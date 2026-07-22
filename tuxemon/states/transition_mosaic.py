@@ -29,29 +29,31 @@ class MosaicTransition(State):
         self,
         client: BaseClient,
         duration: float = 1.0,
-        tile_size: int = 10,
+        mosaic_block_size: int = 10,
         **kwargs: Any,
     ) -> None:
         """
         Parameters:
             duration: The time in seconds. Defaults to 1.0 seconds.
-            tile_size: The size of the mosaic tile. Defaults to 10.
+            mosaic_block_size: The size of one mosaic block, in screen
+                pixels (unrelated to the game tile size). Defaults to 10.
         """
         super().__init__(client=client, **kwargs)
         logger.info("Initializing Mosaic transition")
         self.duration = duration
         self.start_time = 0.0
         self.elapsed_time = 0.0
-        self.tile_size = tile_size
+        self.mosaic_block_size = mosaic_block_size
         self.tiles: list[Rect] = []
         self.tile_surfaces: list[Surface] = []
         self.resume()
 
     def resume(self) -> None:
         self.screenshot = Surface.copy(self.client.context.screen)
-        for x in range(0, self.screenshot.get_width(), self.tile_size):
-            for y in range(0, self.screenshot.get_height(), self.tile_size):
-                rect = Rect(x, y, self.tile_size, self.tile_size)
+        block = self.mosaic_block_size
+        for x in range(0, self.screenshot.get_width(), block):
+            for y in range(0, self.screenshot.get_height(), block):
+                rect = Rect(x, y, block, block)
                 self.tiles.append(rect)
                 self.tile_surfaces.append(self.screenshot.subsurface(rect))
 

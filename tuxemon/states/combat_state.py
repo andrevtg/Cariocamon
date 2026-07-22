@@ -681,7 +681,6 @@ class CombatState(CombatAnimations):
                 if m:
                     message += "\n" + m
 
-
         self.text_anim.add_text_animation(
             partial(self.dialog.alert, message, self.text_area), action_time
         )
@@ -889,9 +888,7 @@ class CombatState(CombatAnimations):
         """
         if winner in self.combat_session.monsters_in_play_right:
             if techniques:
-                tech_list = ", ".join(
-                    T.translate(tech) for tech in techniques
-                )
+                tech_list = ", ".join(T.translate(tech) for tech in techniques)
                 params = {"name": winner.name, "tech": tech_list}
                 mex = T.format("tuxemon_new_tech", params)
                 self.text_anim.add_xp_message(mex)

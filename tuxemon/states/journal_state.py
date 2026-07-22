@@ -37,7 +37,9 @@ class JournalState(PygameMenuState):
     name: ClassVar[str] = "JournalState"
 
     def add_menu_items(self, menu: Menu, monsters: list[MonsterModel]) -> None:
-        btn_x_offset = fix_measure(menu._width, 0.25) - self.client.context.scaling.scale_int(60)
+        btn_x_offset = fix_measure(
+            menu._width, 0.25
+        ) - self.client.context.scaling.scale_int(60)
         btn_y_offset = fix_measure(menu._height, 0.01)
         menu._column_max_width = [None, None]
 
@@ -74,8 +76,12 @@ class JournalState(PygameMenuState):
                         button_id=mon.slug,
                         underline=True,
                         underline_color=SEA_BLUE_COLOR,
-                        underline_offset=self.client.context.scaling.scale_int(1),
-                        underline_width=self.client.context.scaling.scale_int(1),
+                        underline_offset=self.client.context.scaling.scale_int(
+                            1
+                        ),
+                        underline_width=self.client.context.scaling.scale_int(
+                            1
+                        ),
                     ).translate(btn_x_offset, btn_y_offset)
             else:
                 label = f"{mon.txmn_id}. -----"

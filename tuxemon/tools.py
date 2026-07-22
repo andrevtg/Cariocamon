@@ -36,6 +36,7 @@ from tuxemon.compat.rect import ReadOnlyRect
 from tuxemon.constants.asset_loader import fetch_asset
 from tuxemon.db import Comparison
 from tuxemon.locale.locale import T
+from tuxemon.platform.const.sizes import NATIVE_RESOLUTION
 from tuxemon.scaling import ScalingStrategy
 from tuxemon.ui.dialogue import calc_dialog_rect
 from tuxemon.ui.text_alignment import DialogPosition
@@ -183,6 +184,16 @@ def get_valid_uuid(
 def fix_measure(measure: int, percentage: float) -> int:
     """it returns the correct measure based on percentage"""
     return round(measure * percentage)
+
+
+def fix_native_x(measure: int, native_px: float) -> int:
+    """Scale an x-value given in native-resolution pixels to ``measure``."""
+    return fix_measure(measure, native_px / NATIVE_RESOLUTION[0])
+
+
+def fix_native_y(measure: int, native_px: float) -> int:
+    """Scale a y-value given in native-resolution pixels to ``measure``."""
+    return fix_measure(measure, native_px / NATIVE_RESOLUTION[1])
 
 
 def open_dialog(

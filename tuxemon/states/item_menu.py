@@ -23,7 +23,15 @@ from tuxemon.platform.const.graphics import (
     DIMGRAY_COLOR,
     MISSING_IMAGE,
 )
-from tuxemon.platform.const.sizes import MAX_MENU_ITEMS
+from tuxemon.platform.const.sizes import (
+    DESC_BOX_HEIGHT,
+    DESC_BOX_LEFT,
+    DESC_BOX_TOP,
+    DESC_BOX_WIDTH,
+    MAX_MENU_ITEMS,
+    MENU_DISPLAY_CENTER_RATIO,
+    MENU_ITEM_CENTER_RATIO,
+)
 from tuxemon.platform.events import PlayerInput
 from tuxemon.session import local_session
 from tuxemon.sprite import Sprite
@@ -63,7 +71,10 @@ class ItemMenuState(Menu[Item]):
         self._external_is_valid_entry = is_valid_entry
         # this sprite is used to display the item
         # it's also animated to pop out of the backpack
-        self.item_center = self.rect.width * 0.164, self.rect.height * 0.13
+        self.item_center = (
+            self.rect.width * MENU_ITEM_CENTER_RATIO[0],
+            self.rect.height * MENU_ITEM_CENTER_RATIO[1],
+        )
         self.item_sprite = Sprite()
         self.sprites.add(self.item_sprite)
 
@@ -75,10 +86,10 @@ class ItemMenuState(Menu[Item]):
 
         # this is the area where the item description is displayed
         rect = self.client.context.rect.copy()
-        rect.top = self.client.context.scaling.scale_int(106)
-        rect.left = self.client.context.scaling.scale_int(3)
-        rect.width = self.client.context.scaling.scale_int(250)
-        rect.height = self.client.context.scaling.scale_int(32)
+        rect.top = self.client.context.scaling.scale_int(DESC_BOX_TOP)
+        rect.left = self.client.context.scaling.scale_int(DESC_BOX_LEFT)
+        rect.width = self.client.context.scaling.scale_int(DESC_BOX_WIDTH)
+        rect.height = self.client.context.scaling.scale_int(DESC_BOX_HEIGHT)
         self.text_area = TextArea(
             font=self.font,
             font_color=self.font_color,
@@ -97,7 +108,10 @@ class ItemMenuState(Menu[Item]):
         self.page_size = MAX_MENU_ITEMS
 
         # load the backpack icon
-        self.backpack_center = self.rect.width * 0.16, self.rect.height * 0.45
+        self.backpack_center = (
+            self.rect.width * MENU_DISPLAY_CENTER_RATIO[0],
+            self.rect.height * MENU_DISPLAY_CENTER_RATIO[1],
+        )
         self.load_sprite(
             BG_ITEMS_BACKPACK,
             center=self.backpack_center,

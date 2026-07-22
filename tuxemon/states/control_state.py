@@ -15,6 +15,7 @@ from tuxemon.menu.menu import PygameMenuState
 from tuxemon.menu.theme import get_theme
 from tuxemon.menu.transitions import PopInClamped
 from tuxemon.platform.const import buttons
+from tuxemon.platform.const.sizes import NATIVE_RESOLUTION
 from tuxemon.state.state import State
 
 if TYPE_CHECKING:
@@ -106,7 +107,7 @@ class ControlState(PygameMenuState):
             font_size=self.font_type.small,
         )
 
-        _native_w, _native_h = 256, 144
+        _native_w, _native_h = NATIVE_RESOLUTION
         _current_w = self.client.config.resolution[0]
         _current_scale = max(1, min(5, _current_w // _native_w))
         _size_default = _current_scale - 1
@@ -133,7 +134,6 @@ class ControlState(PygameMenuState):
             onchange=on_change_screen_size,
             font_size=self.font_type.small,
         )
-
 
         if not self.main_menu:
 

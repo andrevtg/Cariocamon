@@ -84,7 +84,9 @@ class GiveEffect(CoreEffect):
             elif result.blocked_by and result.blocked_reason not in (
                 BlockedReason.IMMUNE_BY_ITEM,
             ):
-                protected_info.append((monster.name, result.blocked_by, status.name))
+                protected_info.append(
+                    (monster.name, result.blocked_by, status.name)
+                )
 
         if immune_info:
             immune_names = ", ".join(immune_info)

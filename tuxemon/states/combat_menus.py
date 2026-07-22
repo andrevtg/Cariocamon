@@ -24,7 +24,7 @@ from tuxemon.sprite import Sprite
 from tuxemon.states.item_menu import ItemMenuState
 from tuxemon.states.monster_menu import MonsterMenuState
 from tuxemon.technique.technique import Technique
-from tuxemon.tools import fix_measure, open_dialog
+from tuxemon.tools import fix_native_x, fix_native_y, open_dialog
 from tuxemon.ui.graphic_box import GraphicBox
 from tuxemon.ui.text import TextArea
 
@@ -115,8 +115,8 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
 
     def calculate_menu_rectangle(self) -> Rect:
         rect_screen = self.client.context.rect.copy()
-        menu_width = fix_measure(rect_screen.w, 102 / 256)
-        menu_height = fix_measure(rect_screen.h, 36 / 144)
+        menu_width = fix_native_x(rect_screen.w, 102)
+        menu_height = fix_native_y(rect_screen.h, 36)
         rect = Rect(0, 0, menu_width, menu_height)
         rect.bottomright = rect_screen.w, rect_screen.h
         return rect
@@ -456,13 +456,13 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                             # Position independently on grid
                             if i == 0:
                                 spr.rect.topleft = (
-                                    fix_measure(screen_w, 132 / 256),
-                                    fix_measure(screen_h, 126 / 144),
+                                    fix_native_x(screen_w, 132),
+                                    fix_native_y(screen_h, 126),
                                 )
                             else:
                                 spr.rect.topleft = (
-                                    fix_measure(screen_w, 142 / 256),
-                                    fix_measure(screen_h, 126 / 144),
+                                    fix_native_x(screen_w, 142),
+                                    fix_native_y(screen_h, 126),
                                 )
 
                             self.sprites.add(spr, layer=200)
@@ -480,8 +480,8 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                     spr.image = surf
                     spr.rect = surf.get_rect()
                     spr.rect.topleft = (
-                        fix_measure(screen_w, 7 / 256),
-                        fix_measure(screen_h, 121 / 144),
+                        fix_native_x(screen_w, 7),
+                        fix_native_y(screen_h, 121),
                     )
                     self.sprites.add(spr, layer=200)
                     self.range_icon_sprite = spr
@@ -499,8 +499,8 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                     spr.image = surf
                     spr.rect = surf.get_rect()
                     spr.rect.topleft = (
-                        fix_measure(screen_w, 135 / 256),
-                        fix_measure(screen_h, 113 / 144),
+                        fix_native_x(screen_w, 135),
+                        fix_native_y(screen_h, 113),
                     )
                     self.sprites.add(spr, layer=200)
                     self.speed_icon_sprite = spr
@@ -531,18 +531,18 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                     # Independent positioning (you can tweak these individually)
                     if key == "accuracy":
                         spr.rect.topleft = (
-                            fix_measure(screen_w, 7 / 256),
-                            fix_measure(screen_h, 114 / 144),
+                            fix_native_x(screen_w, 7),
+                            fix_native_y(screen_h, 114),
                         )
                     elif key == "power":
                         spr.rect.topleft = (
-                            fix_measure(screen_w, 44 / 256),
-                            fix_measure(screen_h, 123 / 144),
+                            fix_native_x(screen_w, 44),
+                            fix_native_y(screen_h, 123),
                         )
                     elif key == "recharge":
                         spr.rect.topleft = (
-                            fix_measure(screen_w, 7 / 256),
-                            fix_measure(screen_h, 133 / 144),
+                            fix_native_x(screen_w, 7),
+                            fix_native_y(screen_h, 133),
                         )
 
                     self.sprites.add(spr, layer=200)
