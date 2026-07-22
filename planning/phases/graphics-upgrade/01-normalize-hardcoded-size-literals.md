@@ -79,6 +79,7 @@ Deviations and findings vs. the plan:
 - Tooling gotchas for later phases: ruff was unpinned (`tox.ini`) and
   version drift reformatted ~26 files repo-wide — unrelated files were
   reverted to keep this diff scoped, and ruff is now pinned to 0.15.22
-  (~23 files of pre-existing format drift remain repo-wide). Local
+  with a one-time repo-wide format commit applied — `tox -e fmt`/`lint`
+  are clean from here on. Local
   `.venv` lacks pytest/pytest-mock; use
   `uv run --with pytest --with pytest-mock pytest tests`.
