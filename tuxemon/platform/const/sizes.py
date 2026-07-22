@@ -50,6 +50,16 @@ BATTLE_BG_SIZE: tuple[int, int] = (256, 108)
 # Native resolution is similar to the old gameboy resolution.
 NATIVE_RESOLUTION: tuple[int, int] = (256, 144)
 
+# Item/technique/shop menu description box (native-resolution px)
+DESC_BOX_TOP: int = 106
+DESC_BOX_LEFT: int = 3
+DESC_BOX_WIDTH: int = 250
+DESC_BOX_HEIGHT: int = 32
+
+# Item/technique/shop menu sprite anchors (fractions of the menu rect)
+MENU_ITEM_CENTER_RATIO: tuple[float, float] = (0.164, 0.13)
+MENU_DISPLAY_CENTER_RATIO: tuple[float, float] = (0.16, 0.45)
+
 # Conversion Factors
 COEFF_TILE: float = 1.0
 COEFF_MILES: float = 0.6213711922

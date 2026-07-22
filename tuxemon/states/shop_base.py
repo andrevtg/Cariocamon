@@ -24,7 +24,15 @@ from tuxemon.item.shop_utils import calc_internal_rect
 from tuxemon.menu.interface import MenuItem
 from tuxemon.menu.menu import Menu
 from tuxemon.platform.const import buttons
-from tuxemon.platform.const.sizes import MAX_MENU_ITEMS
+from tuxemon.platform.const.sizes import (
+    DESC_BOX_HEIGHT,
+    DESC_BOX_LEFT,
+    DESC_BOX_TOP,
+    DESC_BOX_WIDTH,
+    MAX_MENU_ITEMS,
+    MENU_DISPLAY_CENTER_RATIO,
+    MENU_ITEM_CENTER_RATIO,
+)
 from tuxemon.platform.events import PlayerInput
 from tuxemon.sprite import Sprite
 from tuxemon.ui.text import TextArea
@@ -65,7 +73,10 @@ class ShopMenuState(Menu[T], Generic[T], ABC):
         super().__init__(client=client, **kwargs)
 
         # This sprite is used to display the selected asset.
-        self.item_center = self.rect.width * 0.164, self.rect.height * 0.13
+        self.item_center = (
+            self.rect.width * MENU_ITEM_CENTER_RATIO[0],
+            self.rect.height * MENU_ITEM_CENTER_RATIO[1],
+        )
         self.asset_sprite = Sprite()
         self.sprites.add(self.asset_sprite)
 
@@ -77,10 +88,10 @@ class ShopMenuState(Menu[T], Generic[T], ABC):
 
         # This is the area where the asset's description is displayed.
         rect = self.client.context.rect.copy()
-        rect.top = self.scale_int(106)
-        rect.left = self.scale_int(3)
-        rect.width = self.scale_int(250)
-        rect.height = self.scale_int(32)
+        rect.top = self.scale_int(DESC_BOX_TOP)
+        rect.left = self.scale_int(DESC_BOX_LEFT)
+        rect.width = self.scale_int(DESC_BOX_WIDTH)
+        rect.height = self.scale_int(DESC_BOX_HEIGHT)
         self.text_area = TextArea(
             font=self.font,
             font_color=self.font_color,
@@ -89,7 +100,10 @@ class ShopMenuState(Menu[T], Generic[T], ABC):
         )
         self.sprites.add(self.text_area, layer=100)
 
-        self.image_center = self.rect.width * 0.16, self.rect.height * 0.45
+        self.image_center = (
+            self.rect.width * MENU_DISPLAY_CENTER_RATIO[0],
+            self.rect.height * MENU_DISPLAY_CENTER_RATIO[1],
+        )
         self.buyer = buyer
         self.seller = seller
         self.economy = economy

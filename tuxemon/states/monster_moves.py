@@ -19,7 +19,8 @@ from tuxemon.platform.const.graphics import TECH_INFO
 from tuxemon.platform.const.sizes import ACCURACY_RANGE, POTENCY_RANGE
 from tuxemon.technique.technique import Technique
 from tuxemon.tools import (
-    fix_measure,
+    fix_native_x,
+    fix_native_y,
     open_dialog,
     scale,
     transform_resource_filename,
@@ -52,13 +53,13 @@ class MonsterMovesState(PygameMenuState):
         menu: Menu,
         monster: Monster,
     ) -> None:
-        def fxw(r: float) -> int:
-            return fix_measure(menu._width, r)
+        def fxw(native_px: float) -> int:
+            return fix_native_x(menu._width, native_px)
 
-        def fxh(r: float) -> int:
-            return fix_measure(menu._height, r)
+        def fxh(native_px: float) -> int:
+            return fix_native_y(menu._height, native_px)
 
-        menu._width = fxw(248 / 256)
+        menu._width = fxw(248)
 
         self.minimal_font = transform_resource_filename(
             "font", self.client.config.locale.minimal_font_file
@@ -74,13 +75,13 @@ class MonsterMovesState(PygameMenuState):
             align=ALIGN_LEFT,
             float=True,
         )
-        lab1.translate(fxw(79.4 / 256), fxh(-0.2 / 144))
+        lab1.translate(fxw(79.4), fxh(-0.2))
 
         # Move buttons (newest is always last)
         output: list[Technique] = monster.moves.get_moves()
 
-        step = 9 / 144 if len(output) >= 5 else 12 / 144
-        _height = 4.8 / 144
+        step = 9 if len(output) >= 5 else 12
+        _height = 4.8
         for tech in output:
             _height += step
             menu.add.button(
@@ -90,7 +91,7 @@ class MonsterMovesState(PygameMenuState):
                 font_size=self.font_type.biggest,
                 align=ALIGN_LEFT,
                 float=True,
-            ).translate(fxw(83.6 / 256), fxh(_height))
+            ).translate(fxw(83.6), fxh(_height))
 
         # Monster image (manual position)
         renderer = MonsterRenderer(monster, scale=self.factor)
@@ -98,7 +99,7 @@ class MonsterMovesState(PygameMenuState):
         new_image = self._create_image_from_surface(surface)
         image_widget = menu.add.image(image_path=new_image.copy())
         image_widget.set_float(origin_position=True)
-        image_widget.translate(fxw(1 / 256), fxh(2 / 144))
+        image_widget.translate(fxw(1), fxh(2))
 
     # -------------------------
     # Per-tech UI updates
@@ -106,7 +107,7 @@ class MonsterMovesState(PygameMenuState):
     def add_menu_technique(self, menu: Menu, slug: str) -> None:
         # keep width stable across updates
         width, height = self.client.context.resolution
-        menu._width = fix_measure(width, 248 / 256)
+        menu._width = fix_native_x(width, 248)
 
         technique = Technique.create(slug)
 
@@ -140,7 +141,7 @@ class MonsterMovesState(PygameMenuState):
             )
             assert not isinstance(self.description_label, list)
             self.description_label.translate(
-                fix_measure(width, 3.8 / 256), fix_measure(height, 113 / 144)
+                fix_native_x(width, 3.8), fix_native_y(height, 113)
             )
         else:
             description_label.set_title(technique.description)
@@ -178,7 +179,7 @@ class MonsterMovesState(PygameMenuState):
             # place it just above the description block
             assert not isinstance(self.info_label, list)
             self.info_label.translate(
-                fix_measure(width, 206 / 256), fix_measure(height, 102 / 144)
+                fix_native_x(width, 206), fix_native_y(height, 102)
             )
         else:
             info_label.set_title(label_text)
@@ -207,7 +208,7 @@ class MonsterMovesState(PygameMenuState):
                 T.translate("technique_accuracy"),
                 default=diff_accuracy,
                 font_size=self.font_type.biggest,
-                width=fix_measure(width, 80 / 256),
+                width=fix_native_x(width, 80),
                 align=ALIGN_LEFT,
                 progress_text_font=self.minimal_font,
                 float=True,
@@ -215,7 +216,7 @@ class MonsterMovesState(PygameMenuState):
                 progress_text_font_hfactor=1.0,
             )
             self.bar_accuracy.translate(
-                fix_measure(width, 4 / 256), fix_measure(height, 74.8 / 144)
+                fix_native_x(width, 4), fix_native_y(height, 74.8)
             )
         else:
             bar_accuracy.set_value(diff_accuracy)
@@ -230,7 +231,7 @@ class MonsterMovesState(PygameMenuState):
                 T.translate("technique_potency"),
                 default=diff_potency,
                 font_size=self.font_type.biggest,
-                width=fix_measure(width, 80 / 256),
+                width=fix_native_x(width, 80),
                 align=ALIGN_LEFT,
                 progress_text_font=self.minimal_font,
                 float=True,
@@ -238,7 +239,7 @@ class MonsterMovesState(PygameMenuState):
                 box_border_width=scale(1),
             )
             self.bar_potency.translate(
-                fix_measure(width, 4 / 256), fix_measure(height, 99.8 / 144)
+                fix_native_x(width, 4), fix_native_y(height, 99.8)
             )
         else:
             bar_potency.set_value(diff_potency)
@@ -248,15 +249,15 @@ class MonsterMovesState(PygameMenuState):
 
         width, height = self.client.context.resolution
 
-        def fxw(r: float) -> int:
-            return fix_measure(width, r)
+        def fxw(native_px: float) -> int:
+            return fix_native_x(width, native_px)
 
-        def fxh(r: float) -> int:
-            return fix_measure(height, r)
+        def fxh(native_px: float) -> int:
+            return fix_native_y(height, native_px)
 
         # Type icons: two fixed slots (type_icon_0, type_icon_1)
-        x_positions = [225 / 256, 213.4 / 256]
-        y_position = 73.8 / 144
+        x_positions = [225, 213.4]
+        y_position = 73.8
         for i in range(2):
             slot_id = f"type_icon_{i}"
             existing = menu.get_widget(slot_id)
@@ -266,7 +267,9 @@ class MonsterMovesState(PygameMenuState):
                 img = self._create_image(path)
                 img.scale(self.factor, self.factor)
                 if existing is None:
-                    icon = menu.add.image(img.copy(), image_id=slot_id, float=True)
+                    icon = menu.add.image(
+                        img.copy(), image_id=slot_id, float=True
+                    )
                     icon.translate(fxw(x_positions[i]), fxh(y_position))
                 else:
                     existing.set_image(img)
@@ -282,8 +285,10 @@ class MonsterMovesState(PygameMenuState):
             rimg = self._create_image(path)
             rimg.scale(self.factor, self.factor)
             if existing_range is None:
-                w = menu.add.image(rimg.copy(), image_id="range_icon", float=True)
-                w.translate(fxw(4 / 256), fxh(86.8 / 144))
+                w = menu.add.image(
+                    rimg.copy(), image_id="range_icon", float=True
+                )
+                w.translate(fxw(4), fxh(86.8))
             else:
                 existing_range.set_image(rimg)
                 existing_range.show()
@@ -299,7 +304,7 @@ class MonsterMovesState(PygameMenuState):
         existing_speed = menu.get_widget("speed_icon")
         if existing_speed is None:
             w = menu.add.image(simg.copy(), image_id="speed_icon", float=True)
-            w.translate(fxw(222 / 256), fxh(51.8 / 144))
+            w.translate(fxw(222), fxh(51.8))
         else:
             existing_speed.set_image(simg)
 
@@ -320,7 +325,7 @@ class MonsterMovesState(PygameMenuState):
             )
             assert not isinstance(label, list)
             label.translate(
-                fix_measure(width, 42 / 256), fix_measure(height, 87.8 / 144)
+                fix_native_x(width, 42), fix_native_y(height, 87.8)
             )
         else:
             existing.set_title(power_text)
@@ -400,9 +405,10 @@ class MonsterMovesState(PygameMenuState):
             result = super().process_event(event)
             self.update_selected_widget()
             if self.selected_widget:
-                self.add_menu_technique(self.menu, self.selected_widget.get_id())
+                self.add_menu_technique(
+                    self.menu, self.selected_widget.get_id()
+                )
             return result
-
 
         if self._source in [
             "WorldMenuState",
