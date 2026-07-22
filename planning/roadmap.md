@@ -5,4 +5,4 @@ organized and how to pick up work on any of these.
 
 | Epic | Status | Phases | ADRs |
 |------|--------|--------|------|
-| HD sprite & tileset upgrade | In progress (phase 1 done) | [phases/graphics-upgrade](phases/graphics-upgrade) | [0001](adr/0001-double-native-resolution-and-asset-sizes.md), [0002](adr/0002-normalize-hardcoded-size-literals-before-bump.md), [0003](adr/0003-asset-and-map-migration-ordering.md), [0004](adr/0004-rollout-on-a-long-lived-feature-branch.md) |
+| HD sprite & tileset upgrade | In progress (phase 1 done) | [phases/graphics-upgrade](phases/graphics-upgrade) | [0001](adr/0001-double-native-resolution-and-asset-sizes.md), [0002](adr/0002-normalize-hardcoded-size-literals-before-bump.md), [0003](adr/0003-asset-and-map-migration-ordering.md), [0004](adr/0004-work-directly-on-development.md) |

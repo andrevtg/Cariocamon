@@ -15,6 +15,10 @@ values, before any real asset production starts.
 
 ## Tasks
 
+- [ ] Before anything lands: tag current `development` as
+      `pre-hd-baseline` (per [ADR-0004](../../adr/0004-work-directly-on-development.md)
+      — last fully-playable old-resolution commit, since `development`
+      will not validate again until Phase 3 completes).
 - [ ] In `tuxemon/platform/const/sizes.py`, double: `NATIVE_RESOLUTION`,
       `TILE_SIZE`, `ICON_SIZE`, `TECH_ICON_SIZE`, `STATUS_ICON_SIZE`,
       `ITEM_SIZE`, `ELEMENT_SIZE`, `BORDERS_SIZE`, `BATTLE_BG_SIZE`.
