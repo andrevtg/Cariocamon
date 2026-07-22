@@ -33,7 +33,7 @@ class TextRenderer:
             font_filename, self.scaling.scale_int(FONT_SIZE)
         )
 
-        ox, oy = self.scaling.scale_sequence((0.5, 0.5))
+        ox, oy = self.scaling.scale_sequence((1.0, 1.0))
         self._shadow_offset: tuple[float, ...] = (float(ox), float(oy))
 
     @lru_cache(maxsize=256)

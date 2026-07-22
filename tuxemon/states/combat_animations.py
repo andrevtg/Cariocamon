@@ -164,7 +164,7 @@ class CombatAnimations(Menu[None], ABC):
         # Load and scale capture device sprite
         capdev = self.load_sprite(f"gfx/items/{monster.capture_device}.png")
         graphics.scale_sprite(capdev, 0.4)
-        capdev.rect.center = (feet[0], feet[1] - self.scale_int(60))
+        capdev.rect.center = (feet[0], feet[1] - self.scale_int(120))
 
         # Animate capture device falling
         fall_time = 0.7
@@ -184,7 +184,7 @@ class CombatAnimations(Menu[None], ABC):
             self.animate, duration=fade_duration, delay=delay
         )
         animate_fade(capdev, width=1, height=h * 1.5)
-        animate_fade(capdev.rect, y=-self.scale_int(14), relative=True)
+        animate_fade(capdev.rect, y=-self.scale_int(28), relative=True)
 
         # Convert capture device sprite for easy fading
         def convert_sprite() -> None:
@@ -239,9 +239,9 @@ class CombatAnimations(Menu[None], ABC):
         _, horizontal = self.combat_zone.get_zone(attacker.rect)
 
         delta = (
-            self.scale_int(14)
+            self.scale_int(28)
             if horizontal is HorizontalAlignment.LEFT
-            else -self.scale_int(14)
+            else -self.scale_int(28)
         )
 
         self.animate(
@@ -283,10 +283,10 @@ class CombatAnimations(Menu[None], ABC):
             duration=1,
             transition="in_out_elastic",
         )
-        ani = animate(x=original_x, initial=original_x + self.scale_int(400))
+        ani = animate(x=original_x, initial=original_x + self.scale_int(800))
         # just want the end of the animation, not the entire thing
         ani._elapsed = 0.735
-        ani = animate(y=original_y, initial=original_y - self.scale_int(400))
+        ani = animate(y=original_y, initial=original_y - self.scale_int(800))
         # just want the end of the animation, not the entire thing
         ani._elapsed = 0.735
 
@@ -367,7 +367,7 @@ class CombatAnimations(Menu[None], ABC):
             raise KeyError(f"Sprite not found for entity: {monster.name}")
 
         x_offset = self.combat_zone.get_horizontal_offset(
-            sprite.rect, self.scale_int(-150)
+            sprite.rect, self.scale_int(-300)
         )
 
         renderer = MonsterRenderer(monster)
@@ -491,8 +491,8 @@ class CombatAnimations(Menu[None], ABC):
         ):
             return (
                 None,
-                home.right - self.scale_int(13),
-                self.scale_int(8),
+                home.right - self.scale_int(26),
+                self.scale_int(16),
             )
 
         hud_data = self.env.data.get_battle_graphics().hud
@@ -823,7 +823,7 @@ class CombatAnimations(Menu[None], ABC):
         def shake_up() -> Animation:
             return self.animate(
                 capdev.rect,
-                y=self.scale_int(3),
+                y=self.scale_int(6),
                 relative=True,
                 duration=0.1,
                 transition="in_quad",
@@ -832,7 +832,7 @@ class CombatAnimations(Menu[None], ABC):
         def shake_down() -> Animation:
             return self.animate(
                 capdev.rect,
-                y=-self.scale_int(6),
+                y=-self.scale_int(12),
                 relative=True,
                 duration=0.2,
                 transition="in_quad",
@@ -841,7 +841,7 @@ class CombatAnimations(Menu[None], ABC):
         def shake_up2() -> Animation:
             return self.animate(
                 capdev.rect,
-                y=self.scale_int(3),
+                y=self.scale_int(6),
                 relative=True,
                 duration=0.1,
                 transition="in_quad",

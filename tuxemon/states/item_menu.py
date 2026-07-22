@@ -78,7 +78,9 @@ class ItemMenuState(Menu[Item]):
         self.item_sprite = Sprite()
         self.sprites.add(self.item_sprite)
 
-        self.menu_items.line_spacing = self.client.context.scaling.scale_int(7)
+        self.menu_items.line_spacing = self.client.context.scaling.scale_int(
+            14
+        )
         self.current_page = 0
         self.total_pages = 0
         self.inventory = self.filter_controller.get_filtered_inventory()

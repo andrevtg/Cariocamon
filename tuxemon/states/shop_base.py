@@ -80,7 +80,7 @@ class ShopMenuState(Menu[T], Generic[T], ABC):
         self.asset_sprite = Sprite()
         self.sprites.add(self.asset_sprite)
 
-        self.menu_items.line_spacing = self.scale_int(7)
+        self.menu_items.line_spacing = self.scale_int(14)
         self.page_size = MAX_MENU_ITEMS
         self.current_page = 0
         self.total_pages = 0

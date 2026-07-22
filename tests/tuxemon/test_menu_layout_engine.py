@@ -107,8 +107,8 @@ def test_mutating_layout_changes_rect_when_shrink_to_items():
 
     result = engine.compute(menu, mutate=True)
 
-    assert result.width == 40 + 18
-    assert result.height == 20 + 19
+    assert result.width == 40 + 36
+    assert result.height == 20 + 38
     assert menu.position_rect_called == 1
 
 
@@ -146,8 +146,8 @@ def test_union_of_items_and_sprites(items_rect, sprites_rect, expected):
 
     result = engine.compute(menu, mutate=True)
 
-    expected_w = expected[0] + 18
-    expected_h = expected[1] + 19
+    expected_w = expected[0] + 36
+    expected_h = expected[1] + 38
 
     assert result.width == expected_w
     assert result.height == expected_h

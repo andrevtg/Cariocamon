@@ -115,8 +115,8 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
 
     def calculate_menu_rectangle(self) -> Rect:
         rect_screen = self.client.context.rect.copy()
-        menu_width = fix_native_x(rect_screen.w, 102)
-        menu_height = fix_native_y(rect_screen.h, 36)
+        menu_width = fix_native_x(rect_screen.w, 204)
+        menu_height = fix_native_y(rect_screen.h, 72)
         rect = Rect(0, 0, menu_width, menu_height)
         rect.bottomright = rect_screen.w, rect_screen.h
         return rect
@@ -456,13 +456,13 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                             # Position independently on grid
                             if i == 0:
                                 spr.rect.topleft = (
-                                    fix_native_x(screen_w, 132),
-                                    fix_native_y(screen_h, 126),
+                                    fix_native_x(screen_w, 264),
+                                    fix_native_y(screen_h, 252),
                                 )
                             else:
                                 spr.rect.topleft = (
-                                    fix_native_x(screen_w, 142),
-                                    fix_native_y(screen_h, 126),
+                                    fix_native_x(screen_w, 284),
+                                    fix_native_y(screen_h, 252),
                                 )
 
                             self.sprites.add(spr, layer=200)
@@ -480,8 +480,8 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                     spr.image = surf
                     spr.rect = surf.get_rect()
                     spr.rect.topleft = (
-                        fix_native_x(screen_w, 7),
-                        fix_native_y(screen_h, 121),
+                        fix_native_x(screen_w, 14),
+                        fix_native_y(screen_h, 242),
                     )
                     self.sprites.add(spr, layer=200)
                     self.range_icon_sprite = spr
@@ -499,8 +499,8 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                     spr.image = surf
                     spr.rect = surf.get_rect()
                     spr.rect.topleft = (
-                        fix_native_x(screen_w, 135),
-                        fix_native_y(screen_h, 113),
+                        fix_native_x(screen_w, 270),
+                        fix_native_y(screen_h, 226),
                     )
                     self.sprites.add(spr, layer=200)
                     self.speed_icon_sprite = spr
@@ -531,18 +531,18 @@ class MainCombatMenuState(PopUpMenu[MenuGameObj]):
                     # Independent positioning (you can tweak these individually)
                     if key == "accuracy":
                         spr.rect.topleft = (
-                            fix_native_x(screen_w, 7),
-                            fix_native_y(screen_h, 114),
+                            fix_native_x(screen_w, 14),
+                            fix_native_y(screen_h, 228),
                         )
                     elif key == "power":
                         spr.rect.topleft = (
-                            fix_native_x(screen_w, 44),
-                            fix_native_y(screen_h, 123),
+                            fix_native_x(screen_w, 88),
+                            fix_native_y(screen_h, 246),
                         )
                     elif key == "recharge":
                         spr.rect.topleft = (
-                            fix_native_x(screen_w, 7),
-                            fix_native_y(screen_h, 133),
+                            fix_native_x(screen_w, 14),
+                            fix_native_y(screen_h, 266),
                         )
 
                     self.sprites.add(spr, layer=200)
@@ -747,7 +747,7 @@ class CombatTargetMenuState(Menu[Monster]):
                 return
 
             selected.image = Surface(selected.rect.size, SRCALPHA)
-            BORDER_OFFSET = self.client.context.scaling.scale_int(12)
+            BORDER_OFFSET = self.client.context.scaling.scale_int(24)
             selected.rect.center = (
                 pos.rect.centerx - BORDER_OFFSET,
                 pos.rect.centery - BORDER_OFFSET,

@@ -75,7 +75,7 @@ class MonsterMenuState(Menu[Monster | None]):
         self.monsters = self.monster_filter.get_filtered_monsters(monsters)
 
         # make a text area to show messages
-        rect = self.client.context.scaling.scale_tuple((20, 80, 80, 100))
+        rect = self.client.context.scaling.scale_tuple((40, 160, 160, 200))
         self.text_area = TextArea(
             font=self.font,
             font_color=self.font_color,
@@ -524,7 +524,7 @@ class MonsterSpriteDisplay:
             width = self.resolution[0]
             margin = int(width * 0.005)
             self.sprite.rect.x = width - (self.sprite.rect.width + margin)
-            self.sprite.rect.y = rect.y + self.scaling.scale_int(10)
+            self.sprite.rect.y = rect.y + self.scaling.scale_int(20)
 
         else:
             self.remove_sprite()
@@ -568,7 +568,7 @@ class MonsterPortraitDisplay:
     def animate_down(self) -> None:
         ani = self.menu_state.animate(
             self.portrait.rect,
-            y=-self.scaling.scale_int(5),
+            y=-self.scaling.scale_int(10),
             duration=1,
             transition="in_out_quad",
             relative=True,
@@ -578,7 +578,7 @@ class MonsterPortraitDisplay:
     def animate_up(self) -> None:
         ani = self.menu_state.animate(
             self.portrait.rect,
-            y=self.scaling.scale_int(5),
+            y=self.scaling.scale_int(10),
             duration=1,
             transition="in_out_quad",
             relative=True,
@@ -649,7 +649,7 @@ class MonsterSlotRenderer:
         if not monster:
             return
 
-        padding = self.scaling.scale_int(6)
+        padding = self.scaling.scale_int(12)
         content = rect.inflate(-padding, -padding)
 
         upper_label = f"{monster.name}{monster.gender_symbol}"
@@ -663,7 +663,7 @@ class MonsterSlotRenderer:
             font=self.font,
         )
 
-        text_rect.top = rect.bottom - self.scaling.scale_int(7)
+        text_rect.top = rect.bottom - self.scaling.scale_int(14)
         bottom_label = f"  Lv {monster.level}"
         draw_text(
             surface,
@@ -674,7 +674,7 @@ class MonsterSlotRenderer:
         )
 
         hp_width = int(content.width * 0.35)
-        hp_rect = Rect(0, 0, hp_width, self.scaling.scale_int(8))
+        hp_rect = Rect(0, 0, hp_width, self.scaling.scale_int(16))
         hp_rect.right = content.right
         hp_rect.centery = content.centery
 
@@ -689,13 +689,13 @@ class MonsterSlotRenderer:
         monster: Monster,
         content: Rect,
     ) -> None:
-        icon_y = content.top + self.scaling.scale_int(4)
+        icon_y = content.top + self.scaling.scale_int(8)
 
         for i, status in enumerate(monster.status.get_statuses()):
             if status.icon:
                 img = load_and_scale(status.icon)
                 x = int(content.width * 0.45) + i * (
-                    img.get_width() + self.scaling.scale_int(4)
+                    img.get_width() + self.scaling.scale_int(8)
                 )
                 x += content.left
                 surface.blit(img, (x, icon_y))
@@ -704,6 +704,6 @@ class MonsterSlotRenderer:
             item_img = load_and_scale(monster.held_item.sprite, 1.5)
             x = int(content.width * 0.45) + len(
                 monster.status.get_statuses()
-            ) * (self.scaling.scale_int(4) + item_img.get_width())
+            ) * (self.scaling.scale_int(8) + item_img.get_width())
             x += content.left
             surface.blit(item_img, (x, icon_y))

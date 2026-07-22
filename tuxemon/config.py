@@ -31,8 +31,8 @@ LOCALE_FONT_MAP = {
 class DisplayConfig(BaseModel):
     """Configuration for the game display."""
 
-    resolution_x: int = 1280
-    resolution_y: int = 720
+    resolution_x: int = 1536
+    resolution_y: int = 864
     splash: bool = True
     fullscreen: bool = False
     fps: float = 60.0

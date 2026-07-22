@@ -33,7 +33,7 @@ def write_yaml(dir_path: Path, data) -> Path:
 def test_defaults_load_when_no_file():
     cfg = TuxemonConfig(config_path=None)
     assert cfg.config_model is not None
-    assert cfg.resolution == (1280, 720)
+    assert cfg.resolution == (1536, 864)
     assert cfg.dialog_speed == "slow"
 
 
@@ -49,7 +49,7 @@ def test_load_partial_yaml_merges_with_defaults():
 
         assert cfg.resolution[0] == 800
         assert cfg.music_volume == pytest.approx(0.75)
-        assert cfg.resolution[1] == 720
+        assert cfg.resolution[1] == 864
         assert cfg.dialog_speed == "slow"
 
 
@@ -349,7 +349,7 @@ def test_reload_config_preserves_non_overridden_fields():
 
         cfg.reload_config()
         assert cfg.resolution[0] == 1024
-        assert cfg.resolution[1] == 720
+        assert cfg.resolution[1] == 864
 
 
 def test_reload_config_rebuilds_input_map_after_controls_change():

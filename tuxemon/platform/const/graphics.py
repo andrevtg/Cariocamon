@@ -72,10 +72,11 @@ BG_ITEMS: str = ITEM_MENU
 BG_MOVES: str = ITEM_MENU
 
 # Font Sizes
-# Note: These values are relative size indices, not pixel counts.
-FONT_SIZE_SMALLER = 3
-FONT_SIZE_SMALL = 4
-FONT_SIZE = 5
-FONT_SIZE_BIG = 6
-FONT_SIZE_BIGGER = 7
-FONT_SIZE_BIGGEST = 8
+# Native-resolution px; consumers multiply by the window scale
+# (e.g. scale_int(FONT_SIZE)) to get the on-screen font size.
+FONT_SIZE_SMALLER = 6
+FONT_SIZE_SMALL = 8
+FONT_SIZE = 10
+FONT_SIZE_BIG = 12
+FONT_SIZE_BIGGER = 14
+FONT_SIZE_BIGGEST = 16

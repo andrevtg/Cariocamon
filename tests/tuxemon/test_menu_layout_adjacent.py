@@ -187,8 +187,8 @@ def test_union_edge_cases(items_rect, sprites_rect):
     result = engine.compute(menu, mutate=True)
 
     # Must be >= padding
-    assert result.width >= 18
-    assert result.height >= 19
+    assert result.width >= 36
+    assert result.height >= 38
 
 
 def test_padding_constants_are_applied():
@@ -202,5 +202,5 @@ def test_padding_constants_are_applied():
 
     result = engine.compute(menu, mutate=True)
 
-    assert result.width == 40 + 18
-    assert result.height == 20 + 19
+    assert result.width == 40 + 36
+    assert result.height == 20 + 38

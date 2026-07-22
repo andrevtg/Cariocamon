@@ -391,8 +391,8 @@ class HordeSprite(Sprite):
         horde_size = len(self.opponent_party.alive)
         horde_text = f"x{horde_size}"
         text_surface = self.shadow_text(horde_text)
-        x_pad = self.context.scaling.scale_int(2)
-        y_pad = self.context.scaling.scale_int(4)
+        x_pad = self.context.scaling.scale_int(4)
+        y_pad = self.context.scaling.scale_int(8)
         width = text_surface.get_width() + x_pad * 2
         height = text_surface.get_height() + y_pad * 2
         self.image = Surface((width, height), SRCALPHA)
@@ -467,7 +467,7 @@ class CaptureDeviceSprite(Sprite):
         animate(sprite.image, set_alpha=255, initial=0)
         animate(
             sprite.rect,
-            bottom=self.tray.rect.top + self.context.scaling.scale_int(3),
+            bottom=self.tray.rect.top + self.context.scaling.scale_int(6),
         )
 
 

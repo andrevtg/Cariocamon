@@ -75,7 +75,7 @@ class JournalChoice(PygameMenuState):
             float_origin_position=True,
             padding=0,
         )
-        badge_featured_lbl.translate(scale_int(3), scale_int(96))
+        badge_featured_lbl.translate(scale_int(6), scale_int(192))
 
         badge_featured_num: Any = menu.add.label(
             title=str(featured),
@@ -85,7 +85,7 @@ class JournalChoice(PygameMenuState):
             float_origin_position=True,
             padding=0,
         )
-        badge_featured_num.translate(scale_int(10), scale_int(102))
+        badge_featured_num.translate(scale_int(20), scale_int(204))
 
         badge_stubs_lbl: Any = menu.add.label(
             title=stubs_text,
@@ -95,7 +95,7 @@ class JournalChoice(PygameMenuState):
             float_origin_position=True,
             padding=0,
         )
-        badge_stubs_lbl.translate(scale_int(3), scale_int(112))
+        badge_stubs_lbl.translate(scale_int(6), scale_int(224))
 
         badge_stubs_num: Any = menu.add.label(
             title=str(stubs),
@@ -105,7 +105,7 @@ class JournalChoice(PygameMenuState):
             float_origin_position=True,
             padding=0,
         )
-        badge_stubs_num.translate(scale_int(10), scale_int(118))
+        badge_stubs_num.translate(scale_int(20), scale_int(236))
 
         badge_missing_lbl: Any = menu.add.label(
             title=missing_text,
@@ -115,7 +115,7 @@ class JournalChoice(PygameMenuState):
             float_origin_position=True,
             padding=0,
         )
-        badge_missing_lbl.translate(scale_int(3), scale_int(128))
+        badge_missing_lbl.translate(scale_int(6), scale_int(256))
 
         badge_missing_num: Any = menu.add.label(
             title=str(missing),
@@ -125,11 +125,11 @@ class JournalChoice(PygameMenuState):
             float_origin_position=True,
             padding=0,
         )
-        badge_missing_num.translate(scale_int(10), scale_int(134))
+        badge_missing_num.translate(scale_int(20), scale_int(268))
 
-        btn_x_offset = scale_int(44)
-        btn_y_offset = scale_int(8)
-        menu._column_max_width = [scale_int(115), scale_int(150)]
+        btn_x_offset = scale_int(88)
+        btn_y_offset = scale_int(16)
+        menu._column_max_width = [scale_int(230), scale_int(300)]
 
         for page in range(pages):
             start = page * MAX_PAGE

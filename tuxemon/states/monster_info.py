@@ -102,7 +102,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab1.translate(fxw(37), fxh(9.8))
+        lab1.translate(fxw(74), fxh(19.6))
         # level + exp
         lab2: Any = menu.add.label(
             title=f"Lv. {monster.level}",
@@ -112,7 +112,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab2.translate(fxw(169), fxh(12.8))
+        lab2.translate(fxw(338), fxh(25.6))
 
         # how much XP earned since last level-up
         x = monster.experience_handler.experience_current_level
@@ -128,7 +128,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab3.translate(fxw(84), fxh(86.8))
+        lab3.translate(fxw(168), fxh(173.6))
 
         lab3b: Any = menu.add.label(
             title=f"{y:,}",  # add commas for readability
@@ -138,7 +138,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab3b.translate(fxw(92), fxh(96.8))
+        lab3b.translate(fxw(184), fxh(193.6))
 
         # section labels
         height_label: Any = menu.add.label(
@@ -150,7 +150,7 @@ class MonsterInfoState(PygameMenuState):
             font_name=thin_font_path,
             font_color=light_color,
         )
-        height_label.translate(fxw(79), fxh(25.8))
+        height_label.translate(fxw(158), fxh(51.6))
 
         weight_label: Any = menu.add.label(
             title=T.translate("weight"),
@@ -161,7 +161,7 @@ class MonsterInfoState(PygameMenuState):
             font_name=thin_font_path,
             font_color=light_color,
         )
-        weight_label.translate(fxw(118), fxh(25.8))
+        weight_label.translate(fxw(236), fxh(51.6))
 
         tastes_label: Any = menu.add.label(
             title=T.translate("tastes"),
@@ -172,7 +172,7 @@ class MonsterInfoState(PygameMenuState):
             font_name=thin_font_path,
             font_color=light_color,
         )
-        tastes_label.translate(fxw(79), fxh(48.8))
+        tastes_label.translate(fxw(158), fxh(97.6))
 
         exp_label: Any = menu.add.label(
             title=T.translate("exp_to_next_level"),
@@ -183,7 +183,7 @@ class MonsterInfoState(PygameMenuState):
             font_name=thin_font_path,
             font_color=light_color,
         )
-        exp_label.translate(fxw(79), fxh(78.8))
+        exp_label.translate(fxw(158), fxh(157.6))
 
         if monster.gender_symbol:
             lab_gender: Any = menu.add.label(
@@ -194,7 +194,7 @@ class MonsterInfoState(PygameMenuState):
                 font_color=dark_color,
                 float=True,
             )
-            lab_gender.translate(fxw(11), fxh(9))
+            lab_gender.translate(fxw(22), fxh(18))
 
         # weight
         lab4: Any = menu.add.label(
@@ -205,7 +205,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab4.translate(fxw(122), fxh(34.8))
+        lab4.translate(fxw(244), fxh(69.6))
         # height
         lab5: Any = menu.add.label(
             title=mon_height,
@@ -215,7 +215,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab5.translate(fxw(84), fxh(34.8))
+        lab5.translate(fxw(168), fxh(69.6))
 
         # taste
         cold = T.translate(f"taste_{monster.taste_cold.lower()}")
@@ -228,7 +228,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab8.translate(fxw(84), fxh(58))
+        lab8.translate(fxw(168), fxh(116))
 
         lab9: Any = menu.add.label(
             title=f"{cold}",
@@ -238,7 +238,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab9.translate(fxw(84), fxh(66))
+        lab9.translate(fxw(168), fxh(132))
 
         # capture
         lab10: Any = menu.add.label(
@@ -250,7 +250,7 @@ class MonsterInfoState(PygameMenuState):
             font_name=thin_font_path,
             font_color=dark_color,
         )
-        lab10.translate(fxw(38), fxh(118.8))
+        lab10.translate(fxw(76), fxh(237.6))
 
         # type icons (first and second type separately)
         types = monster.types.current
@@ -263,7 +263,7 @@ class MonsterInfoState(PygameMenuState):
             icon1_widget = menu.add.image(image_path=type1_icon)
             icon1_widget.set_float(origin_position=True)
             # Position of type 1 (set wherever you want)
-            icon1_widget.translate(fxw(148), fxh(61))
+            icon1_widget.translate(fxw(296), fxh(122))
 
         if len(types) >= 2:
             type2_icon = self._create_image(
@@ -273,7 +273,7 @@ class MonsterInfoState(PygameMenuState):
             icon2_widget = menu.add.image(image_path=type2_icon)
             icon2_widget.set_float(origin_position=True)
             # Position of type 2 (independent from type 1)
-            icon2_widget.translate(fxw(131), fxh(45))
+            icon2_widget.translate(fxw(262), fxh(90))
 
         # hp
         lab11: Any = menu.add.label(
@@ -284,7 +284,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab11.translate(fxw(200), fxh(34.8))
+        lab11.translate(fxw(400), fxh(69.6))
         # armour
         lab12: Any = menu.add.label(
             title=f"{monster.armour}",
@@ -294,7 +294,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab12.translate(fxw(200), fxh(47.8))
+        lab12.translate(fxw(400), fxh(95.6))
         # dodge
         lab13: Any = menu.add.label(
             title=f"{monster.dodge}",
@@ -304,7 +304,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab13.translate(fxw(200), fxh(60.8))
+        lab13.translate(fxw(400), fxh(121.6))
         # melee
         lab14: Any = menu.add.label(
             title=f"{monster.melee}",
@@ -314,7 +314,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab14.translate(fxw(200), fxh(72.8))
+        lab14.translate(fxw(400), fxh(145.6))
         # ranged
         lab15: Any = menu.add.label(
             title=f"{monster.ranged}",
@@ -324,7 +324,7 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab15.translate(fxw(200), fxh(85.8))
+        lab15.translate(fxw(400), fxh(171.6))
         # speed
         lab16: Any = menu.add.label(
             title=f"{monster.speed}",
@@ -334,15 +334,15 @@ class MonsterInfoState(PygameMenuState):
             float=True,
             font_color=dark_color,
         )
-        lab16.translate(fxw(200), fxh(98.8))
+        lab16.translate(fxw(400), fxh(197.6))
 
         stat_positions = {
-            "hp": (fxw(165), fxh(34.8)),
-            "armour": (fxw(165), fxh(47.8)),
-            "dodge": (fxw(165), fxh(60.8)),
-            "melee": (fxw(165), fxh(72.8)),
-            "ranged": (fxw(165), fxh(85.8)),
-            "speed": (fxw(165), fxh(98.8)),
+            "hp": (fxw(330), fxh(69.6)),
+            "armour": (fxw(330), fxh(95.6)),
+            "dodge": (fxw(330), fxh(121.6)),
+            "melee": (fxw(330), fxh(145.6)),
+            "ranged": (fxw(330), fxh(171.6)),
+            "speed": (fxw(330), fxh(197.6)),
         }
 
         stat_labels = {
@@ -390,7 +390,7 @@ class MonsterInfoState(PygameMenuState):
             x, y = stat_positions[warm_stat]
             plus = menu.add.image(image_path=plus_icon.copy())
             plus.set_float(origin_position=True)
-            plus.translate(x + fxw(36), y + (0.2 / NATIVE_RESOLUTION[1]))
+            plus.translate(x + fxw(72), y + (0.4 / NATIVE_RESOLUTION[1]))
 
         # Cold taste gives -10%
         cold_stat = get_stat_for_taste(monster.taste_cold)
@@ -398,7 +398,7 @@ class MonsterInfoState(PygameMenuState):
             x, y = stat_positions[cold_stat]
             minus = menu.add.image(image_path=minus_icon.copy())
             minus.set_float(origin_position=True)
-            minus.translate(x + fxw(36), y + (0.2 / NATIVE_RESOLUTION[1]))
+            minus.translate(x + fxw(72), y + (0.4 / NATIVE_RESOLUTION[1]))
 
         # bond icon
         owner = self.client.get_monster_owner(monster)
@@ -409,7 +409,7 @@ class MonsterInfoState(PygameMenuState):
                 bond_icon.scale(self.factor, self.factor)
                 bond_widget = menu.add.image(image_path=bond_icon)
                 bond_widget.set_float(origin_position=True)
-                bond_widget.translate(fxw(20), fxh(29))
+                bond_widget.translate(fxw(40), fxh(58))
 
         # image
         renderer = MonsterRenderer(monster, scale=self.factor)
@@ -417,7 +417,7 @@ class MonsterInfoState(PygameMenuState):
         new_image = self._create_image_from_surface(surface)
         image_widget = menu.add.image(image_path=new_image.copy())
         image_widget.set_float(origin_position=True)
-        image_widget.translate(fxw(16), fxh(27))
+        image_widget.translate(fxw(32), fxh(54))
         # tuxeball
         tuxeball = self._create_image(
             f"gfx/items/{monster.capture_device}.png"
@@ -425,7 +425,7 @@ class MonsterInfoState(PygameMenuState):
         tuxeball.scale(self.factor, self.factor)
         capture_device = menu.add.image(image_path=tuxeball)
         capture_device.set_float(origin_position=True)
-        capture_device.translate(fxw(17), fxh(110))
+        capture_device.translate(fxw(34), fxh(220))
 
     def __init__(
         self,

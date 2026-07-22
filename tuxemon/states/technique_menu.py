@@ -70,7 +70,9 @@ class TechniqueMenuState(Menu[Technique]):
         )
         self.technique_sprite = Sprite()
         self.sprites.add(self.technique_sprite)
-        self.menu_items.line_spacing = self.client.context.scaling.scale_int(7)
+        self.menu_items.line_spacing = self.client.context.scaling.scale_int(
+            14
+        )
 
         # this is the area where the technique description is displayed
         rect = self.client.context.rect.copy()

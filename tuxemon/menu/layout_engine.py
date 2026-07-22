@@ -93,8 +93,8 @@ class MenuLayoutEngine:
         rect1 = rect1.union(rect2)
 
         # TODO: remove hardcoded padding
-        rect1.width += menu.client.context.scaling.scale_int(18)
-        rect1.height += menu.client.context.scaling.scale_int(19)
+        rect1.width += menu.client.context.scaling.scale_int(36)
+        rect1.height += menu.client.context.scaling.scale_int(38)
         rect1.topleft = (0, 0)
 
         menu.rect = rect1

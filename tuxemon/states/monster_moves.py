@@ -59,7 +59,7 @@ class MonsterMovesState(PygameMenuState):
         def fxh(native_px: float) -> int:
             return fix_native_y(menu._height, native_px)
 
-        menu._width = fxw(248)
+        menu._width = fxw(496)
 
         self.minimal_font = transform_resource_filename(
             "font", self.client.config.locale.minimal_font_file
@@ -75,13 +75,13 @@ class MonsterMovesState(PygameMenuState):
             align=ALIGN_LEFT,
             float=True,
         )
-        lab1.translate(fxw(79.4), fxh(-0.2))
+        lab1.translate(fxw(158.8), fxh(-0.4))
 
         # Move buttons (newest is always last)
         output: list[Technique] = monster.moves.get_moves()
 
-        step = 9 if len(output) >= 5 else 12
-        _height = 4.8
+        step = 18 if len(output) >= 5 else 24
+        _height = 9.6
         for tech in output:
             _height += step
             menu.add.button(
@@ -91,7 +91,7 @@ class MonsterMovesState(PygameMenuState):
                 font_size=self.font_type.biggest,
                 align=ALIGN_LEFT,
                 float=True,
-            ).translate(fxw(83.6), fxh(_height))
+            ).translate(fxw(167.2), fxh(_height))
 
         # Monster image (manual position)
         renderer = MonsterRenderer(monster, scale=self.factor)
@@ -99,7 +99,7 @@ class MonsterMovesState(PygameMenuState):
         new_image = self._create_image_from_surface(surface)
         image_widget = menu.add.image(image_path=new_image.copy())
         image_widget.set_float(origin_position=True)
-        image_widget.translate(fxw(1), fxh(2))
+        image_widget.translate(fxw(2), fxh(4))
 
     # -------------------------
     # Per-tech UI updates
@@ -107,7 +107,7 @@ class MonsterMovesState(PygameMenuState):
     def add_menu_technique(self, menu: Menu, slug: str) -> None:
         # keep width stable across updates
         width, height = self.client.context.resolution
-        menu._width = fix_native_x(width, 248)
+        menu._width = fix_native_x(width, 496)
 
         technique = Technique.create(slug)
 
@@ -141,7 +141,7 @@ class MonsterMovesState(PygameMenuState):
             )
             assert not isinstance(self.description_label, list)
             self.description_label.translate(
-                fix_native_x(width, 3.8), fix_native_y(height, 113)
+                fix_native_x(width, 7.6), fix_native_y(height, 226)
             )
         else:
             description_label.set_title(technique.description)
@@ -179,7 +179,7 @@ class MonsterMovesState(PygameMenuState):
             # place it just above the description block
             assert not isinstance(self.info_label, list)
             self.info_label.translate(
-                fix_native_x(width, 206), fix_native_y(height, 102)
+                fix_native_x(width, 412), fix_native_y(height, 204)
             )
         else:
             info_label.set_title(label_text)
@@ -208,7 +208,7 @@ class MonsterMovesState(PygameMenuState):
                 T.translate("technique_accuracy"),
                 default=diff_accuracy,
                 font_size=self.font_type.biggest,
-                width=fix_native_x(width, 80),
+                width=fix_native_x(width, 160),
                 align=ALIGN_LEFT,
                 progress_text_font=self.minimal_font,
                 float=True,
@@ -216,7 +216,7 @@ class MonsterMovesState(PygameMenuState):
                 progress_text_font_hfactor=1.0,
             )
             self.bar_accuracy.translate(
-                fix_native_x(width, 4), fix_native_y(height, 74.8)
+                fix_native_x(width, 8), fix_native_y(height, 149.6)
             )
         else:
             bar_accuracy.set_value(diff_accuracy)
@@ -231,7 +231,7 @@ class MonsterMovesState(PygameMenuState):
                 T.translate("technique_potency"),
                 default=diff_potency,
                 font_size=self.font_type.biggest,
-                width=fix_native_x(width, 80),
+                width=fix_native_x(width, 160),
                 align=ALIGN_LEFT,
                 progress_text_font=self.minimal_font,
                 float=True,
@@ -239,7 +239,7 @@ class MonsterMovesState(PygameMenuState):
                 box_border_width=scale(1),
             )
             self.bar_potency.translate(
-                fix_native_x(width, 4), fix_native_y(height, 99.8)
+                fix_native_x(width, 8), fix_native_y(height, 199.6)
             )
         else:
             bar_potency.set_value(diff_potency)
@@ -256,8 +256,8 @@ class MonsterMovesState(PygameMenuState):
             return fix_native_y(height, native_px)
 
         # Type icons: two fixed slots (type_icon_0, type_icon_1)
-        x_positions = [225, 213.4]
-        y_position = 73.8
+        x_positions = [450, 426.8]
+        y_position = 147.6
         for i in range(2):
             slot_id = f"type_icon_{i}"
             existing = menu.get_widget(slot_id)
@@ -288,7 +288,7 @@ class MonsterMovesState(PygameMenuState):
                 w = menu.add.image(
                     rimg.copy(), image_id="range_icon", float=True
                 )
-                w.translate(fxw(4), fxh(86.8))
+                w.translate(fxw(8), fxh(173.6))
             else:
                 existing_range.set_image(rimg)
                 existing_range.show()
@@ -304,7 +304,7 @@ class MonsterMovesState(PygameMenuState):
         existing_speed = menu.get_widget("speed_icon")
         if existing_speed is None:
             w = menu.add.image(simg.copy(), image_id="speed_icon", float=True)
-            w.translate(fxw(222), fxh(51.8))
+            w.translate(fxw(444), fxh(103.6))
         else:
             existing_speed.set_image(simg)
 
@@ -325,7 +325,7 @@ class MonsterMovesState(PygameMenuState):
             )
             assert not isinstance(label, list)
             label.translate(
-                fix_native_x(width, 42), fix_native_y(height, 87.8)
+                fix_native_x(width, 84), fix_native_y(height, 175.6)
             )
         else:
             existing.set_title(power_text)

@@ -1203,13 +1203,13 @@ class FlairModel(DataModel, BaseLookupModel):
 class MonsterSpritesModel(BaseModel):
     sheet: str  # Path to the combined sprite sheet
     # Front sprite region
-    front_rect: tuple[int, int, int, int] = (0, 0, 64, 64)
+    front_rect: tuple[int, int, int, int] = (0, 0, 128, 128)
     # Back sprite region
-    back_rect: tuple[int, int, int, int] = (64, 0, 64, 64)
+    back_rect: tuple[int, int, int, int] = (128, 0, 128, 128)
     # Menu icon 1 region
-    menu1_rect: tuple[int, int, int, int] = (0, 64, 24, 24)
+    menu1_rect: tuple[int, int, int, int] = (0, 128, 48, 48)
     # Menu icon 2 region
-    menu2_rect: tuple[int, int, int, int] = (24, 64, 24, 24)
+    menu2_rect: tuple[int, int, int, int] = (48, 128, 48, 48)
 
     @field_validator("sheet")
     def sheet_exists(cls, v: str) -> str:
@@ -1983,11 +1983,11 @@ class NpcTemplateModel(TemplateModel):
         description="Base filename of the overworld sprite sheet (without extension)",
     )
     frame_width: int = Field(
-        16,
+        32,
         description="Width of a single animation frame in the sheet",
     )
     frame_height: int = Field(
-        32,
+        64,
         description="Height of a single animation frame in the sheet",
     )
     rows: int = Field(
@@ -2209,10 +2209,10 @@ class BattleHudModel(BaseModel):
     )
 
     tray_center_offset: int = Field(
-        13, description="Horizontal offset for the tray center point"
+        26, description="Horizontal offset for the tray center point"
     )
     icon_spacing_offset: int = Field(
-        8, description="Spacing offset between party icons"
+        16, description="Spacing offset between party icons"
     )
     animation_duration: float = Field(
         2.0, description="Duration of the tray slide-in animation"
@@ -2222,28 +2222,28 @@ class BattleHudModel(BaseModel):
     )
     # Bars
     hp_bar_width: int = Field(
-        70, ge=1, description="Default width (scaled units) of the HP bar."
+        140, ge=1, description="Default width (scaled units) of the HP bar."
     )
     hp_bar_height: int = Field(
-        8, ge=1, description="Default height (scaled units) of the HP bar."
+        16, ge=1, description="Default height (scaled units) of the HP bar."
     )
     hp_player_top: int = Field(
-        18,
+        36,
         description="Vertical offset from the top of the player's HUD sprite to place the HP bar.",
     )
     hp_opponent_top: int = Field(
-        12,
+        24,
         description="Vertical offset from the top of the opponent's HUD sprite to place the HP bar.",
     )
     exp_bar_height: int = Field(
-        6, ge=1, description="Default height (scaled units) of the EXP bar."
+        12, ge=1, description="Default height (scaled units) of the EXP bar."
     )
     exp_bar_top: int = Field(
-        31,
+        62,
         description="Vertical offset from the top of the player's HUD sprite to place the EXP bar.",
     )
     bar_right_padding: int = Field(
-        8,
+        16,
         description="Horizontal padding between the right edge of the HUD sprite and the bar's right edge.",
     )
 
@@ -2313,20 +2313,20 @@ class BattleGraphicsModel(BaseModel):
     hud: BattleHudModel
     icons: BattleIconsModel
     island_offset_y: int = Field(
-        50, description="Vertical shift for islands relative to HUD home"
+        100, description="Vertical shift for islands relative to HUD home"
     )
     enemy_base_offset: int = Field(
-        12, description="Vertical offset for enemy relative to island bottom"
+        24, description="Vertical offset for enemy relative to island bottom"
     )
     monster_base_offset: int = Field(
-        24,
+        48,
         description="Vertical offset for wild monsters relative to island bottom",
     )
     player_base_offset: int = Field(
-        6, description="Vertical offset for player relative to island center"
+        12, description="Vertical offset for player relative to island center"
     )
     entry_jump_distance: int = Field(
-        50, description="Vertical 'bounce' during entry."
+        100, description="Vertical 'bounce' during entry."
     )
     entry_duration: float = Field(
         3.0, description="Seconds for the entry transition."

@@ -114,4 +114,7 @@ def test_draw_text_center_alignment(surface, rect, font, scaling):
         return_metrics=True,
     )
 
-    assert metrics["rect"].center == rect.center
+    # Centering offsets are floored, so an odd-width text surface may
+    # land 1px off the exact center.
+    assert abs(metrics["rect"].centerx - rect.centerx) <= 1
+    assert abs(metrics["rect"].centery - rect.centery) <= 1

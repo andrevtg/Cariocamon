@@ -34,27 +34,22 @@ MAP_CACHE_SIZE: int = 10
 PLAYER_NPC = "npc_red"
 
 # Asset Sizes (Native)
-TILE_SIZE: tuple[int, int] = (16, 16)  # 1 tile = 16 pixels
-ICON_SIZE: tuple[int, int] = (7, 7)
-TECH_ICON_SIZE: tuple[int, int] = (9, 9)
-STATUS_ICON_SIZE: tuple[int, int] = (9, 9)
-SPRITE_SIZE: tuple[int, int] = (16, 32)
-ITEM_SIZE: tuple[int, int] = (24, 24)
-TEMPLATE_SIZE: tuple[int, int] = (64, 64)
-MONSTER_SIZE: tuple[int, int] = (64, 64)
-MONSTER_SIZE_MENU: tuple[int, int] = (24, 24)
-BORDERS_SIZE: tuple[int, int] = (18, 18)
-ELEMENT_SIZE: tuple[int, int] = (24, 24)
-BATTLE_BG_SIZE: tuple[int, int] = (256, 108)
+TILE_SIZE: tuple[int, int] = (32, 32)  # 1 tile = 32 pixels
+ICON_SIZE: tuple[int, int] = (14, 14)
+STATUS_ICON_SIZE: tuple[int, int] = (18, 18)
+ITEM_SIZE: tuple[int, int] = (48, 48)
+BORDERS_SIZE: tuple[int, int] = (36, 36)
+ELEMENT_SIZE: tuple[int, int] = (48, 48)
+BATTLE_BG_SIZE: tuple[int, int] = (512, 216)
 
-# Native resolution is similar to the old gameboy resolution.
-NATIVE_RESOLUTION: tuple[int, int] = (256, 144)
+# Native resolution (doubled from the original 256x144 — see ADR-0001).
+NATIVE_RESOLUTION: tuple[int, int] = (512, 288)
 
 # Item/technique/shop menu description box (native-resolution px)
-DESC_BOX_TOP: int = 106
-DESC_BOX_LEFT: int = 3
-DESC_BOX_WIDTH: int = 250
-DESC_BOX_HEIGHT: int = 32
+DESC_BOX_TOP: int = 212
+DESC_BOX_LEFT: int = 6
+DESC_BOX_WIDTH: int = 500
+DESC_BOX_HEIGHT: int = 64
 
 # Item/technique/shop menu sprite anchors (fractions of the menu rect)
 MENU_ITEM_CENTER_RATIO: tuple[float, float] = (0.164, 0.13)
