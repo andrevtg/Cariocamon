@@ -76,8 +76,9 @@ Deviations and findings vs. the plan:
   on the unmodified baseline (env/pygame-ce version related). mypy error
   set is byte-identical to baseline (25 pre-existing errors). Ruff
   clean on all touched files.
-- Tooling gotchas for later phases: ruff is unpinned (`tox.ini`), and
-  current ruff (0.15.x) reformats ~26 files repo-wide — unrelated files
-  were reverted to keep this diff scoped. Local `.venv` lacks
-  pytest/pytest-mock; use
+- Tooling gotchas for later phases: ruff was unpinned (`tox.ini`) and
+  version drift reformatted ~26 files repo-wide — unrelated files were
+  reverted to keep this diff scoped, and ruff is now pinned to 0.15.22
+  (~23 files of pre-existing format drift remain repo-wide). Local
+  `.venv` lacks pytest/pytest-mock; use
   `uv run --with pytest --with pytest-mock pytest tests`.
