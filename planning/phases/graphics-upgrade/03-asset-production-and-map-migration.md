@@ -44,3 +44,30 @@ every map's tile metadata to match, in dependency order.
 This is the largest and most error-prone phase by volume (~1,554 image
 files + 263 maps) — track progress per-category rather than as one
 monolithic checklist item, and don't skip the per-category validator run.
+
+### Asset spec (measured from current assets, then doubled — Phase 2)
+
+Target sizes after the 2x bump; the engine constants/defaults already
+expect these (`tuxemon/platform/const/sizes.py`, `db.py`):
+
+| Category | Old (uniform) | New target |
+| --- | --- | --- |
+| Tiles | 16x16 | 32x32 |
+| NPC overworld sheet (3x4 frames of 16x32) | 48x128 | 96x256 |
+| Battle/monster sheet (front+back 64x64, two 24x24 menu icons) | 128x88 | 256x176 |
+| Party/template icons | 7x7 | 14x14 |
+| Status icons | 9x9 | 18x18 |
+| Item sprites | 24x24 | 48x48 |
+| Element icons | 24x24 | 48x48 |
+| Dialog borders (3x3 nine-slice) | 18x18 | 36x36 |
+| Battle backgrounds | 256x108 | 512x216 |
+| Economy/menu backgrounds (max bound) | ≤256x144 | ≤512x288 |
+
+Sheet slicing rects live in `db.py` (`MonsterSpritesModel`,
+`NpcTemplateModel`) and were doubled in Phase 2. `scripts/upscale_png_2x.py`
+(nearest-neighbor 2x) exists for placeholder passes. Two boot-relevant
+facts from Phase 2: `db.load()` validates with `validate=True` and raises
+on the first wrong-size asset (game won't boot until a category is fully
+migrated or all validated categories are consistent), and
+`tests/tuxemon/test_folder_maps_tmx.py`'s `MULTIPLIER = 16` must be
+updated when maps migrate to 32px tiles.
