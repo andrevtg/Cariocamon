@@ -1,6 +1,6 @@
 # Phase 3a: Mechanical 2x migration (assets + maps)
 
-- Status: Not started
+- Status: Complete
 - Depends on: Phase 2 (complete),
   [ADR-0003](../../adr/0003-asset-and-map-migration-ordering.md),
   [ADR-0005](../../adr/0005-hd-pixel-art-via-algorithmic-enhancement.md)
@@ -86,3 +86,37 @@ from Phase 2: `db.load()` validates with `validate=True` and raises on
 the first wrong-size asset (game won't boot until all validated
 categories are consistent), and `tests/tuxemon/test_folder_maps_tmx.py`'s
 `MULTIPLIER = 16` must be updated when maps migrate to 32px tiles.
+
+## Outcome (2026-07-23)
+
+Completed in one sitting, one commit per category. Findings vs. plan:
+
+- `scripts/make_map_migration.py` turned out to be an interactive
+  tile-*mapping* tool, not a TMX rewriter — wrote
+  `scripts/migrate_maps_2x.py` instead: purely textual regex rewrite of
+  px-valued attributes only (map/tileset `tilewidth`/`tileheight`,
+  image `width`/`height`, object `x`/`y`/`width`/`height`,
+  polyline/polygon `points`), preserving formatting. Not idempotent —
+  never re-run it over already-migrated files.
+- Corpus facts the plan didn't know: 79 maps have *embedded* tilesets
+  (contra the external-only convention), 28 maps have polylines, 17
+  external `.tsx` files exist, all object coords are integers, no
+  imagelayers/offsets/margins anywhere.
+- Category counts as migrated: tilesets 77 PNG (76 changed; one was
+  identical after round-trip) + 17 TSX, maps 263/263, NPC overworld
+  232, battle/player/flairs 771 (flairs/ subdir wasn't in the plan),
+  UI+items+bubbles+borders 453, straggler sweep 211 (animations/
+  technique+tileset+item+intro 207, plus menu cursor `gfx/arrow.png`
+  and the touch overlay d-pad/a/b buttons). Deliberately NOT doubled:
+  window icons (`gfx/icon*.png`), unreferenced legacy `gfx/menu-*.png`,
+  `tuxemon_wip_colorpalette.png`, `gfx/test/` (already HD).
+- Phase 2's guard test `test_old_resolution_icon_fails_doubled_icon_
+  size_check` relied on a real icon still being stale — rewritten to
+  use the HD test tile as the wrong-size input.
+- Verification: `db.load(validate=True)` clean; 263/263 maps load
+  through `TMXMapLoader` (headless; needs `SDL_VIDEODRIVER=dummy` plus
+  `pygame.display.set_mode` for pytmx surface conversion); 25s headless
+  boot with zero errors; pytest back to the exact 9-failure
+  pre-existing baseline (element-icon errors from Phase 2 cleared).
+  Pre-existing, unrelated: a few maps log "Skipping event 'None'"
+  (unnamed event objects) — content issue, untouched by migration.
