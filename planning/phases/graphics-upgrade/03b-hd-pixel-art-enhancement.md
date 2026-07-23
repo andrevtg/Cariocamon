@@ -1,7 +1,7 @@
 # Phase 3b: HD pixel-art enhancement (hq2x)
 
-- Status: In progress (pilot applied to working tree, awaiting user
-  verdict)
+- Status: In progress (pilot accepted — keep all, including hq2x
+  border; batch underway)
 - Depends on: Phase 3a (complete),
   [ADR-0005](../../adr/0005-hd-pixel-art-via-algorithmic-enhancement.md)
 
@@ -46,9 +46,14 @@ the phase can pause per-category with no breakage.
         Overworld sprite sheets get per-frame (`16x32`) for the same
         reason; battle sheets are filtered whole (transparent gutters
         isolate the cells).
-  - [ ] Nine-slice borders and tiny icons (7px/9px): hq2x slightly
-        rounds the border's outer corners — flagged for user judgment;
-        fallback is NN (never worse than today).
+  - [x] Nine-slice borders and tiny icons (7px/9px): hq2x slightly
+        rounds the border's outer corners — user played with it and
+        accepted; keep hq2x.
+  - [x] Verdict (2026-07-23): user playtested the slice and accepted
+        everything ("everything looked fine"). One exception kept at
+        user request: agnite's battle front uses the Ani2Real
+        pre-rendered 3D render (see AI side test below), a style
+        one-off pending a possible future direction change.
 - [ ] **Go/no-go per category** — record pilot verdict here, then batch
       the surviving categories in visibility order: tilesets, NPC
       overworld, battle/monster sheets, UI/items/borders/bubbles.
