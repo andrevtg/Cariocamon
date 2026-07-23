@@ -1,5 +1,5 @@
 - file: intro
   slug: intro
-  frame_x: 256
-  frame_y: 144
+  frame_x: 512
+  frame_y: 288
   rate: 0.5

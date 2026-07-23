@@ -4,8 +4,10 @@
 constants (ADR-0001, graphics-upgrade phase 2), plus the lazily-loaded
 battle sheets whose sizes are only checked at runtime (phase 3a)."""
 
+import pygame
 import pytest
 
+from tuxemon.constants.asset_loader import fetch_asset
 from tuxemon.database.registry import validator as has
 from tuxemon.database.runtime import db
 from tuxemon.platform.const.sizes import ICON_SIZE, TILE_SIZE
@@ -69,4 +71,19 @@ def test_combat_sheets_match_npc_template_frame_sizes(loaded_db):
         )
         assert has.size(file, expected), (
             f"Combat sheet '{file}' (NPC '{slug}') is not {expected}"
+        )
+
+
+def test_animation_sheets_divide_evenly_by_declared_frame_size(loaded_db):
+    for slug in loaded_db.database["animation"]:
+        animation = loaded_db.lookup(slug, table="animation")
+        path = fetch_asset(
+            "animations", f"{animation.file}/{animation.slug}.png"
+        )
+        width, height = pygame.image.load(path).get_size()
+        assert (
+            width % animation.frame_x == 0 and height % animation.frame_y == 0
+        ), (
+            f"Animation '{slug}' sheet is {width}x{height}, not divisible "
+            f"by declared frame {animation.frame_x}x{animation.frame_y}"
         )
