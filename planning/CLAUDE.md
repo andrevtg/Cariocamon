@@ -28,8 +28,10 @@ planning/
 - **ADRs** are numbered sequentially across the whole project (`0001`, `0002`,
   ...), regardless of which epic prompted them — they record architecture-wide
   decisions, not epic-scoped notes. Status is one of `Proposed`, `Accepted`,
-  `Superseded by ADR-00XX`. Never edit an Accepted ADR's Decision after the
-  fact — if a decision changes, write a new ADR that supersedes it.
+  `Superseded by ADR-00XX`. Never edit an ADR's Decision once it has been
+  executed/implemented — if a decision changes after that, write a new ADR
+  that supersedes it. An ADR whose work has not run yet may still be edited
+  in place at will.
 - **Phase files** live under `phases/<epic-slug>/`, named `01-slug.md`,
   `02-slug.md`, etc. (zero-padded, ordered). Each one has: Goal, Depends on
   (prior phases / ADRs), Entry criteria, Tasks, Exit criteria, Notes. When a
