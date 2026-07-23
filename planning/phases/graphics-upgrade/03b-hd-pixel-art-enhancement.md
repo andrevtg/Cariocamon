@@ -33,7 +33,9 @@ the phase can pause per-category with no breakage.
       (uncommitted), awaiting user verdict: core_outdoor /
       core_set pieces / core_buildings tilesets (`--tile 16`),
       adventurer + ceo + shopkeeper overworld sheets (`--tile 16x32`),
-      rockitten + fruitera + bamboon battle sheets (whole-image),
+      battle sheets (whole-image) for rockitten + fruitera + bamboon
+      plus the Paper Town intro/starter monsters and first wild
+      (agnite, lambert, nut, tweesher, propellercat),
       borders.png (`--tile 6`), potion + tuxeball items (whole-image).
       Schema validation green with pilot applied. Evaluate in-game
       (walk, dialog, one battle, menus).

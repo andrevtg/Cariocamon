@@ -139,4 +139,13 @@ Completed in one sitting, one commit per category. Findings vs. plan:
   divides evenly by declared frame size). Swept the rest of
   `mods/tuxemon/db/` for pixel-valued content: environments hold only
   asset paths, monster `height`/`weight` are biometric (not px) —
-  animation YAMLs were the only case.
+  animation YAMLs were the only case *inside* `db/`.
+- **Third straggler (user playtest, fixed): `mods/combat_layouts.yaml`.**
+  Native-px HUD/home rects (`LAYOUT_COORDINATES`) live at the `mods/`
+  root, not under `db/`, so the content sweep missed them — every
+  battle element converged to the top-left quadrant during the entry
+  animation. Doubled; swept all other `mods/*.yaml` for px lists
+  (rest are levels/colors/ranges — clean). Content-px checklist for
+  any future resolution bump: `db/animation/*.yaml` frame sizes,
+  `combat_layouts.yaml`, TMX/TSX (phase 3a script), and the `db.py`
+  pydantic defaults.
