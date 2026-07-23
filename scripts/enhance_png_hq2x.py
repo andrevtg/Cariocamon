@@ -103,7 +103,11 @@ def main() -> None:
     args = parser.parse_args()
 
     for path in args.files:
-        src = load_from_ref(args.ref, path.as_posix())
+        try:
+            src = load_from_ref(args.ref, path.as_posix())
+        except subprocess.CalledProcessError:
+            print(f"skip (not in {args.ref}): {path}")
+            continue
         result = enhance(src, args.tile)
         dest = args.out_dir / path.name if args.out_dir else path
         dest.parent.mkdir(parents=True, exist_ok=True)
