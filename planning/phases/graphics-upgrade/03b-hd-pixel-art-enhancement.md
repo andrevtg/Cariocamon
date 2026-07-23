@@ -65,6 +65,21 @@ the phase can pause per-category with no breakage.
 
 ## Notes
 
+### AI-redraw side test (2026-07-23, user-requested)
+
+One sprite (agnite front) redrawn via FLUX.1-Kontext (HF Space
+`mcp-tools/FLUX.1-Kontext-Dev`, called through its Gradio API with the
+user's HF token — the claude.ai HF connector has Space invocation
+disabled). Pipeline: 64px original → NN 1024px on white → Kontext edit
+prompt ("HD pixel art, same pose/palette") → 8x8-block dominant-color
+quantize to 128px → border flood-fill for alpha → pasted into the
+hq2x sheet (hybrid: AI front, hq2x back/icons). In working tree with
+the pilot. Verdict inputs: high design fidelity and real detail gain,
+but visible liberties (pose shift, eye rendering, busier shading) and
+~10 min of per-asset pipeline vs ~0 for hq2x. Supports ADR-0005's
+call: batch = hq2x; AI redraw viable later as a selective
+high-visibility pass with human curation.
+
 - hq2x smooths, it does not invent detail — the quality ceiling is
   bounded (ADR-0005 accepts this). A future selective AI/manual redraw
   of high-visibility assets can layer on top with no engine change.
