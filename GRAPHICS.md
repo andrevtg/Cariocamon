@@ -2,7 +2,7 @@
 
 Originally exploratory notes (2026-07-22) on what "enhanced graphics" could
 mean for Tuxemon. **Option 1 below was executed** as the HD sprite & tileset
-upgrade epic (see `planning/phases/graphics-upgrade/` and ADRs 0001–0005):
+upgrade epic (see `planning/phases/graphics-upgrade/` and ADRs 0001–0006):
 native resolution doubled to `512x288`, every asset 2x'd and hq2x-enhanced.
 The second half of this file is the playbook for doing another pass.
 
@@ -116,6 +116,8 @@ sheets, animation frame divisibility) — extend them for anything new.
 | `enhance_png_hq2x.py` | hq2x from the baseline tag; `--tile N` / `--tile WxH` for per-cell filtering |
 | `enhance_animations_hq2x.py` | drives the above with per-animation frame cells from the db YAMLs |
 | `prerender_sprite_ai.py` | AI pre-render pipeline: Ani2Real Space → rembg matte → fitted sheet cell |
+| `convert_realesrgan_coreml.py` | one-time anime6B → Core ML build |
+| `enhance_png_coreml.py` | local AI enhance (3c); CLI as hq2x |
 
 Cell-size choices that mattered: tilesets `--tile 16` (in-sheet neighbors
 are not in-game neighbors), overworld sheets `--tile 16x32` (frame cells),
@@ -130,6 +132,13 @@ current constants when sourcing from the baseline.
   will happily upgrade Pillow and silently break hqx — pin `pillow==9.5.0`
   in the scratch venv after installing anything. These are script-only
   deps: scratch venv, never `requirements.txt`.
+- Core ML scripts (2026-07-23): use a **separate** scratch uv project
+  (`uv add "coremltools>=9.0" "torch==2.7.0" numpy pillow`) — do not
+  share the hqx venv (conflicting Pillow pins; torch is needed only
+  for the one-time conversion). Load models with compute units `ALL`:
+  `CPU_ONLY` crashes the Core ML runtime (SIGTRAP). Converted model
+  input is capped at 512 px per side — larger images need `--tile`.
+  Model + weights live in `~/.cache/tuxemon-coreml/`, never the repo.
 - Batch with `find -print0 | xargs -0` — several tileset filenames
   contain spaces.
 - `git show <tag>:<path>` needs repo-relative paths.
@@ -152,17 +161,23 @@ current constants when sourcing from the baseline.
 
 ## If we enhance again (options ranked by what we know now)
 
+- **Local AI upscale via Core ML** — CHOSEN (ADR-0006, phase 3c):
+  Real-ESRGAN anime6B on the ANE, ~140 ms/monster, deterministic, no
+  curation. The two defects found and fixed during the experiment:
+  tiny features (eyes, markings) get smoothed away unless the input
+  is NN-2x pre-upscaled first, and colors dim unless low-frequency
+  color is restored from the original. `enhance_png_coreml.py`
+  encodes both. Monsters user-validated 2026-07-23; other categories
+  gated on the 3c pilot.
 - **Another 2x bump** (128px monsters → 256px): repeat phases 1–3
-  mechanically using the checklist above. Proven, boring, safe.
-- **Better filters than hq2x** (xBR variants, or AI upscalers tuned for
-  pixel art): pure 3b-style drop-in pass — pilot on the starting-area
-  slice first, judge in-game, then batch. No engine work at all.
+  mechanically using the checklist above. Proven, boring, safe — and
+  it recovers the smoothness the integer scaler currently eats (the
+  AI pipeline re-runs from the same originals at any scale).
 - **AI redraw / pre-rendered 3D style** (`prerender_sprite_ai.py`):
   quality ceiling is real but so is per-sprite curation (~1 min of
   compute + human eye each; seed/prompt pinning tames drift, doesn't
   eliminate it). A style switch is all-or-nothing per asset class
-  (agnite's front is the lone committed experiment) and deserves an ADR
-  superseding ADR-0005 before any batch.
-- **Smooth/painted hi-res**: still gated on another native-res bump —
-  the renderer integer-scales 3x on screen, so painted art below
-  ~3x native wastes its smoothness.
+  (agnite's front is the lone committed experiment) and would need an
+  ADR superseding ADR-0006 before any batch.
+- **xBR variants / other classical filters**: superseded by the Core
+  ML path — same drop-in mechanics, lower ceiling.

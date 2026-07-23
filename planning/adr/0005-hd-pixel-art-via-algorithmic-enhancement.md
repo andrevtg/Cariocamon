@@ -1,6 +1,9 @@
 # ADR-0005: HD pixel art direction via algorithmic (hqx) enhancement
 
-- Status: Accepted
+- Status: Superseded by
+  [ADR-0006](0006-ai-enhancement-via-local-coreml-upscaler.md)
+  (method and art direction; the migration/enhancement separability
+  principle and the executed 3a/3b structure remain valid)
 - Date: 2026-07-22
 - Epic: HD sprite & tileset upgrade
 
