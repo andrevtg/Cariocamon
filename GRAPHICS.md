@@ -118,12 +118,16 @@ sheets, animation frame divisibility) — extend them for anything new.
 | `prerender_sprite_ai.py` | AI pre-render pipeline: Ani2Real Space → rembg matte → fitted sheet cell |
 | `convert_realesrgan_coreml.py` | one-time anime6B → Core ML build |
 | `enhance_png_coreml.py` | local AI enhance (3c); CLI as hq2x |
+| `enhance_animations_coreml.py` | drives the above over all db animations, model loaded once, frame cells from the YAMLs / 2 |
 
 Cell-size choices that mattered: tilesets `--tile 16` (in-sheet neighbors
 are not in-game neighbors), overworld sheets `--tile 16x32` (frame cells),
 player combat sheets `--tile 64x64`, dialog borders `--tile 6` (nine-slice),
 island sheets `--tile 96x57`; monster battle sheets whole-image
-(transparent gutters isolate the cells). Original-art cell sizes — halve
+(transparent gutters isolate the cells); UI whole-image except
+anything over 256px original, which needs a split
+(`grass_background_240.png` → `--tile 140x112`, seam invisible thanks
+to the low-frequency color restore). Original-art cell sizes — halve
 current constants when sourcing from the baseline.
 
 ## Environment gotchas
@@ -132,15 +136,29 @@ current constants when sourcing from the baseline.
   will happily upgrade Pillow and silently break hqx — pin `pillow==9.5.0`
   in the scratch venv after installing anything. These are script-only
   deps: scratch venv, never `requirements.txt`.
-- Core ML scripts (2026-07-23): use a **separate** scratch uv project
-  (`uv add "coremltools>=9.0" "torch==2.7.0" numpy pillow`) — do not
-  share the hqx venv (conflicting Pillow pins; torch is needed only
-  for the one-time conversion). Load models with compute units `ALL`:
-  `CPU_ONLY` crashes the Core ML runtime (SIGTRAP). Converted model
-  input is capped at 512 px per side — larger images need `--tile`.
-  Model + weights live in `~/.cache/tuxemon-coreml/`, never the repo.
-- Batch with `find -print0 | xargs -0` — several tileset filenames
-  contain spaces.
+- Core ML scripts (2026-07-23): once the model is built, no venv or
+  scratch project is needed at all — enhancement runs with
+  `uv run --no-project --with "coremltools>=9.0" --with numpy
+  --with pillow python scripts/enhance_png_coreml.py ...` (3c ran
+  every batch this way). torch is only needed for the one-time
+  conversion (`uv run --no-project --with ... --with torch==2.7.0`).
+  Never share an env with the hqx script (conflicting Pillow pins).
+  Load models with compute units `ALL`: `CPU_ONLY` crashes the Core
+  ML runtime (SIGTRAP). Model + weights live in
+  `~/.cache/tuxemon-coreml/`, never the repo.
+- Converted model input must be **8–512 px per side** (after the
+  script's NN-2x pre-upscale, so 4–256 px original art). Both ends
+  bite: a 280px-wide background needed `--tile 140x112`, and 2x2
+  nine-slice pieces can't be enhanced at all (kept hq2x). **Pre-check
+  every batch's sizes against these limits first** — one bad file
+  raises and kills the rest of that `xargs` invocation, leaving the
+  batch silently partial (3c lost 25 files this way before noticing).
+- Batch with `find -print0 | xargs -0` (or
+  `git ls-tree -r --name-only -z <tag> <dir> | ... | xargs -0`) —
+  several tileset filenames contain spaces. Related zsh trap: unquoted
+  variables neither word-split nor glob-expand (`$pat` with a `*`
+  inside silently matches nothing) — pipe explicit lists, don't
+  interpolate patterns.
 - `git show <tag>:<path>` needs repo-relative paths.
 - Headless verification needs `SDL_VIDEODRIVER=dummy` **plus**
   `pygame.display.set_mode(...)` for pytmx surface conversion.
@@ -155,8 +173,15 @@ current constants when sourcing from the baseline.
    combat sheets for all content, or just run the regression tests).
 4. Load all 263 maps through `TMXMapLoader`.
 5. Spot-render a map region from raw gids (scratch script pattern in
-   phase 3b outcome) and eyeball for seams/halos.
-6. A real playtest — the three content-px stragglers were all found by
+   phase 3b outcome; pytmx `load_pygame` + blit visible layers works
+   headless) and eyeball for seams/halos.
+6. Whole-tree integrity sweep (phase 4 pattern): every PNG exactly 2x
+   its baseline (the only legit exceptions: window icons, root
+   `gfx/menu-*.png`, the WIP palette, `gfx/test/`); TSX declared
+   sizes match their PNGs (note `factory.tsx` writes its image path
+   relative to `maps/`, resolve with a fallback); animation sheets
+   divide evenly by their YAML frame sizes.
+7. A real playtest — the three content-px stragglers were all found by
    playing, not by any automated gate.
 
 ## If we enhance again (options ranked by what we know now)
