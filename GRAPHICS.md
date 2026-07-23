@@ -167,8 +167,13 @@ current constants when sourcing from the baseline.
   tiny features (eyes, markings) get smoothed away unless the input
   is NN-2x pre-upscaled first, and colors dim unless low-frequency
   color is restored from the original. `enhance_png_coreml.py`
-  encodes both. Monsters user-validated 2026-07-23; other categories
-  gated on the 3c pilot.
+  encodes both. Executed in full 2026-07-23: every category shipped
+  AI-enhanced after a user-approved pilot playtest. Sole exception:
+  the 24 2x2-px monster-slot nine-slice pieces (below the model's
+  8px minimum input, nothing to enhance) keep their hq2x versions.
+  Model limits to know: input must be 8-512 px per side (after the
+  NN-2x pre-upscale), so whole-image works up to 256px originals;
+  larger or smaller goes through `--tile`.
 - **Another 2x bump** (128px monsters → 256px): repeat phases 1–3
   mechanically using the checklist above. Proven, boring, safe — and
   it recovers the smoothness the integer scaler currently eats (the
@@ -177,7 +182,8 @@ current constants when sourcing from the baseline.
   quality ceiling is real but so is per-sprite curation (~1 min of
   compute + human eye each; seed/prompt pinning tames drift, doesn't
   eliminate it). A style switch is all-or-nothing per asset class
-  (agnite's front is the lone committed experiment) and would need an
-  ADR superseding ADR-0006 before any batch.
+  (agnite's front carried the lone committed experiment through 3b;
+  3c re-unified it with the batch pipeline by user decision) and
+  would need an ADR superseding ADR-0006 before any batch.
 - **xBR variants / other classical filters**: superseded by the Core
   ML path — same drop-in mechanics, lower ceiling.

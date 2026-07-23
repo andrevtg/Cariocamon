@@ -1,6 +1,6 @@
 # Phase 3c: AI enhancement via local Core ML (replaces hq2x outputs)
 
-- Status: Not started
+- Status: Complete (2026-07-23)
 - Depends on: Phase 3b (complete),
   [ADR-0006](../../adr/0006-ai-enhancement-via-local-coreml-upscaler.md)
 
@@ -73,23 +73,36 @@ Gotchas (learned 2026-07-23, do not rediscover):
 - [ ] **Stage 2: pilot slice, uncommitted** — same slice as 3b so the
       comparison is apples-to-apples. Apply to working tree and have
       the user playtest (walk Paper Town, dialog, one battle, menus):
-  - [ ] core_outdoor / core_set pieces / core_buildings tilesets
+  - [x] core_outdoor / core_set pieces / core_buildings tilesets
         (`--tile 16`)
-  - [ ] adventurer + ceo + shopkeeper overworld sheets
-        (`--tile 16x32`)
-  - [ ] one player combat sheet (`--tile 64x64`)
-  - [ ] `mods/tuxemon/gfx/borders/borders.png` (`--tile 6`) — watch
+  - [x] adventurer + ceo + shopkeeper overworld sheets
+        (`--tile 16x32`, from `mods/tuxemon/sprites/`)
+  - [x] one player combat sheet (`--tile 64x64`):
+        `gfx/sprites/player/adventurer.png`
+  - [x] `mods/tuxemon/gfx/borders/borders.png` (`--tile 6`) — watch
         nine-slice corners
-  - [ ] one island sheet (`--tile 96x57`)
-  - [ ] potion + tuxeball items (whole-image)
-  - [ ] one multi-frame animation from `db/animation/*.yaml`
+  - [x] one island sheet (`--tile 96x57`):
+        `gfx/ui/island_sheet/grass_island_sheet.png`
+  - [x] potion + tuxeball items (whole-image)
+  - [x] one multi-frame animation from `db/animation/*.yaml`
         (per-frame cells = current YAML `frame_x/y` / 2) — watch for
-        frame-to-frame shimmer in motion, not stills
-  - [ ] Specific questions the pilot must answer: tile seams on real
+        frame-to-frame shimmer in motion, not stills. Picked
+        `animations/technique/bubbleattack.png` (4 frames, 64x64
+        original cells, `--tile 64x64`).
+        All 12 pilot files applied to the working tree 2026-07-23,
+        uncommitted; sizes verified identical to the hq2x files they
+        replace, HD size validation test green.
+  - [x] Specific questions the pilot must answer: tile seams on real
         maps? smooth style acceptable on terrain (only monsters are
         pre-judged)? borders corners intact? animation stable?
-- [ ] **Stage 3: go/no-go per category** — record each verdict here;
+        **Pilot verdict (user, 2026-07-23): all seven categories
+        look good — full go for every Stage 3 batch.** (The playtest
+        also surfaced unrelated stale event scripts in the water
+        mini-game maps, fixed in separate commits.)
+- [x] **Stage 3: go/no-go per category** — record each verdict here;
       fallback is keeping that category's hq2x output (never NN).
+      All categories: GO (pilot verdict). Shipped 2026-07-23, one
+      commit each — see Outcome below for counts and exceptions.
       Batch survivors in visibility order, one commit per category,
       re-running the schema validator after each:
       tilesets 77 (`--tile 16`) → overworld sheets 208 (`--tile
@@ -100,12 +113,12 @@ Gotchas (learned 2026-07-23, do not rediscover):
       207 (per-frame cells from the YAMLs / 2).
       Compute is trivial (worst single file ~43 s; whole pass well
       under an hour) — re-running after a verdict change is free.
-- [ ] **Docs close-out** — update `GRAPHICS.md` "If we enhance again"
+- [x] **Docs close-out** — update `GRAPHICS.md` "If we enhance again"
       ranking to reflect what 3c actually shipped; append the Outcome
       note here; confirm ATTRIBUTIONS.md needs nothing (outputs are
       algorithmic derivatives of the same CC-licensed art, as 3b
       recorded; the model itself is BSD-3-Clause tooling, not shipped
-      content).
+      content). Done 2026-07-23; ATTRIBUTIONS.md confirmed unchanged.
 
 ## Verification gates (unchanged from the playbook)
 
@@ -140,3 +153,45 @@ Gotchas (learned 2026-07-23, do not rediscover):
   alpha checkerboard) is worth regenerating for pilot judgment; the
   builder script from the experiment session can be recreated from
   this spec if needed.
+
+### Outcome (2026-07-23)
+
+Executed start-to-finish in one session, same day as planned. All
+categories shipped AI-enhanced, one commit each:
+
+- Stage 1 monsters: 412 battle sheets (`3b0c65f5d`); agnite's 3b
+  Ani2Real exception dropped by user decision — unified with the AI
+  pass.
+- Pilot (12 files) accepted by user playtest: all seven categories GO.
+- Stage 3: tilesets 76 (`7473d9bd6` — the plan said 77; actual
+  baseline count is 76), overworld 208 + static objects 24
+  (`7b7d86ff9`), player combat 357 + flairs 1 (`c7203d86f`), UI 234 +
+  islands 24 + borders 6 (`037155c26`), items 177 + bubbles 12 +
+  overlay/cursor 4 (`053a55892`), animations 207 (`812046f8b`).
+
+Deviations and exceptions:
+
+- Kept hq2x: the 24 2x2-px monster-slot nine-slice pieces
+  (`gfx/ui/monster/pieces/`) — the Core ML model requires 8-512 px
+  per side after the NN-2x pre-upscale, and 2x2 flat-color fragments
+  have nothing to enhance anyway. Everything else is AI.
+- `grass_background_240.png` (280px wide, over the 512 cap after
+  pre-upscale) went through `--tile 140x112`; no visible seam (the
+  color-restore pass keeps low frequencies continuous).
+- No scratch uv project needed: `uv run --no-project --with
+  coremltools --with numpy --with pillow` suffices (enhance script
+  needs no torch; model already built in `~/.cache/tuxemon-coreml/`).
+- Animations ran via a one-shot driver loading the model once and
+  reusing `enhance()` from the script, cell sizes from the YAMLs / 2;
+  all 207 PNGs matched a YAML entry exactly.
+
+Verification: validator green after every category; full suite at the
+9-failure pre-existing baseline (4227 passed) with the HD size tests
+green; headless boot clean; 263 maps load; Taba Town spot-render
+seam-free; user playtested battles, both mini-games, dialogs, menus.
+
+Unrelated finds fixed along the way (own commits, not 3c content):
+stale event scripts in `water_underwater.tmx` (`105c13e64`,
+`d33795839`) and broken music slugs across seven maps (`cc57004f9`) —
+engine/content drift the playtest surfaced, all pre-dating 3c.
+`hq2x-build` tag kept locally for A/B.
