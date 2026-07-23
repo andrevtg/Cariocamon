@@ -1,7 +1,7 @@
 # Phase 4: Validation
 
 - Status: Not started
-- Depends on: Phase 3 (complete)
+- Depends on: Phases 3a and 3b (complete)
 
 ## Goal
 
@@ -10,7 +10,8 @@ schema-valid, test-suite-green, and playable.
 
 ## Entry criteria
 
-- Phase 3 complete: every asset category migrated and individually
+- Phase 3a complete (sizes/maps migrated) and Phase 3b complete (every
+  category enhanced or recorded as kept-NN), each individually
   validated.
 
 ## Tasks
