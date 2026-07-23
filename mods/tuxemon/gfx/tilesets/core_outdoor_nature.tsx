@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="git" name="core_outdoor_nature" tilewidth="16" tileheight="16" tilecount="8192" columns="64">
- <image source="core_outdoor_nature.png" width="1024" height="2048"/>
+<tileset version="1.10" tiledversion="git" name="core_outdoor_nature" tilewidth="32" tileheight="32" tilecount="8192" columns="64">
+ <image source="core_outdoor_nature.png" width="2048" height="4096"/>
  <tile id="2">
   <properties>
    <property name="enter_from" value="right,down"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.5" tiledversion="1.7.0" name="Pacheesi Tiles" tilewidth="16" tileheight="16" tilecount="21" columns="7">
- <image source="Pacheesi Tiles.png" width="112" height="48"/>
+<tileset version="1.5" tiledversion="1.7.0" name="Pacheesi Tiles" tilewidth="32" tileheight="32" tilecount="21" columns="7">
+ <image source="Pacheesi Tiles.png" width="224" height="96"/>
  <tile id="11">
   <properties>
    <property name="endure" value="up"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="git" name="rubberduck_outdoor" tilewidth="16" tileheight="16" tilecount="1369" columns="37">
- <image source="rubberduck_outdoor.png" width="592" height="592"/>
+<tileset version="1.10" tiledversion="git" name="rubberduck_outdoor" tilewidth="32" tileheight="32" tilecount="1369" columns="37">
+ <image source="rubberduck_outdoor.png" width="1184" height="1184"/>
  <tile id="72">
   <properties>
    <property name="endure" value="left"/>

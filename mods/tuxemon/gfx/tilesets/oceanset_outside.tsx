@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.2" name="oceanset_outside.tiles" tilewidth="16" tileheight="16" tilecount="1792" columns="16">
- <image source="./oceanset_outside.tiles.png" width="256" height="1800"/>
+<tileset version="1.2" tiledversion="1.3.2" name="oceanset_outside.tiles" tilewidth="32" tileheight="32" tilecount="1792" columns="16">
+ <image source="./oceanset_outside.tiles.png" width="512" height="3600"/>
  <tile id="368">
   <animation>
    <frame tileid="144" duration="100"/>

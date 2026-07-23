@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="git" name="My_tuxemon_sheet" tilewidth="16" tileheight="16" tilecount="104" columns="8">
- <image source="My_tuxemon_sheet.png" width="128" height="208"/>
+<tileset version="1.10" tiledversion="git" name="My_tuxemon_sheet" tilewidth="32" tileheight="32" tilecount="104" columns="8">
+ <image source="My_tuxemon_sheet.png" width="256" height="416"/>
  <tile id="28">
   <properties>
    <property name="endure" value="up"/>
