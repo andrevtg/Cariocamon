@@ -255,7 +255,7 @@
     <property name="act4" value="wild_encounter jemuar,60,3"/>
     <property name="act5" value="set_variable after_gemuar:yes"/>
     <property name="cond1" value="is char_facing_tile player"/>
-    <property name="cond2" value="is button_pressed K_RETURN"/>
+    <property name="cond2" value="is button_pressed INTERACT"/>
     <property name="cond3" value="not variable_set after_gemuar:yes"/>
    </properties>
   </object>
@@ -566,8 +566,8 @@
   </object>
   <object id="69" name="Play Music" type="event" x="1568" y="1056" width="32" height="32">
    <properties>
-    <property name="act1" value="play_music music_come_find_me"/>
-    <property name="cond1" value="not music_playing music_come_find_me"/>
+    <property name="act1" value="play_music music_come_and_find_me"/>
+    <property name="cond1" value="not music_playing music_come_and_find_me"/>
    </properties>
   </object>
   <object id="221" name="The End" type="event" x="1216" y="160" width="32" height="32">
