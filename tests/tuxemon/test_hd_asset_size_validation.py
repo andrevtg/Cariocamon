@@ -1,10 +1,13 @@
 # SPDX-License-Identifier: GPL-3.0
 # Copyright (c) 2014-2026 William Edwards <shadowapex@gmail.com>, Benjamin Bean <superman2k5@gmail.com>
 """Validate the throwaway HD test assets against the doubled size
-constants (ADR-0001, graphics-upgrade phase 2)."""
+constants (ADR-0001, graphics-upgrade phase 2), plus the lazily-loaded
+battle sheets whose sizes are only checked at runtime (phase 3a)."""
+
+import pytest
 
 from tuxemon.database.registry import validator as has
-from tuxemon.database.runtime import db  # noqa: F401  # side-effect import
+from tuxemon.database.runtime import db
 from tuxemon.platform.const.sizes import ICON_SIZE, TILE_SIZE
 
 HD_TEST_TILE = "gfx/test/hd_test_tile.png"
@@ -31,3 +34,39 @@ def test_throwaway_hd_npc_sheet_matches_doubled_sheet_size():
 def test_wrong_size_asset_fails_icon_size_check():
     wrong_size_image = HD_TEST_TILE  # 32x32, not the 14x14 icon size
     assert not has.size(wrong_size_image, ICON_SIZE)
+
+
+@pytest.fixture(scope="module")
+def loaded_db():
+    saved = {table: dict(rows) for table, rows in db.database.items()}
+    db.load(validate=False)
+    yield db
+    db.database.clear()
+    db.database.update(saved)
+
+
+def test_island_sheets_match_environment_frame_sizes(loaded_db):
+    for slug in loaded_db.database["environment"]:
+        graphics = loaded_db.lookup(slug, table="environment").battle_graphics
+        expected = (graphics.island_width * 2, graphics.island_height)
+        assert has.size(graphics.island_sheet, expected), (
+            f"Island sheet for environment '{slug}' "
+            f"('{graphics.island_sheet}') is not {expected}"
+        )
+
+
+def test_combat_sheets_match_npc_template_frame_sizes(loaded_db):
+    checked = set()
+    for slug in loaded_db.database["npc"]:
+        template = loaded_db.lookup(slug, table="npc").template
+        file = f"gfx/sprites/player/{template.combat_sheet}.png"
+        if file in checked:
+            continue
+        checked.add(file)
+        expected = (
+            template.combat_frame_width * 2,
+            template.combat_frame_height,
+        )
+        assert has.size(file, expected), (
+            f"Combat sheet '{file}' (NPC '{slug}') is not {expected}"
+        )

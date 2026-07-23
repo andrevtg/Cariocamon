@@ -2018,8 +2018,8 @@ class NpcTemplateModel(TemplateModel):
         ...,
         description="Filename of the combat sprite sheet (side-by-side, back|front)",
     )
-    combat_frame_width: int = 64
-    combat_frame_height: int = 64
+    combat_frame_width: int = 128
+    combat_frame_height: int = 128
     combat_rows: int = 1
     combat_columns: int = 2
 
@@ -2296,14 +2296,14 @@ class BattleGraphicsModel(BaseModel):
         ..., description="Sprite sheet containing back+front islands"
     )
     island_width: int = Field(
-        96,
+        192,
         description=(
             "Width of a single island frame inside the island sheet. "
             "The sheet contains two frames arranged horizontally."
         ),
     )
     island_height: int = Field(
-        57,
+        114,
         description=(
             "Height of a single island frame inside the island sheet. "
             "Both frames must share this height."
@@ -2332,7 +2332,7 @@ class BattleGraphicsModel(BaseModel):
         3.0, description="Seconds for the entry transition."
     )
     trainer_exit_offset: int = Field(
-        150, description="Pixels to move trainer when leaving"
+        300, description="Pixels to move trainer when leaving"
     )
     trainer_exit_duration: float = Field(
         0.8, description="Duration of trainer exit animation"
