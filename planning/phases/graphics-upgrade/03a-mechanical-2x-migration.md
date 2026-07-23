@@ -120,3 +120,13 @@ Completed in one sitting, one commit per category. Findings vs. plan:
   pre-existing baseline (element-icon errors from Phase 2 cleared).
   Pre-existing, unrelated: a few maps log "Skipping event 'None'"
   (unnamed event objects) — content issue, untouched by migration.
+- **Post-completion straggler (found by user playtest, fixed):** four
+  native-px `db.py` defaults are validated only when a battle starts,
+  so neither boot nor the test suite caught them:
+  `island_width`/`island_height` (`IslandSheet` crashed on the first
+  wild encounter), `combat_frame_width`/`combat_frame_height`
+  (`CombatSheet`), and `trainer_exit_offset`. Doubled, plus regression
+  tests in `test_hd_asset_size_validation.py` covering every
+  environment island sheet and NPC combat sheet. Lesson for Phase 4:
+  lazily-loaded asset paths need explicit exercise — boot success
+  proves little about battle assets.
