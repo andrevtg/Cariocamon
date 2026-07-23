@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="12" height="7" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="59">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="12" height="7" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="59">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -32,23 +32,23 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="29" type="collision" x="16" y="96" width="32" height="16"/>
-  <object id="33" type="collision" x="0" y="16" width="192" height="16"/>
-  <object id="39" type="collision" x="128" y="32" width="16" height="48"/>
-  <object id="41" type="collision" x="144" y="64" width="48" height="16"/>
-  <object id="42" type="collision" x="16" y="32" width="32" height="16"/>
-  <object id="43" type="collision" x="16" y="64" width="32" height="16"/>
-  <object id="45" type="collision" x="80" y="32" width="16" height="16"/>
-  <object id="46" type="collision" x="80" y="48" width="32" height="32"/>
+  <object id="29" type="collision" x="32" y="192" width="64" height="32"/>
+  <object id="33" type="collision" x="0" y="32" width="384" height="32"/>
+  <object id="39" type="collision" x="256" y="64" width="32" height="96"/>
+  <object id="41" type="collision" x="288" y="128" width="96" height="32"/>
+  <object id="42" type="collision" x="32" y="64" width="64" height="32"/>
+  <object id="43" type="collision" x="32" y="128" width="64" height="32"/>
+  <object id="45" type="collision" x="160" y="64" width="32" height="32"/>
+  <object id="46" type="collision" x="160" y="96" width="64" height="64"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="23" name="Play Music" type="event" x="176" y="0" width="16" height="16">
+  <object id="23" name="Play Music" type="event" x="352" y="0" width="32" height="32">
    <properties>
     <property name="act10" value="play_music music_home"/>
     <property name="cond10" value="not music_playing music_home"/>
    </properties>
   </object>
-  <object id="27" name="Go Outside" type="event" x="112" y="96" width="16" height="16">
+  <object id="27" name="Go Outside" type="event" x="224" y="192" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_town.tmx,33,4,0.3"/>
     <property name="act20" value="char_face player,down"/>
@@ -56,14 +56,14 @@
     <property name="cond20" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="48" name="Create Owner" type="event" x="160" y="48" width="16" height="16">
+  <object id="48" name="Create Owner" type="event" x="320" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc taba_house3_owner,10,3"/>
     <property name="act2" value="char_face taba_house3_owner"/>
     <property name="cond1" value="not char_exists taba_house3_owner"/>
    </properties>
   </object>
-  <object id="51" name="Talk1" type="event" x="160" y="80" width="16" height="16">
+  <object id="51" name="Talk1" type="event" x="320" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="char_face taba_house3_owner,down"/>
     <property name="act2" value="translated_dialog taba_house3_owner1"/>
@@ -72,46 +72,46 @@
     <property name="cond3" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="52" name="Create Client1" type="event" x="0" y="96" width="16" height="16">
+  <object id="52" name="Create Client1" type="event" x="0" y="192" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc nurse2,0,6"/>
     <property name="act2" value="char_face nurse2,right"/>
     <property name="cond1" value="not char_exists nurse2"/>
    </properties>
   </object>
-  <object id="53" name="Talk Client1" type="event" x="0" y="16" width="16" height="16">
+  <object id="53" name="Talk Client1" type="event" x="0" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client1a"/>
     <property name="behav1" value="talk nurse2"/>
    </properties>
   </object>
-  <object id="54" name="Create Client2" type="event" x="48" y="64" width="16" height="16">
+  <object id="54" name="Create Client2" type="event" x="96" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc knight4,3,4"/>
     <property name="act2" value="char_face knight4,left"/>
     <property name="cond1" value="not char_exists knight4"/>
    </properties>
   </object>
-  <object id="55" name="Talk Client2" type="event" x="32" y="16" width="16" height="16">
+  <object id="55" name="Talk Client2" type="event" x="64" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client2a"/>
     <property name="behav1" value="talk knight4"/>
    </properties>
   </object>
-  <object id="56" name="Create Client3" type="event" x="0" y="32" width="16" height="16">
+  <object id="56" name="Create Client3" type="event" x="0" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc knight3,0,2"/>
     <property name="act2" value="char_face knight3,right"/>
     <property name="cond1" value="not char_exists knight3"/>
    </properties>
   </object>
-  <object id="57" name="Talk Client3" type="event" x="64" y="16" width="16" height="16">
+  <object id="57" name="Talk Client3" type="event" x="128" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client3a"/>
     <property name="behav1" value="talk knight3"/>
    </properties>
   </object>
-  <object id="58" name="Go Up" type="event" x="96" y="32" width="16" height="16">
+  <object id="58" name="Go Up" type="event" x="192" y="64" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_house3_upstairs.tmx,7,2,0.3"/>
     <property name="act20" value="char_face player,right"/>

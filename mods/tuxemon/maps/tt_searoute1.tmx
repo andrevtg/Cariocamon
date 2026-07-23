@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="265">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="265">
  <properties>
   <property name="edges" value="clamped"/>
  </properties>
@@ -42,7 +42,7 @@
   </data>
  </layer>
  <objectgroup id="4" name="Events" visible="0">
-  <object id="156" name="Teleport to Paper Town" type="event" x="624" y="512" width="16" height="96">
+  <object id="156" name="Teleport to Paper Town" type="event" x="1248" y="1024" width="32" height="192">
    <properties>
     <property name="act1" value="transition_teleport player,tt_paper_town.tmx,1,18,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -52,64 +52,64 @@
   </object>
  </objectgroup>
  <objectgroup color="#ff0000" id="3" name="Collisions" visible="0">
-  <object id="157" type="collision" x="272" y="0" width="256" height="32"/>
-  <object id="158" type="collision" x="528" y="0" width="80" height="32"/>
-  <object id="159" type="collision" x="544" y="32" width="64" height="16"/>
-  <object id="168" type="collision" x="256" y="32" width="64" height="16"/>
-  <object id="169" type="collision" x="240" y="48" width="48" height="16"/>
-  <object id="170" type="collision" x="208" y="48" width="32" height="32"/>
-  <object id="171" type="collision" x="96" y="32" width="80" height="16"/>
-  <object id="172" type="collision" x="80" y="48" width="48" height="16"/>
-  <object id="174" type="collision" x="32" y="304" width="32" height="16"/>
-  <object id="175" type="collision" x="0" y="288" width="48" height="16"/>
-  <object id="181" type="collision" x="592" y="48" width="16" height="448"/>
-  <object id="185" type="collision" x="576" y="608" width="64" height="32"/>
-  <object id="186" type="collision" x="512" y="576" width="64" height="32"/>
-  <object id="187" type="collision" x="528" y="560" width="16" height="16"/>
-  <object id="188" type="collision" x="512" y="528" width="16" height="48"/>
-  <object id="189" type="collision" x="480" y="528" width="32" height="16"/>
-  <object id="190" type="collision" x="432" y="512" width="64" height="16"/>
-  <object id="191" type="collision" x="432" y="496" width="48" height="16"/>
-  <object id="192" type="collision" x="384" y="464" width="48" height="32"/>
-  <object id="193" type="collision" x="320" y="432" width="80" height="32"/>
-  <object id="194" type="collision" x="432" y="480" width="32" height="16"/>
-  <object id="195" type="collision" x="32" y="320" width="32" height="32"/>
-  <object id="196" type="collision" x="576" y="592" width="16" height="16"/>
-  <object id="198" type="collision" x="608" y="320" width="32" height="192"/>
-  <object id="219" type="collision" x="80" y="64" width="32" height="32"/>
-  <object id="220" type="collision" x="0" y="64" width="16" height="64"/>
-  <object id="222" type="collision" x="224" y="448" width="96" height="32"/>
-  <object id="223" type="collision" x="224" y="480" width="16" height="48"/>
-  <object id="224" type="collision" x="160" y="512" width="64" height="16"/>
-  <object id="225" type="collision" x="144" y="496" width="16" height="32"/>
-  <object id="226" type="collision" x="128" y="464" width="16" height="48"/>
-  <object id="227" type="collision" x="64" y="464" width="64" height="16"/>
-  <object id="228" type="collision" x="0" y="448" width="64" height="32"/>
-  <object id="229" type="collision" x="64" y="448" width="32" height="16"/>
-  <object id="230" type="collision" x="64" y="336" width="16" height="112"/>
-  <object id="231" type="collision" x="80" y="352" width="16" height="64"/>
-  <object id="232" type="collision" x="0" y="272" width="32" height="16"/>
-  <object id="233" type="collision" x="0" y="240" width="16" height="32"/>
-  <object id="235" type="collision" x="240" y="256" width="48" height="16"/>
-  <object id="237" type="collision" x="288" y="256" width="32" height="48"/>
-  <object id="238" type="collision" x="240" y="224" width="64" height="32"/>
-  <object id="239" type="collision" x="272" y="272" width="16" height="16"/>
-  <object id="240" type="collision" x="576" y="48" width="16" height="368"/>
-  <object id="241" type="collision" x="560" y="304" width="16" height="32"/>
-  <object id="242" type="collision" x="544" y="272" width="32" height="32"/>
-  <object id="243" type="collision" x="528" y="112" width="48" height="144"/>
-  <object id="244" type="collision" x="560" y="256" width="16" height="16"/>
-  <object id="245" type="collision" x="496" y="192" width="32" height="48"/>
-  <object id="246" type="collision" x="512" y="176" width="16" height="16"/>
-  <object id="247" type="collision" x="512" y="112" width="16" height="48"/>
-  <object id="248" type="collision" x="512" y="32" width="16" height="16"/>
-  <object id="249" type="collision" x="192" y="16" width="32" height="32"/>
-  <object id="250" type="collision" x="128" y="0" width="64" height="32"/>
-  <object id="251" type="collision" x="112" y="80" width="32" height="32"/>
-  <object id="252" type="collision" x="16" y="48" width="64" height="32"/>
-  <object id="253" type="collision" x="16" y="80" width="32" height="16"/>
-  <object id="254" type="collision" x="16" y="96" width="16" height="16"/>
-  <object id="255" type="collision" x="528" y="32" width="16" height="16"/>
-  <object id="263" type="collision" x="352" y="288" width="32" height="32"/>
+  <object id="157" type="collision" x="544" y="0" width="512" height="64"/>
+  <object id="158" type="collision" x="1056" y="0" width="160" height="64"/>
+  <object id="159" type="collision" x="1088" y="64" width="128" height="32"/>
+  <object id="168" type="collision" x="512" y="64" width="128" height="32"/>
+  <object id="169" type="collision" x="480" y="96" width="96" height="32"/>
+  <object id="170" type="collision" x="416" y="96" width="64" height="64"/>
+  <object id="171" type="collision" x="192" y="64" width="160" height="32"/>
+  <object id="172" type="collision" x="160" y="96" width="96" height="32"/>
+  <object id="174" type="collision" x="64" y="608" width="64" height="32"/>
+  <object id="175" type="collision" x="0" y="576" width="96" height="32"/>
+  <object id="181" type="collision" x="1184" y="96" width="32" height="896"/>
+  <object id="185" type="collision" x="1152" y="1216" width="128" height="64"/>
+  <object id="186" type="collision" x="1024" y="1152" width="128" height="64"/>
+  <object id="187" type="collision" x="1056" y="1120" width="32" height="32"/>
+  <object id="188" type="collision" x="1024" y="1056" width="32" height="96"/>
+  <object id="189" type="collision" x="960" y="1056" width="64" height="32"/>
+  <object id="190" type="collision" x="864" y="1024" width="128" height="32"/>
+  <object id="191" type="collision" x="864" y="992" width="96" height="32"/>
+  <object id="192" type="collision" x="768" y="928" width="96" height="64"/>
+  <object id="193" type="collision" x="640" y="864" width="160" height="64"/>
+  <object id="194" type="collision" x="864" y="960" width="64" height="32"/>
+  <object id="195" type="collision" x="64" y="640" width="64" height="64"/>
+  <object id="196" type="collision" x="1152" y="1184" width="32" height="32"/>
+  <object id="198" type="collision" x="1216" y="640" width="64" height="384"/>
+  <object id="219" type="collision" x="160" y="128" width="64" height="64"/>
+  <object id="220" type="collision" x="0" y="128" width="32" height="128"/>
+  <object id="222" type="collision" x="448" y="896" width="192" height="64"/>
+  <object id="223" type="collision" x="448" y="960" width="32" height="96"/>
+  <object id="224" type="collision" x="320" y="1024" width="128" height="32"/>
+  <object id="225" type="collision" x="288" y="992" width="32" height="64"/>
+  <object id="226" type="collision" x="256" y="928" width="32" height="96"/>
+  <object id="227" type="collision" x="128" y="928" width="128" height="32"/>
+  <object id="228" type="collision" x="0" y="896" width="128" height="64"/>
+  <object id="229" type="collision" x="128" y="896" width="64" height="32"/>
+  <object id="230" type="collision" x="128" y="672" width="32" height="224"/>
+  <object id="231" type="collision" x="160" y="704" width="32" height="128"/>
+  <object id="232" type="collision" x="0" y="544" width="64" height="32"/>
+  <object id="233" type="collision" x="0" y="480" width="32" height="64"/>
+  <object id="235" type="collision" x="480" y="512" width="96" height="32"/>
+  <object id="237" type="collision" x="576" y="512" width="64" height="96"/>
+  <object id="238" type="collision" x="480" y="448" width="128" height="64"/>
+  <object id="239" type="collision" x="544" y="544" width="32" height="32"/>
+  <object id="240" type="collision" x="1152" y="96" width="32" height="736"/>
+  <object id="241" type="collision" x="1120" y="608" width="32" height="64"/>
+  <object id="242" type="collision" x="1088" y="544" width="64" height="64"/>
+  <object id="243" type="collision" x="1056" y="224" width="96" height="288"/>
+  <object id="244" type="collision" x="1120" y="512" width="32" height="32"/>
+  <object id="245" type="collision" x="992" y="384" width="64" height="96"/>
+  <object id="246" type="collision" x="1024" y="352" width="32" height="32"/>
+  <object id="247" type="collision" x="1024" y="224" width="32" height="96"/>
+  <object id="248" type="collision" x="1024" y="64" width="32" height="32"/>
+  <object id="249" type="collision" x="384" y="32" width="64" height="64"/>
+  <object id="250" type="collision" x="256" y="0" width="128" height="64"/>
+  <object id="251" type="collision" x="224" y="160" width="64" height="64"/>
+  <object id="252" type="collision" x="32" y="96" width="128" height="64"/>
+  <object id="253" type="collision" x="32" y="160" width="64" height="32"/>
+  <object id="254" type="collision" x="32" y="192" width="32" height="32"/>
+  <object id="255" type="collision" x="1056" y="64" width="32" height="32"/>
+  <object id="263" type="collision" x="704" y="576" width="64" height="64"/>
  </objectgroup>
 </map>

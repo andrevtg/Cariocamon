@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="9" height="7" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="64">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="9" height="7" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="64">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -32,22 +32,22 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="29" type="collision" x="0" y="32" width="64" height="16"/>
-  <object id="39" type="collision" x="96" y="48" width="48" height="16"/>
-  <object id="40" type="collision" x="0" y="64" width="64" height="32"/>
-  <object id="59" type="collision" x="96" y="16" width="48" height="16"/>
-  <object id="60" type="collision" x="64" y="16" width="16" height="16"/>
-  <object id="61" type="collision" x="80" y="0" width="16" height="16"/>
-  <object id="62" type="collision" x="96" y="32" width="16" height="16"/>
+  <object id="29" type="collision" x="0" y="64" width="128" height="32"/>
+  <object id="39" type="collision" x="192" y="96" width="96" height="32"/>
+  <object id="40" type="collision" x="0" y="128" width="128" height="64"/>
+  <object id="59" type="collision" x="192" y="32" width="96" height="32"/>
+  <object id="60" type="collision" x="128" y="32" width="32" height="32"/>
+  <object id="61" type="collision" x="160" y="0" width="32" height="32"/>
+  <object id="62" type="collision" x="192" y="64" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="23" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="23" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act10" value="play_music music_home"/>
     <property name="cond10" value="not music_playing music_home"/>
    </properties>
   </object>
-  <object id="27" name="Go Outside" type="event" x="112" y="96" width="16" height="16">
+  <object id="27" name="Go Outside" type="event" x="224" y="192" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_town.tmx,40,12,0.3"/>
     <property name="act20" value="char_face player,down"/>
@@ -55,14 +55,14 @@
     <property name="cond20" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="43" name="Create Owner" type="event" x="128" y="32" width="16" height="16">
+  <object id="43" name="Create Owner" type="event" x="256" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc taba_house2_owner,8,2"/>
     <property name="act2" value="char_face taba_house2_owner,down"/>
     <property name="cond1" value="not char_exists taba_house2_owner"/>
    </properties>
   </object>
-  <object id="45" name="Talk1" type="event" x="128" y="64" width="16" height="16">
+  <object id="45" name="Talk1" type="event" x="256" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="char_face taba_house2_owner,down"/>
     <property name="act2" value="translated_dialog taba_house2_owner1"/>
@@ -71,68 +71,68 @@
     <property name="cond3" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="46" name="Reading1" type="event" x="0" y="64" width="16" height="16">
+  <object id="46" name="Reading1" type="event" x="0" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_reading1"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="47" name="Reading2" type="event" x="16" y="64" width="16" height="16">
+  <object id="47" name="Reading2" type="event" x="32" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_reading2"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="48" name="Reading3" type="event" x="32" y="64" width="16" height="16">
+  <object id="48" name="Reading3" type="event" x="64" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_reading3"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="49" name="Reading4" type="event" x="48" y="64" width="16" height="16">
+  <object id="49" name="Reading4" type="event" x="96" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_reading4"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="50" name="Books" type="event" x="0" y="32" width="64" height="16">
+  <object id="50" name="Books" type="event" x="0" y="64" width="128" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_books"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="51" name="Create Reader1" type="event" x="64" y="64" width="16" height="16">
+  <object id="51" name="Create Reader1" type="event" x="128" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc nurse1,4,4"/>
     <property name="act2" value="char_face nurse1,left"/>
     <property name="cond1" value="not char_exists nurse1"/>
    </properties>
   </object>
-  <object id="52" name="Reader1 Talk" type="event" x="0" y="16" width="16" height="16">
+  <object id="52" name="Reader1 Talk" type="event" x="0" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_reader1a"/>
     <property name="behav1" value="talk nurse1"/>
    </properties>
   </object>
-  <object id="53" name="Create Reader2" type="event" x="64" y="32" width="16" height="16">
+  <object id="53" name="Create Reader2" type="event" x="128" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc knight4,4,2"/>
     <property name="act2" value="char_face knight4,down"/>
     <property name="cond1" value="not char_exists knight4"/>
    </properties>
   </object>
-  <object id="54" name="Reader2 Talk" type="event" x="16" y="16" width="16" height="16">
+  <object id="54" name="Reader2 Talk" type="event" x="32" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house2_reader2a"/>
     <property name="behav1" value="talk knight4"/>
    </properties>
   </object>
-  <object id="63" name="Go Upstairs" type="event" x="80" y="16" width="16" height="16">
+  <object id="63" name="Go Upstairs" type="event" x="160" y="32" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_house2_upstairs.tmx,7,2,0.3"/>
     <property name="act20" value="char_face player,left"/>

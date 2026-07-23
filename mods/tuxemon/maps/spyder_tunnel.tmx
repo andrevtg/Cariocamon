@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="366">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="366">
  <properties>
   <property name="east" value="route6"/>
   <property name="edges" value="clamped"/>
@@ -32,16 +32,16 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="291" type="collision" x="64" y="608" width="256" height="32"/>
-  <object id="292" type="collision" x="288" y="496" width="32" height="32"/>
-  <object id="321" type="collision" x="256" y="0" width="64" height="32"/>
-  <object id="322" type="collision" x="288" y="576" width="32" height="32"/>
-  <object id="323" type="collision" x="288" y="80" width="32" height="368"/>
-  <object id="324" type="collision" x="176" y="112" width="64" height="64"/>
-  <object id="325" type="collision" x="256" y="224" width="32" height="32"/>
+  <object id="291" type="collision" x="128" y="1216" width="512" height="64"/>
+  <object id="292" type="collision" x="576" y="992" width="64" height="64"/>
+  <object id="321" type="collision" x="512" y="0" width="128" height="64"/>
+  <object id="322" type="collision" x="576" y="1152" width="64" height="64"/>
+  <object id="323" type="collision" x="576" y="160" width="64" height="736"/>
+  <object id="324" type="collision" x="352" y="224" width="128" height="128"/>
+  <object id="325" type="collision" x="512" y="448" width="64" height="64"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="4" name="Events">
-  <object id="197" name="Teleport to Below" type="event" x="192" y="32" width="16" height="16">
+  <object id="197" name="Teleport to Below" type="event" x="384" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_tunnel_below.tmx,7,2,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -49,7 +49,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="198" name="Teleport to Below" type="event" x="96" y="240" width="16" height="16">
+  <object id="198" name="Teleport to Below" type="event" x="192" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_tunnel_below.tmx,13,14,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -57,7 +57,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="199" name="Teleport to Below" type="event" x="80" y="416" width="16" height="16">
+  <object id="199" name="Teleport to Below" type="event" x="160" y="832" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_tunnel_below.tmx,14,25,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -65,7 +65,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="200" name="Teleport to Timber Town" type="event" x="240" y="0" width="16" height="16">
+  <object id="200" name="Teleport to Timber Town" type="event" x="480" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_timber_town.tmx,15,39,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -73,7 +73,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="201" name="Teleport to Timber Town" type="event" x="224" y="0" width="16" height="16">
+  <object id="201" name="Teleport to Timber Town" type="event" x="448" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_timber_town.tmx,14,39,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -81,7 +81,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="204" name="Teleport to Route 6" type="event" x="304" y="560" width="16" height="16">
+  <object id="204" name="Teleport to Route 6" type="event" x="608" y="1120" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_route6.tmx,0,15,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -89,7 +89,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="205" name="Teleport to Route 6" type="event" x="304" y="544" width="16" height="16">
+  <object id="205" name="Teleport to Route 6" type="event" x="608" y="1088" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_route6.tmx,0,14,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -97,7 +97,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="206" name="Teleport to Route 6" type="event" x="304" y="528" width="16" height="16">
+  <object id="206" name="Teleport to Route 6" type="event" x="608" y="1056" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_route6.tmx,0,13,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -105,14 +105,14 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="333" name="Create Iris" type="event" x="160" y="240" width="16" height="16">
+  <object id="333" name="Create Iris" type="event" x="320" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_iris,10,15"/>
     <property name="act2" value="char_wander spyder_tunnelb_iris,0.8"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_iris"/>
    </properties>
   </object>
-  <object id="334" name="Talk Iris" type="event" x="160" y="224" width="16" height="16">
+  <object id="334" name="Talk Iris" type="event" x="320" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_tunnelb_iris,pre_battle"/>
     <property name="act2" value="add_monster tourbidi,23,spyder_tunnelb_iris,5,10"/>
@@ -124,13 +124,13 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_tunnelb_iris"/>
    </properties>
   </object>
-  <object id="335" name="Create Greta" type="event" x="208" y="560" width="16" height="16">
+  <object id="335" name="Create Greta" type="event" x="416" y="1120" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_greta,13,35"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_greta"/>
    </properties>
   </object>
-  <object id="336" name="Talk Greta" type="event" x="208" y="544" width="16" height="16">
+  <object id="336" name="Talk Greta" type="event" x="416" y="1088" width="32" height="32">
    <properties>
     <property name="act01" value="char_talk spyder_tunnelb_greta,pre_battle"/>
     <property name="act02" value="add_monster foofle,21,spyder_tunnelb_greta,5,10"/>
@@ -145,13 +145,13 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_tunnelb_greta"/>
    </properties>
   </object>
-  <object id="337" name="Create Tommy" type="event" x="208" y="80" width="16" height="16">
+  <object id="337" name="Create Tommy" type="event" x="416" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_tommy,14,4,wander"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_tommy"/>
    </properties>
   </object>
-  <object id="338" name="Talk Tommy" type="event" x="224" y="80" width="16" height="16">
+  <object id="338" name="Talk Tommy" type="event" x="448" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_tunnelb_tommy,pre_battle"/>
     <property name="act2" value="add_monster zunna,27,spyder_tunnelb_tommy,5,10"/>
@@ -161,7 +161,7 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_tunnelb_tommy"/>
    </properties>
   </object>
-  <object id="341" name="Talk Greta" type="event" x="208" y="576" width="16" height="32">
+  <object id="341" name="Talk Greta" type="event" x="416" y="1152" width="32" height="64">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="pathfind_to_char player,spyder_tunnelb_greta"/>
@@ -181,7 +181,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="346" name="Teleport to Routee 1" type="event" x="304" y="48" width="16" height="16">
+  <object id="346" name="Teleport to Routee 1" type="event" x="608" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_routee.tmx,0,3,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -189,7 +189,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="347" name="Teleport to Routee 2" type="event" x="304" y="64" width="16" height="16">
+  <object id="347" name="Teleport to Routee 2" type="event" x="608" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_routee.tmx,0,4,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -197,7 +197,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="348" name="Teleport to Route6 1" type="event" x="304" y="464" width="16" height="16">
+  <object id="348" name="Teleport to Route6 1" type="event" x="608" y="928" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_route6.tmx,0,9,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -205,7 +205,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="349" name="Teleport to Route6 2" type="event" x="304" y="480" width="16" height="16">
+  <object id="349" name="Teleport to Route6 2" type="event" x="608" y="960" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_route6.tmx,0,10,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -213,48 +213,48 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="359" name="Environment Day" type="event" x="16" y="0" width="16" height="16">
+  <object id="359" name="Environment Day" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment grass"/>
     <property name="cond1" value="not time_is stage_of_day,equals,night"/>
     <property name="cond2" value="not environment_is grass"/>
    </properties>
   </object>
-  <object id="360" name="Environment Night" type="event" x="32" y="0" width="16" height="16">
+  <object id="360" name="Environment Night" type="event" x="64" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment night_grass"/>
     <property name="cond1" value="is time_is stage_of_day,equals,night"/>
     <property name="cond2" value="not environment_is night_grass"/>
    </properties>
   </object>
-  <object id="361" name="Post Talk Tommy" type="event" x="208" y="96" width="16" height="16">
+  <object id="361" name="Post Talk Tommy" type="event" x="416" y="192" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_tunnelb_tommy,post_battle_lose"/>
     <property name="behav1" value="talk spyder_tunnelb_tommy"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_tunnelb_tommy"/>
    </properties>
   </object>
-  <object id="362" name="Post Talk Iris" type="event" x="176" y="240" width="16" height="16">
+  <object id="362" name="Post Talk Iris" type="event" x="352" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_tunnelb_iris,post_battle_lose"/>
     <property name="behav1" value="talk spyder_tunnelb_iris"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_tunnelb_iris"/>
    </properties>
   </object>
-  <object id="363" name="Post Talk Greta" type="event" x="192" y="560" width="16" height="16">
+  <object id="363" name="Post Talk Greta" type="event" x="384" y="1120" width="32" height="32">
    <properties>
     <property name="act01" value="char_talk spyder_tunnelb_greta,post_battle_lose"/>
     <property name="behav1" value="talk spyder_tunnelb_greta"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_tunnelb_greta"/>
    </properties>
   </object>
-  <object id="364" name="Create Nurse" type="event" x="272" y="512" width="16" height="16">
+  <object id="364" name="Create Nurse" type="event" x="544" y="1024" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_nurse,17,32"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_nurse"/>
    </properties>
   </object>
-  <object id="365" name="Talk Nurse" type="event" x="288" y="512" width="16" height="16">
+  <object id="365" name="Talk Nurse" type="event" x="576" y="1024" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_generic_nurse"/>
     <property name="act2" value="set_monster_health"/>

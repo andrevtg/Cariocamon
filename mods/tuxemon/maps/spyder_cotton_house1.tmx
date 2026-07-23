@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="10" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="74">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="10" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="74">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -31,45 +31,45 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="63" type="collision" x="0" y="0" width="160" height="32"/>
-  <object id="64" type="collision" x="96" y="48" width="32" height="32"/>
-  <object id="66" type="collision" x="0" y="96" width="16" height="32"/>
-  <object id="67" type="collision" x="144" y="96" width="16" height="32"/>
-  <object id="71" type="collision" x="144" y="32" width="16" height="16"/>
+  <object id="63" type="collision" x="0" y="0" width="320" height="64"/>
+  <object id="64" type="collision" x="192" y="96" width="64" height="64"/>
+  <object id="66" type="collision" x="0" y="192" width="32" height="64"/>
+  <object id="67" type="collision" x="288" y="192" width="32" height="64"/>
+  <object id="71" type="collision" x="288" y="64" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="59" name="Create Homemaker" type="event" x="48" y="80" width="16" height="16">
+  <object id="59" name="Create Homemaker" type="event" x="96" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottoncafe_juliana,3,5,wander"/>
     <property name="cond1" value="not char_exists spyder_cottoncafe_juliana"/>
    </properties>
   </object>
-  <object id="60" name="Talk Homemaker" type="event" x="48" y="64" width="16" height="16">
+  <object id="60" name="Talk Homemaker" type="event" x="96" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonhouse1_homemaker"/>
     <property name="behav1" value="talk spyder_cottoncafe_juliana"/>
    </properties>
   </object>
-  <object id="61" name="Create Firefighter" type="event" x="112" y="48" width="16" height="16">
+  <object id="61" name="Create Firefighter" type="event" x="224" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottonhouse1_rodger,7,2"/>
     <property name="cond1" value="not char_exists spyder_cottonhouse1_rodger"/>
    </properties>
   </object>
-  <object id="62" name="Talk Firefighter" type="event" x="112" y="32" width="16" height="16">
+  <object id="62" name="Talk Firefighter" type="event" x="224" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonhouse1_firefighter"/>
     <property name="behav1" value="talk spyder_cottonhouse1_rodger"/>
    </properties>
   </object>
-  <object id="70" name="Go outside" type="event" x="96" y="112" width="32" height="16">
+  <object id="70" name="Go outside" type="event" x="192" y="224" width="64" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_cotton_town.tmx,27,27,0.3"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="73" name="Watch TV" type="event" x="144" y="32" width="16" height="16">
+  <object id="73" name="Watch TV" type="event" x="288" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonhouse1_tvwatch"/>
     <property name="cond1" value="is char_facing_tile player"/>

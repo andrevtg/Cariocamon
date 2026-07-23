@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="19" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="8">
- <tileset firstgid="1" name="core_indoor_walls" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_walls.png" width="736" height="1344"/>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="19" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="8">
+ <tileset firstgid="1" name="core_indoor_walls" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_walls.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="3865" name="core_indoor_floors" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_floors.png" width="736" height="1344"/>
+ <tileset firstgid="3865" name="core_indoor_floors" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_floors.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="7729" name="core_set pieces" tilewidth="16" tileheight="16" tilecount="1550" columns="31">
-  <image source="../gfx/tilesets/core_set pieces.png" width="496" height="800"/>
+ <tileset firstgid="7729" name="core_set pieces" tilewidth="32" tileheight="32" tilecount="1550" columns="31">
+  <image source="../gfx/tilesets/core_set pieces.png" width="992" height="1600"/>
  </tileset>
  <tileset firstgid="9279" source="../gfx/tilesets/core_outdoor.tsx"/>
  <layer id="1" name="Layer 1" width="19" height="16">
@@ -31,20 +31,20 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="4" name="Collisions">
-  <object id="1" type="collision" x="16" y="32">
-   <polygon points="0,0 96,0 96,128 160,128 160,80 144,80 144,96 112,96 112,48 160,48 160,0 192,0 192,16 208,16 208,0 240,0 240,-16 256,-16 256,0 272,0 272,192 0,192 0,0 -16,0 -16,224 288,224 288,-32 0,-32 -16,-32 -16,0"/>
+  <object id="1" type="collision" x="32" y="64">
+   <polygon points="0,0 192,0 192,256 320,256 320,160 288,160 288,192 224,192 224,96 320,96 320,0 384,0 384,32 416,32 416,0 480,0 480,-32 512,-32 512,0 544,0 544,384 0,384 0,0 -32,0 -32,448 576,448 576,-64 0,-64 -32,-64 -32,0"/>
   </object>
-  <object id="2" type="collision" x="32" y="48">
-   <polygon points="0,0 0,160 240,160 240,96 224,96 224,128 16,128 16,0"/>
+  <object id="2" type="collision" x="64" y="96">
+   <polygon points="0,0 0,320 480,320 480,192 448,192 448,256 32,256 32,0"/>
   </object>
-  <object id="4" type="collision" x="256" y="96">
-   <polygon points="0,0 -16,0 -16,-16 0,-16"/>
+  <object id="4" type="collision" x="512" y="192">
+   <polygon points="0,0 -32,0 -32,-32 0,-32"/>
   </object>
-  <object id="5" type="collision" x="224" y="112">
-   <polygon points="0,0 0,16 -16,16 -16,0 16,0 16,16 0,16"/>
+  <object id="5" type="collision" x="448" y="224">
+   <polygon points="0,0 0,32 -32,32 -32,0 32,0 32,32 0,32"/>
   </object>
-  <object id="6" type="collision" x="192" y="80">
-   <polygon points="0,0 0,16 32,16 48,16 48,0 0,0"/>
+  <object id="6" type="collision" x="384" y="160">
+   <polygon points="0,0 0,32 64,32 96,32 96,0 0,0"/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="Events">

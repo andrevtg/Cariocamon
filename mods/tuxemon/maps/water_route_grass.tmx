@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="69">
+<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="69">
  <properties>
   <property name="edges" value="clamped"/>
  </properties>
@@ -223,7 +223,7 @@
 </data>
  </layer>
  <objectgroup color="#ffff00" id="3" name="Events">
-  <object id="1" name="Teleport to Lower Village" type="event" x="368" y="784" width="16" height="16">
+  <object id="1" name="Teleport to Lower Village" type="event" x="736" y="1568" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,25,0,0.5"/>
     <property name="act2" value="char_face player,down"/>
@@ -231,7 +231,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="2" name="Teleport to Lower Village" type="event" x="384" y="784" width="16" height="16">
+  <object id="2" name="Teleport to Lower Village" type="event" x="768" y="1568" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,26,0,0.5"/>
     <property name="act2" value="char_face player,down"/>
@@ -239,7 +239,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="3" name="Teleport to Lower Village" type="event" x="400" y="784" width="16" height="16">
+  <object id="3" name="Teleport to Lower Village" type="event" x="800" y="1568" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,27,0,0.5"/>
     <property name="act2" value="char_face player,down"/>
@@ -247,7 +247,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="4" name="Teleport to Lower Village" type="event" x="416" y="784" width="16" height="16">
+  <object id="4" name="Teleport to Lower Village" type="event" x="832" y="1568" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,27,0,0.5"/>
     <property name="act2" value="char_face player,down"/>
@@ -255,7 +255,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="5" name="Teleport to River Village" type="event" x="384" y="0" width="16" height="16">
+  <object id="5" name="Teleport to River Village" type="event" x="768" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_river_village.tmx,17,28,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -263,7 +263,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="6" name="Teleport to River Village" type="event" x="400" y="0" width="16" height="16">
+  <object id="6" name="Teleport to River Village" type="event" x="800" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_river_village.tmx,18,28,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -271,7 +271,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="7" name="Teleport to River Village" type="event" x="416" y="0" width="16" height="16">
+  <object id="7" name="Teleport to River Village" type="event" x="832" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_river_village.tmx,17,27,0.1"/>
     <property name="act2" value="char_face player,up"/>
@@ -279,13 +279,13 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="8" name="Create Nurse" type="event" x="144" y="256" width="16" height="16">
+  <object id="8" name="Create Nurse" type="event" x="288" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc water_nurse,9,16"/>
     <property name="cond1" value="not char_exists water_nurse"/>
    </properties>
   </object>
-  <object id="9" name="Talk Nurse" type="event" x="160" y="240" width="16" height="16">
+  <object id="9" name="Talk Nurse" type="event" x="320" y="480" width="32" height="32">
    <properties>
     <property name="act10" value="translated_dialog water_nurse1"/>
     <property name="act20" value="set_monster_health"/>
@@ -294,266 +294,266 @@
     <property name="behav1" value="talk water_nurse"/>
    </properties>
   </object>
-  <object id="11" name="Create CoolDude" type="event" x="432" y="576" width="16" height="16">
+  <object id="11" name="Create CoolDude" type="event" x="864" y="1152" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc water_cooldude,27,36"/>
     <property name="cond1" value="not char_exists water_cooldude"/>
    </properties>
   </object>
-  <object id="15" name="Talk Cool Dude" type="event" x="448" y="544" width="16" height="16">
+  <object id="15" name="Talk Cool Dude" type="event" x="896" y="1088" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog water_cooldude1"/>
     <property name="act20" value="translated_dialog water_cooldude2"/>
     <property name="behav1" value="talk water_cooldude"/>
    </properties>
   </object>
-  <object id="16" name="Create Hiding Guy" type="event" x="64" y="688" width="16" height="16">
+  <object id="16" name="Create Hiding Guy" type="event" x="128" y="1376" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc water_swimmer,4,43"/>
     <property name="cond1" value="not char_exists water_swimmer"/>
    </properties>
   </object>
-  <object id="17" name="Talk Hiding Guy" type="event" x="32" y="688" width="16" height="16">
+  <object id="17" name="Talk Hiding Guy" type="event" x="64" y="1376" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog water_hiding_guy1"/>
     <property name="act20" value="translated_dialog water_hiding_guy2"/>
     <property name="behav1" value="talk water_swimmer"/>
    </properties>
   </object>
-  <object id="18" name="Create Disciple" type="event" x="80" y="496" width="16" height="16">
+  <object id="18" name="Create Disciple" type="event" x="160" y="992" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc water_disciple,5,31"/>
     <property name="cond1" value="not char_exists water_disciple"/>
    </properties>
   </object>
-  <object id="19" name="Talk Disciple" type="event" x="32" y="496" width="16" height="16">
+  <object id="19" name="Talk Disciple" type="event" x="64" y="992" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog water_disciple1"/>
     <property name="behav1" value="talk water_disciple"/>
    </properties>
   </object>
-  <object id="20" name="Create Lost Guy" type="event" x="32" y="16" width="16" height="16">
+  <object id="20" name="Create Lost Guy" type="event" x="64" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc postboy,2,1"/>
     <property name="cond1" value="not char_exists postboy"/>
    </properties>
   </object>
-  <object id="21" name="Talk Lost Guy" type="event" x="16" y="64" width="16" height="16">
+  <object id="21" name="Talk Lost Guy" type="event" x="32" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog water_postboy"/>
     <property name="behav1" value="talk postboy"/>
    </properties>
   </object>
-  <object id="22" name="Random Encounter" type="event" x="192" y="736" width="48" height="16">
+  <object id="22" name="Random Encounter" type="event" x="384" y="1472" width="96" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="23" name="Random Encounter" type="event" x="112" y="704" width="32" height="32">
+  <object id="23" name="Random Encounter" type="event" x="224" y="1408" width="64" height="64">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="24" name="Random Encounter" type="event" x="48" y="560" width="32" height="32">
+  <object id="24" name="Random Encounter" type="event" x="96" y="1120" width="64" height="64">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="25" name="Random Encounter" type="event" x="208" y="528" width="48" height="16">
+  <object id="25" name="Random Encounter" type="event" x="416" y="1056" width="96" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="26" name="Random Encounter" type="event" x="176" y="512" width="64" height="16">
+  <object id="26" name="Random Encounter" type="event" x="352" y="1024" width="128" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="27" name="Random Encounter" type="event" x="320" y="496" width="64" height="16">
+  <object id="27" name="Random Encounter" type="event" x="640" y="992" width="128" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="28" name="Random Encounter" type="event" x="400" y="608" width="48" height="48">
+  <object id="28" name="Random Encounter" type="event" x="800" y="1216" width="96" height="96">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="29" name="Random Encounter" type="event" x="48" y="272" width="48" height="16">
+  <object id="29" name="Random Encounter" type="event" x="96" y="544" width="96" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="30" name="Random Encounter" type="event" x="240" y="224" width="32" height="64">
+  <object id="30" name="Random Encounter" type="event" x="480" y="448" width="64" height="128">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="31" name="Random Encounter" type="event" x="352" y="352" width="48" height="32">
+  <object id="31" name="Random Encounter" type="event" x="704" y="704" width="96" height="64">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="32" name="Random Encounter" type="event" x="336" y="384" width="48" height="16">
+  <object id="32" name="Random Encounter" type="event" x="672" y="768" width="96" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="33" name="Random Encounter" type="event" x="176" y="64" width="64" height="16">
+  <object id="33" name="Random Encounter" type="event" x="352" y="128" width="128" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="34" name="Random Encounter" type="event" x="128" y="48" width="96" height="16">
+  <object id="34" name="Random Encounter" type="event" x="256" y="96" width="192" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="35" name="Random Encounter" type="event" x="80" y="32" width="80" height="16">
+  <object id="35" name="Random Encounter" type="event" x="160" y="64" width="160" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="36" name="Random Encounter" type="event" x="432" y="64" width="32" height="16">
+  <object id="36" name="Random Encounter" type="event" x="864" y="128" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="37" name="Random Encounter" type="event" x="416" y="48" width="32" height="16">
+  <object id="37" name="Random Encounter" type="event" x="832" y="96" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="38" name="Random Encounter" type="event" x="304" y="48" width="32" height="16">
+  <object id="38" name="Random Encounter" type="event" x="608" y="96" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="39" name="Random Encounter" type="event" x="288" y="64" width="32" height="16">
+  <object id="39" name="Random Encounter" type="event" x="576" y="128" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="40" name="Random Encounter" type="event" x="272" y="96" width="32" height="16">
+  <object id="40" name="Random Encounter" type="event" x="544" y="192" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="41" name="Random Encounter" type="event" x="224" y="240" width="16" height="32">
+  <object id="41" name="Random Encounter" type="event" x="448" y="480" width="32" height="64">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="42" name="Random Encounter" type="event" x="64" y="288" width="32" height="16">
+  <object id="42" name="Random Encounter" type="event" x="128" y="576" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="43" name="Random Encounter" type="event" x="304" y="512" width="32" height="16">
+  <object id="43" name="Random Encounter" type="event" x="608" y="1024" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="44" name="Random Encounter" type="event" x="400" y="496" width="32" height="16">
+  <object id="44" name="Random Encounter" type="event" x="800" y="992" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="45" name="Random Encounter" type="event" x="368" y="480" width="32" height="16">
+  <object id="45" name="Random Encounter" type="event" x="736" y="960" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="46" name="Random Encounter" type="event" x="240" y="704" width="32" height="16">
+  <object id="46" name="Random Encounter" type="event" x="480" y="1408" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="47" name="Random Encounter" type="event" x="224" y="720" width="32" height="16">
+  <object id="47" name="Random Encounter" type="event" x="448" y="1440" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="48" name="Random Encounter" type="event" x="352" y="720" width="32" height="16">
+  <object id="48" name="Random Encounter" type="event" x="704" y="1440" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="49" name="Random Encounter" type="event" x="336" y="704" width="32" height="16">
+  <object id="49" name="Random Encounter" type="event" x="672" y="1408" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="50" name="Random Encounter" type="event" x="144" y="736" width="32" height="16">
+  <object id="50" name="Random Encounter" type="event" x="288" y="1472" width="64" height="32">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="51" name="Route Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="51" name="Route Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_home"/>
     <property name="cond1" value="not music_playing music_home"/>
    </properties>
   </object>
-  <object id="52" name="Set Environment" type="event" x="16" y="144" width="16" height="16">
+  <object id="52" name="Set Environment" type="event" x="32" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment grass"/>
     <property name="cond1" value="not environment_is grass"/>
@@ -561,21 +561,21 @@
   </object>
  </objectgroup>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="53" type="collision" x="432" y="656" width="48" height="144"/>
-  <object id="54" type="collision" x="368" y="656" width="64" height="64"/>
-  <object id="55" type="collision" x="384" y="720" width="48" height="32"/>
-  <object id="56" type="collision" x="400" y="752" width="32" height="16"/>
-  <object id="57" type="collision" x="416" y="768" width="16" height="16"/>
-  <object id="58" type="collision" x="448" y="640" width="32" height="16"/>
-  <object id="59" type="collision" x="368" y="640" width="32" height="16"/>
-  <object id="60" type="collision" x="368" y="560" width="32" height="16"/>
-  <object id="61" type="collision" x="448" y="560" width="32" height="16"/>
-  <object id="62" type="collision" x="432" y="512" width="32" height="16"/>
-  <object id="63" type="collision" x="400" y="480" width="48" height="16"/>
-  <object id="64" type="collision" x="432" y="496" width="16" height="16"/>
-  <object id="65" type="collision" x="448" y="528" width="16" height="32"/>
-  <object id="66" type="collision" x="384" y="544" width="16" height="16"/>
-  <object id="67" type="collision" x="368" y="576" width="16" height="64"/>
-  <object id="68" type="collision" x="112" y="192" width="80" height="64"/>
+  <object id="53" type="collision" x="864" y="1312" width="96" height="288"/>
+  <object id="54" type="collision" x="736" y="1312" width="128" height="128"/>
+  <object id="55" type="collision" x="768" y="1440" width="96" height="64"/>
+  <object id="56" type="collision" x="800" y="1504" width="64" height="32"/>
+  <object id="57" type="collision" x="832" y="1536" width="32" height="32"/>
+  <object id="58" type="collision" x="896" y="1280" width="64" height="32"/>
+  <object id="59" type="collision" x="736" y="1280" width="64" height="32"/>
+  <object id="60" type="collision" x="736" y="1120" width="64" height="32"/>
+  <object id="61" type="collision" x="896" y="1120" width="64" height="32"/>
+  <object id="62" type="collision" x="864" y="1024" width="64" height="32"/>
+  <object id="63" type="collision" x="800" y="960" width="96" height="32"/>
+  <object id="64" type="collision" x="864" y="992" width="32" height="32"/>
+  <object id="65" type="collision" x="896" y="1056" width="32" height="64"/>
+  <object id="66" type="collision" x="768" y="1088" width="32" height="32"/>
+  <object id="67" type="collision" x="736" y="1152" width="32" height="128"/>
+  <object id="68" type="collision" x="224" y="384" width="160" height="128"/>
  </objectgroup>
 </map>

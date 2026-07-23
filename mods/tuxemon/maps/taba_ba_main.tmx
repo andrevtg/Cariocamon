@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="19" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="51">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="19" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="51">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="scenario" value="xero"/>
   <property name="slug" value="taba_ba_main"/>
  </properties>
- <tileset firstgid="1" name="core_indoor_floors" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_floors.png" width="736" height="1344"/>
+ <tileset firstgid="1" name="core_indoor_floors" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_floors.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="3865" name="core_indoor_stairs" tilewidth="16" tileheight="16" tilecount="2970" columns="45">
-  <image source="../gfx/tilesets/core_indoor_stairs.png" width="720" height="1056"/>
+ <tileset firstgid="3865" name="core_indoor_stairs" tilewidth="32" tileheight="32" tilecount="2970" columns="45">
+  <image source="../gfx/tilesets/core_indoor_stairs.png" width="1440" height="2112"/>
  </tileset>
- <tileset firstgid="6835" name="core_indoor_walls" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_walls.png" width="736" height="1344"/>
+ <tileset firstgid="6835" name="core_indoor_walls" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_walls.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="10699" name="Interior_Floors_by_George" tilewidth="16" tileheight="16" tilecount="54" columns="9">
-  <image source="../gfx/tilesets/Interior_Floors_by_George.png" width="144" height="96"/>
+ <tileset firstgid="10699" name="Interior_Floors_by_George" tilewidth="32" tileheight="32" tilecount="54" columns="9">
+  <image source="../gfx/tilesets/Interior_Floors_by_George.png" width="288" height="192"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="19" height="15">
   <data encoding="base64" compression="zlib">
@@ -38,28 +38,28 @@
   </data>
  </layer>
  <objectgroup color="#ff2600" id="3" name="Collisions">
-  <object id="1" type="collision" x="0" y="0" width="304" height="32"/>
-  <object id="2" type="collision" x="288" y="32" width="16" height="208"/>
-  <object id="3" type="collision" x="240" y="160" width="16" height="80"/>
-  <object id="5" type="collision" x="192" y="160" width="16" height="80"/>
-  <object id="6" type="collision" x="160" y="144" width="32" height="96"/>
-  <object id="7" type="collision" x="112" y="144" width="32" height="96"/>
-  <object id="8" type="collision" x="144" y="176" width="16" height="64"/>
-  <object id="9" type="collision" x="96" y="160" width="16" height="80"/>
-  <object id="10" type="collision" x="48" y="160" width="16" height="80"/>
-  <object id="11" type="collision" x="0" y="32" width="16" height="208"/>
-  <object id="13" type="collision" x="240" y="80" width="48" height="32"/>
-  <object id="14" type="collision" x="272" y="64" width="16" height="16"/>
+  <object id="1" type="collision" x="0" y="0" width="608" height="64"/>
+  <object id="2" type="collision" x="576" y="64" width="32" height="416"/>
+  <object id="3" type="collision" x="480" y="320" width="32" height="160"/>
+  <object id="5" type="collision" x="384" y="320" width="32" height="160"/>
+  <object id="6" type="collision" x="320" y="288" width="64" height="192"/>
+  <object id="7" type="collision" x="224" y="288" width="64" height="192"/>
+  <object id="8" type="collision" x="288" y="352" width="32" height="128"/>
+  <object id="9" type="collision" x="192" y="320" width="32" height="160"/>
+  <object id="10" type="collision" x="96" y="320" width="32" height="160"/>
+  <object id="11" type="collision" x="0" y="64" width="32" height="416"/>
+  <object id="13" type="collision" x="480" y="160" width="96" height="64"/>
+  <object id="14" type="collision" x="544" y="128" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#fffb00" id="4" name="Events">
-  <object id="12" name="leave" type="event" x="144" y="160" width="16" height="16">
+  <object id="12" name="leave" type="event" x="288" y="320" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_foyer.tmx,2,2,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="17" name="create most people" type="event" x="0" y="112" width="16" height="16">
+  <object id="17" name="create most people" type="event" x="0" y="224" width="32" height="32">
    <properties>
     <property name="act10" value="create_npc christie,10,8,stand"/>
     <property name="act11" value="char_face christie,up"/>
@@ -76,7 +76,7 @@
     <property name="cond1" value="not variable_set moveonnow:yes"/>
    </properties>
   </object>
-  <object id="18" name="im here" type="event" x="144" y="144" width="16" height="16">
+  <object id="18" name="im here" type="event" x="288" y="288" width="32" height="32">
    <properties>
     <property name="act10" value="char_stop player"/>
     <property name="act11" value="lock_controls"/>
@@ -139,7 +139,7 @@
     <property name="cond3" value="not variable_set seconddialog"/>
    </properties>
   </object>
-  <object id="19" name="im here 2" type="event" x="144" y="144" width="16" height="16">
+  <object id="19" name="im here 2" type="event" x="288" y="288" width="32" height="32">
    <properties>
     <property name="act10" value="translated_dialog abouttababa7"/>
     <property name="act11" value="char_move aeble,down 1"/>
@@ -157,7 +157,7 @@
     <property name="cond1" value="is variable_set seconddialog:start"/>
    </properties>
   </object>
-  <object id="20" name="We need help" type="event" x="80" y="16" width="16" height="16">
+  <object id="20" name="We need help" type="event" x="160" y="32" width="32" height="32">
    <properties>
     <property name="act10" value="char_face christie,left"/>
     <property name="act11" value="wait 0.4"/>
@@ -193,7 +193,7 @@
     <property name="cond2" value="not variable_set thirddialog:end"/>
    </properties>
   </object>
-  <object id="23" name="confront your past" type="event" x="144" y="16" width="16" height="16">
+  <object id="23" name="confront your past" type="event" x="288" y="32" width="32" height="32">
    <properties>
     <property name="act10" value="translated_dialog explainthyselfchristie"/>
     <property name="act11" value="char_face christie,up"/>
@@ -222,7 +222,7 @@
     <property name="cond2" value="not variable_set fourthdialog:end"/>
    </properties>
   </object>
-  <object id="24" name="or don't confront it" type="event" x="208" y="16" width="16" height="16">
+  <object id="24" name="or don't confront it" type="event" x="416" y="32" width="32" height="32">
    <properties>
     <property name="act10" value="translated_dialog maybeabattle"/>
     <property name="act11" value="char_speed christie,9"/>
@@ -256,7 +256,7 @@
     <property name="cond2" value="not variable_set fifthdialog:end"/>
    </properties>
   </object>
-  <object id="26" name="oh look it's kyle" type="event" x="16" y="0" width="16" height="16">
+  <object id="26" name="oh look it's kyle" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act10" value="create_npc kyle,17,3"/>
     <property name="act11" value="char_face kyle,left"/>
@@ -293,7 +293,7 @@
     <property name="cond2" value="not variable_set sixthdialog:end"/>
    </properties>
   </object>
-  <object id="27" name="gather back" type="event" x="0" y="32" width="16" height="16">
+  <object id="27" name="gather back" type="event" x="0" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="pathfind christie,10,7"/>
     <property name="act2" value="char_face christie,up"/>
@@ -301,7 +301,7 @@
     <property name="cond1" value="is variable_set gatherback:yes"/>
    </properties>
   </object>
-  <object id="28" name="yeah kyle still kinda sucks" type="event" x="32" y="16" width="16" height="16">
+  <object id="28" name="yeah kyle still kinda sucks" type="event" x="64" y="32" width="32" height="32">
    <properties>
     <property name="act10" value="char_move speck,up 1"/>
     <property name="act11" value="wait 0.2"/>
@@ -339,7 +339,7 @@
     <property name="cond2" value="not variable_set seventhdialog:end"/>
    </properties>
   </object>
-  <object id="29" name="time to head in" type="event" x="256" y="16" width="16" height="16">
+  <object id="29" name="time to head in" type="event" x="512" y="32" width="32" height="32">
    <properties>
     <property name="act10" value="char_move speck,right 1"/>
     <property name="act11" value="char_face speck,down"/>
@@ -393,7 +393,7 @@
     <property name="cond2" value="not variable_set eighthdialog:end"/>
    </properties>
   </object>
-  <object id="30" name="block3" type="event" x="176" y="16" width="16" height="16">
+  <object id="30" name="block3" type="event" x="352" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc omnigrunt5,14,14,stand"/>
     <property name="act2" value="pathfind omnigrunt5,14,12"/>
@@ -405,7 +405,7 @@
     <property name="cond4" value="not variable_set openthree:yes"/>
    </properties>
   </object>
-  <object id="32" name="block2" type="event" x="112" y="16" width="16" height="16">
+  <object id="32" name="block2" type="event" x="224" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc omnigrunt7,5,14,stand"/>
     <property name="act2" value="pathfind omnigrunt7,5,12"/>
@@ -417,7 +417,7 @@
     <property name="cond5" value="not variable_set opentwo:yes"/>
    </properties>
   </object>
-  <object id="33" name="go elsewhere" type="event" x="64" y="176" width="32" height="16">
+  <object id="33" name="go elsewhere" type="event" x="128" y="352" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog notyettababa"/>
     <property name="cond1" value="is variable_set moveit2:now"/>
@@ -427,7 +427,7 @@
     <property name="cond5" value="not variable_set opentwo:yes"/>
    </properties>
   </object>
-  <object id="34" name="go elsewhere" type="event" x="208" y="176" width="32" height="16">
+  <object id="34" name="go elsewhere" type="event" x="416" y="352" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog notyettababa"/>
     <property name="cond1" value="is variable_set moveit3:now"/>
@@ -437,7 +437,7 @@
     <property name="cond5" value="not variable_set openthree:yes"/>
    </properties>
   </object>
-  <object id="35" name="go elsewhere" type="event" x="256" y="176" width="32" height="16">
+  <object id="35" name="go elsewhere" type="event" x="512" y="352" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog notyettababafourth"/>
     <property name="cond1" value="not variable_set allthree:done"/>
@@ -446,7 +446,7 @@
     <property name="cond4" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="37" name="locked" type="event" x="272" y="48" width="16" height="16">
+  <object id="37" name="locked" type="event" x="544" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog itslocked"/>
     <property name="act2" value="char_move player,left 1"/>
@@ -455,7 +455,7 @@
     <property name="cond3" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="38" name="block4" type="event" x="0" y="64" width="16" height="16">
+  <object id="38" name="block4" type="event" x="0" y="128" width="32" height="32">
    <properties>
     <property name="act20" value="create_npc omnigrunt2,17,2,stand"/>
     <property name="act21" value="char_face omnigrunt2,right"/>
@@ -469,21 +469,21 @@
     <property name="cond4" value="not variable_set allthree:done"/>
    </properties>
   </object>
-  <object id="39" name="to passageway 1" type="event" x="16" y="224" width="16" height="16">
+  <object id="39" name="to passageway 1" type="event" x="32" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_1.tmx,16,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="40" name="to passageway1-2" type="event" x="32" y="224" width="16" height="16">
+  <object id="40" name="to passageway1-2" type="event" x="64" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_1.tmx,17,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="41" name="block1" type="event" x="0" y="96" width="16" height="16">
+  <object id="41" name="block1" type="event" x="0" y="192" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc omnigrunt9,2,14,stand"/>
     <property name="act2" value="pathfind omnigrunt9,2,12"/>
@@ -494,55 +494,55 @@
     <property name="cond3" value="not char_exists omnigrunt10"/>
    </properties>
   </object>
-  <object id="42" name="to passageway 2" type="event" x="64" y="224" width="16" height="16">
+  <object id="42" name="to passageway 2" type="event" x="128" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_2.tmx,2,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="43" name="to passageway2-2" type="event" x="80" y="224" width="16" height="16">
+  <object id="43" name="to passageway2-2" type="event" x="160" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_2.tmx,3,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="44" name="to passageway 3" type="event" x="208" y="224" width="16" height="16">
+  <object id="44" name="to passageway 3" type="event" x="416" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_3.tmx,9,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="45" name="to passageway3-2" type="event" x="224" y="224" width="16" height="16">
+  <object id="45" name="to passageway3-2" type="event" x="448" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_3.tmx,10,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="46" name="to passageway 4" type="event" x="256" y="224" width="16" height="16">
+  <object id="46" name="to passageway 4" type="event" x="512" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_4.tmx,3,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="47" name="to passageway 4-2" type="event" x="272" y="224" width="16" height="16">
+  <object id="47" name="to passageway 4-2" type="event" x="544" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_4.tmx,4,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="48" name="battle environment" type="event" x="64" y="0" width="16" height="16">
+  <object id="48" name="battle environment" type="event" x="128" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment interior"/>
     <property name="cond1" value="not environment_is interior"/>
    </properties>
   </object>
-  <object id="49" name="time to face the master" type="event" x="16" y="96" width="16" height="16">
+  <object id="49" name="time to face the master" type="event" x="32" y="192" width="32" height="32">
    <properties>
     <property name="act10" value="lock_controls"/>
     <property name="act11" value="translated_dialog headupstairstababa"/>
@@ -575,7 +575,7 @@
     <property name="cond3" value="not variable_set kyletalkafter4th:done"/>
    </properties>
   </object>
-  <object id="50" name="movin on up" type="event" x="272" y="48" width="16" height="16">
+  <object id="50" name="movin on up" type="event" x="544" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_stairwell_1.tmx,1,8,0.5"/>
     <property name="cond1" value="is variable_set fourthacolyte:finished"/>

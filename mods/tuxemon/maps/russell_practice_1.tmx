@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="21" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="14">
- <tileset firstgid="1" name="KelvinShadewing_Terrain" tilewidth="16" tileheight="16" tilecount="285" columns="19">
-  <image source="../gfx/tilesets/KelvinShadewing_Terrain.png" width="304" height="240"/>
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="21" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="14">
+ <tileset firstgid="1" name="KelvinShadewing_Terrain" tilewidth="32" tileheight="32" tilecount="285" columns="19">
+  <image source="../gfx/tilesets/KelvinShadewing_Terrain.png" width="608" height="480"/>
  </tileset>
- <tileset firstgid="286" name="KelvinShadewing_Buildings" tilewidth="16" tileheight="16" tilecount="680" columns="20">
-  <image source="../gfx/tilesets/KelvinShadewing_Buildings.png" width="320" height="544"/>
+ <tileset firstgid="286" name="KelvinShadewing_Buildings" tilewidth="32" tileheight="32" tilecount="680" columns="20">
+  <image source="../gfx/tilesets/KelvinShadewing_Buildings.png" width="640" height="1088"/>
  </tileset>
  <objectgroup color="#ff007f" id="7" name="Collision">
-  <object id="8" type="collision" x="0" y="16" width="320" height="32"/>
-  <object id="9" type="collision" x="288" y="16" width="32" height="320"/>
-  <object id="10" type="collision" x="0" y="304" width="320" height="32"/>
-  <object id="11" type="collision" x="0" y="16" width="32" height="320"/>
-  <object id="12" type="collision" x="32" y="240" width="96" height="16"/>
-  <object id="13" type="collision" x="256" y="240" width="16" height="16"/>
+  <object id="8" type="collision" x="0" y="32" width="640" height="64"/>
+  <object id="9" type="collision" x="576" y="32" width="64" height="640"/>
+  <object id="10" type="collision" x="0" y="608" width="640" height="64"/>
+  <object id="11" type="collision" x="0" y="32" width="64" height="640"/>
+  <object id="12" type="collision" x="64" y="480" width="192" height="32"/>
+  <object id="13" type="collision" x="512" y="480" width="32" height="32"/>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="20" height="21">
   <data encoding="csv">

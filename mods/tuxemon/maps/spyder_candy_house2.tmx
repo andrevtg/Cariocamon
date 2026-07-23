@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="10" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="76">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="10" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="76">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -30,14 +30,14 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="62" type="collision" x="32" y="80" width="32" height="32"/>
-  <object id="63" type="collision" x="96" y="64" width="32" height="32"/>
-  <object id="64" type="collision" x="0" y="16" width="160" height="16"/>
-  <object id="65" type="collision" x="0" y="32" width="64" height="16"/>
-  <object id="66" type="collision" x="80" y="32" width="80" height="16"/>
+  <object id="62" type="collision" x="64" y="160" width="64" height="64"/>
+  <object id="63" type="collision" x="192" y="128" width="64" height="64"/>
+  <object id="64" type="collision" x="0" y="32" width="320" height="32"/>
+  <object id="65" type="collision" x="0" y="64" width="128" height="32"/>
+  <object id="66" type="collision" x="160" y="64" width="160" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="68" name="Go Outside" type="event" x="96" y="112" width="16" height="16">
+  <object id="68" name="Go Outside" type="event" x="192" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_candy_town.tmx,2,25,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -45,26 +45,26 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="69" name="Create NPCs" type="event" x="0" y="0" width="16" height="16">
+  <object id="69" name="Create NPCs" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_candyhouse2_barney,8,4"/>
     <property name="act2" value="char_face spyder_candyhouse2_barney,left"/>
     <property name="cond1" value="not char_exists spyder_candyhouse2_barney"/>
    </properties>
   </object>
-  <object id="70" name="Captain" type="event" x="144" y="80" width="16" height="16" rotation="180">
+  <object id="70" name="Captain" type="event" x="288" y="160" width="32" height="32" rotation="180">
    <properties>
     <property name="act1" value="translated_dialog spyder_candyhouse2_captain"/>
     <property name="behav1" value="talk spyder_candyhouse2_barney"/>
    </properties>
   </object>
-  <object id="72" name="Create Prof" type="event" x="64" y="32" width="16" height="16">
+  <object id="72" name="Create Prof" type="event" x="128" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_candyhouse2_indiana,4,2"/>
     <property name="cond1" value="not char_exists spyder_candyhouse2_indiana"/>
    </properties>
   </object>
-  <object id="73" name="Talk Prof - No Cateye" type="event" x="80" y="0" width="16" height="16">
+  <object id="73" name="Talk Prof - No Cateye" type="event" x="160" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_candy_prof1"/>
     <property name="act2" value="translated_dialog spyder_candy_prof_nocateye"/>
@@ -73,7 +73,7 @@
     <property name="cond2" value="not variable_set prof_candy_hastraded:yes"/>
    </properties>
   </object>
-  <object id="74" name="Talk Prof - Has Cateye" type="event" x="64" y="16" width="16" height="16">
+  <object id="74" name="Talk Prof - Has Cateye" type="event" x="128" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_candy_prof1"/>
     <property name="act2" value="translated_dialog_choice yes:no,prof_willtrade"/>
@@ -82,7 +82,7 @@
     <property name="cond2" value="not variable_set prof_candy_hastraded:yes"/>
    </properties>
   </object>
-  <object id="75" name="Talk Prof - Will Trade Cateye" type="event" x="64" y="0" width="16" height="16">
+  <object id="75" name="Talk Prof - Will Trade Cateye" type="event" x="128" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_candy_prof_willtrade"/>
     <property name="act2" value="get_player_monster cateye,slug,cateye"/>

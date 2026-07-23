@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="4">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="4">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -79,7 +79,7 @@
    <property name="act20" value="char_face unknownwitch,right"/>
    <property name="cond10" value="not char_exists unknownwitch"/>
   </properties>
-  <object id="2" name="Exit To Azure Town" type="event" x="96" y="176" width="16" height="16">
+  <object id="2" name="Exit To Azure Town" type="event" x="192" y="352" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,azure_town.tmx,9,11,0.3"/>
     <property name="cond10" value="is char_at player"/>

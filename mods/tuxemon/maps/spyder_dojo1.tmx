@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="24" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="62">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="24" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="62">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -32,24 +32,24 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="6" name="Collisions">
-  <object id="3" type="collision" x="0" y="32" width="16" height="160"/>
-  <object id="4" type="collision" x="0" y="16" width="384" height="16"/>
-  <object id="5" type="collision" x="368" y="32" width="16" height="160"/>
-  <object id="6" type="collision" x="80" y="32" width="16" height="112"/>
-  <object id="7" type="collision" x="288" y="32" width="16" height="112"/>
-  <object id="8" type="collision" x="208" y="32" width="16" height="112"/>
-  <object id="9" type="collision" x="160" y="32" width="16" height="112"/>
-  <object id="10" type="collision" x="176" y="64" width="32" height="16"/>
-  <object id="11" type="collision" x="16" y="96" width="32" height="16"/>
-  <object id="12" type="collision" x="48" y="64" width="32" height="16"/>
-  <object id="13" type="collision" x="96" y="96" width="32" height="16"/>
-  <object id="14" type="collision" x="128" y="64" width="32" height="16"/>
-  <object id="15" type="collision" x="224" y="96" width="32" height="16"/>
-  <object id="16" type="collision" x="256" y="64" width="32" height="16"/>
-  <object id="17" type="collision" x="304" y="96" width="32" height="16"/>
-  <object id="18" type="collision" x="336" y="64" width="32" height="16"/>
-  <object id="27" type="collision-line" x="192" y="96">
-   <polyline points="0,0 16,0"/>
+  <object id="3" type="collision" x="0" y="64" width="32" height="320"/>
+  <object id="4" type="collision" x="0" y="32" width="768" height="32"/>
+  <object id="5" type="collision" x="736" y="64" width="32" height="320"/>
+  <object id="6" type="collision" x="160" y="64" width="32" height="224"/>
+  <object id="7" type="collision" x="576" y="64" width="32" height="224"/>
+  <object id="8" type="collision" x="416" y="64" width="32" height="224"/>
+  <object id="9" type="collision" x="320" y="64" width="32" height="224"/>
+  <object id="10" type="collision" x="352" y="128" width="64" height="32"/>
+  <object id="11" type="collision" x="32" y="192" width="64" height="32"/>
+  <object id="12" type="collision" x="96" y="128" width="64" height="32"/>
+  <object id="13" type="collision" x="192" y="192" width="64" height="32"/>
+  <object id="14" type="collision" x="256" y="128" width="64" height="32"/>
+  <object id="15" type="collision" x="448" y="192" width="64" height="32"/>
+  <object id="16" type="collision" x="512" y="128" width="64" height="32"/>
+  <object id="17" type="collision" x="608" y="192" width="64" height="32"/>
+  <object id="18" type="collision" x="672" y="128" width="64" height="32"/>
+  <object id="27" type="collision-line" x="384" y="192">
+   <polyline points="0,0 32,0"/>
   </object>
  </objectgroup>
 </map>

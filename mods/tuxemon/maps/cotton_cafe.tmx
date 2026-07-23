@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="12" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="16">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="12" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="16">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -33,22 +33,22 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="1" type="collision" x="0" y="80" width="80" height="16"/>
-  <object id="2" type="collision" x="64" y="48" width="16" height="48"/>
-  <object id="3" type="collision" x="0" y="0" width="192" height="48"/>
-  <object id="5" type="collision" x="176" y="32" width="16" height="32"/>
-  <object id="9" type="collision" x="64" y="128" width="32" height="32"/>
-  <object id="10" type="collision" x="128" y="96" width="32" height="32"/>
-  <object id="11" type="collision" x="176" y="176" width="16" height="16"/>
+  <object id="1" type="collision" x="0" y="160" width="160" height="32"/>
+  <object id="2" type="collision" x="128" y="96" width="32" height="96"/>
+  <object id="3" type="collision" x="0" y="0" width="384" height="96"/>
+  <object id="5" type="collision" x="352" y="64" width="32" height="64"/>
+  <object id="9" type="collision" x="128" y="256" width="64" height="64"/>
+  <object id="10" type="collision" x="256" y="192" width="64" height="64"/>
+  <object id="11" type="collision" x="352" y="352" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="12" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="12" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act10" value="play_music music_cathedral_theme"/>
     <property name="cond10" value="not music_playing music_cathedral_theme"/>
    </properties>
   </object>
-  <object id="13" name="Teleport to Cotton Town" type="event" x="128" y="176" width="16" height="16">
+  <object id="13" name="Teleport to Cotton Town" type="event" x="256" y="352" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,cotton_town.tmx,10,17,0.3"/>
     <property name="act20" value="char_face player,down"/>
@@ -56,7 +56,7 @@
     <property name="cond20" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="15" name="Go Basement" type="event" x="0" y="160" width="16" height="16">
+  <object id="15" name="Go Basement" type="event" x="0" y="320" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,cotton_cafe_basement.tmx,1,10,0.3"/>
     <property name="act20" value="char_face player,right"/>

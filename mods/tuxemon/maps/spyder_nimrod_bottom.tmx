@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="18" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="72">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="18" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="72">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -7,8 +7,8 @@
   <property name="scenario" value="spyder"/>
   <property name="slug" value="nimrod_bottom"/>
  </properties>
- <tileset firstgid="1" name="Office_interiors_shadowless_16x16" tilewidth="16" tileheight="16" tilecount="528" columns="22">
-  <image source="../gfx/tilesets/Office_interiors_shadowless_16x16.png" width="352" height="384"/>
+ <tileset firstgid="1" name="Office_interiors_shadowless_16x16" tilewidth="32" tileheight="32" tilecount="528" columns="22">
+  <image source="../gfx/tilesets/Office_interiors_shadowless_16x16.png" width="704" height="768"/>
  </tileset>
  <tileset firstgid="529" source="../gfx/tilesets/core_indoor_floors.tsx"/>
  <tileset firstgid="4393" source="../gfx/tilesets/core_indoor_walls.tsx"/>
@@ -35,30 +35,30 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="3" type="collision" x="0" y="0" width="288" height="32"/>
-  <object id="6" type="collision" x="16" y="208" width="96" height="32"/>
-  <object id="7" type="collision" x="96" y="240" width="16" height="64"/>
-  <object id="8" type="collision" x="176" y="208" width="16" height="112"/>
-  <object id="9" type="collision" x="192" y="208" width="80" height="32"/>
-  <object id="11" type="collision" x="176" y="80" width="80" height="32"/>
-  <object id="12" type="collision" x="176" y="112" width="32" height="16"/>
-  <object id="13" type="collision" x="224" y="112" width="32" height="16"/>
-  <object id="14" type="collision" x="16" y="80" width="112" height="32"/>
-  <object id="17" type="collision" x="192" y="64" width="16" height="16"/>
-  <object id="18" type="collision" x="256" y="48" width="16" height="160"/>
-  <object id="20" type="collision" x="80" y="48" width="16" height="32"/>
-  <object id="21" type="collision" x="32" y="32" width="16" height="32"/>
-  <object id="22" type="collision" x="224" y="32" width="16" height="32"/>
-  <object id="23" type="collision" x="32" y="112" width="32" height="16"/>
-  <object id="24" type="collision" x="96" y="112" width="32" height="16"/>
-  <object id="46" type="collision" x="0" y="80" width="16" height="160"/>
-  <object id="50" type="collision" x="240" y="256" width="16" height="48"/>
-  <object id="51" type="collision" x="256" y="256" width="32" height="16"/>
-  <object id="57" type="collision" x="112" y="272" width="16" height="32"/>
-  <object id="63" type="collision" x="32" y="256" width="48" height="32"/>
+  <object id="3" type="collision" x="0" y="0" width="576" height="64"/>
+  <object id="6" type="collision" x="32" y="416" width="192" height="64"/>
+  <object id="7" type="collision" x="192" y="480" width="32" height="128"/>
+  <object id="8" type="collision" x="352" y="416" width="32" height="224"/>
+  <object id="9" type="collision" x="384" y="416" width="160" height="64"/>
+  <object id="11" type="collision" x="352" y="160" width="160" height="64"/>
+  <object id="12" type="collision" x="352" y="224" width="64" height="32"/>
+  <object id="13" type="collision" x="448" y="224" width="64" height="32"/>
+  <object id="14" type="collision" x="32" y="160" width="224" height="64"/>
+  <object id="17" type="collision" x="384" y="128" width="32" height="32"/>
+  <object id="18" type="collision" x="512" y="96" width="32" height="320"/>
+  <object id="20" type="collision" x="160" y="96" width="32" height="64"/>
+  <object id="21" type="collision" x="64" y="64" width="32" height="64"/>
+  <object id="22" type="collision" x="448" y="64" width="32" height="64"/>
+  <object id="23" type="collision" x="64" y="224" width="64" height="32"/>
+  <object id="24" type="collision" x="192" y="224" width="64" height="32"/>
+  <object id="46" type="collision" x="0" y="160" width="32" height="320"/>
+  <object id="50" type="collision" x="480" y="512" width="32" height="96"/>
+  <object id="51" type="collision" x="512" y="512" width="64" height="32"/>
+  <object id="57" type="collision" x="224" y="544" width="32" height="64"/>
+  <object id="63" type="collision" x="64" y="512" width="96" height="64"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="4" name="Events">
-  <object id="1" name="Teleport to Flower City" type="event" x="128" y="304" width="48" height="16">
+  <object id="1" name="Teleport to Flower City" type="event" x="256" y="608" width="96" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_flower_city.tmx,19,10,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -66,7 +66,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="2" name="Teleport to Nimrod Middle" type="event" x="256" y="272" width="32" height="32">
+  <object id="2" name="Teleport to Nimrod Middle" type="event" x="512" y="544" width="64" height="64">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_nimrod_middle.tmx,15,18,0.3"/>
     <property name="act2" value="char_face player,left"/>
@@ -74,20 +74,20 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="34" name="Create Dirk" type="event" x="64" y="304" width="16" height="16">
+  <object id="34" name="Create Dirk" type="event" x="128" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_dirk,4,19"/>
     <property name="act2" value="char_face spyder_nimrod_dirk,up"/>
     <property name="cond1" value="not char_exists spyder_nimrod_dirk"/>
    </properties>
   </object>
-  <object id="35" name="Talk Dirk" type="event" x="96" y="256" width="16" height="16">
+  <object id="35" name="Talk Dirk" type="event" x="192" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_nimrod_dirk1"/>
     <property name="behav1" value="talk spyder_nimrod_dirk"/>
    </properties>
   </object>
-  <object id="38" name="Create Guard" type="event" x="112" y="304" width="16" height="16">
+  <object id="38" name="Create Guard" type="event" x="224" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_jake,7,19"/>
     <property name="act2" value="char_face spyder_nimrod_jake,right"/>
@@ -95,20 +95,20 @@
     <property name="cond2" value="not battle_outcome_count player,won,spyder_nimrod_tru,1"/>
    </properties>
   </object>
-  <object id="39" name="Talk Guard" type="event" x="96" y="272" width="16" height="16">
+  <object id="39" name="Talk Guard" type="event" x="192" y="544" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_nimrod_guard1"/>
     <property name="behav1" value="talk spyder_nimrod_jake"/>
    </properties>
   </object>
-  <object id="40" name="Create Rebel" type="event" x="192" y="240" width="16" height="16">
+  <object id="40" name="Create Rebel" type="event" x="384" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_rebel,12,15"/>
     <property name="act2" value="char_face spyder_nimrod_rebel,right"/>
     <property name="cond1" value="not char_exists spyder_nimrod_rebel"/>
    </properties>
   </object>
-  <object id="41" name="Talk Rebel" type="event" x="192" y="256" width="16" height="16">
+  <object id="41" name="Talk Rebel" type="event" x="384" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_rebel,pre_battle"/>
     <property name="act2" value="add_monster grimachin,30,spyder_nimrod_rebel,5,10"/>
@@ -118,13 +118,13 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_rebel"/>
    </properties>
   </object>
-  <object id="42" name="Create Bowie" type="event" x="16" y="240" width="16" height="16">
+  <object id="42" name="Create Bowie" type="event" x="32" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_bowie,1,15"/>
     <property name="cond1" value="not char_exists spyder_nimrod_bowie"/>
    </properties>
   </object>
-  <object id="43" name="Talk Bowie" type="event" x="16" y="224" width="16" height="16">
+  <object id="43" name="Talk Bowie" type="event" x="32" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_bowie,pre_battle"/>
     <property name="act2" value="add_monster tigrock,40,spyder_nimrod_bowie,5,10"/>
@@ -135,14 +135,14 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_bowie"/>
    </properties>
   </object>
-  <object id="44" name="Create Tru" type="event" x="16" y="288" width="16" height="16">
+  <object id="44" name="Create Tru" type="event" x="32" y="576" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_tru,1,18"/>
     <property name="act2" value="char_face spyder_nimrod_tru,right"/>
     <property name="cond1" value="not char_exists spyder_nimrod_tru"/>
    </properties>
   </object>
-  <object id="45" name="Talk Tru" type="event" x="96" y="240" width="16" height="16">
+  <object id="45" name="Talk Tru" type="event" x="192" y="480" width="32" height="32">
    <properties>
     <property name="act01" value="char_talk spyder_nimrod_tru,pre_battle"/>
     <property name="act02" value="add_monster grimachin,25,spyder_nimrod_tru,5,10"/>
@@ -159,7 +159,7 @@
     <property name="cond1" value="not battle_outcome_count player,won,spyder_nimrod_tru,1"/>
    </properties>
   </object>
-  <object id="48" name="Teleport to  Flower City" type="event" x="0" y="256" width="16" height="48">
+  <object id="48" name="Teleport to  Flower City" type="event" x="0" y="512" width="32" height="96">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_flower_city.tmx,11,4,0.3"/>
     <property name="act2" value="char_face player,left"/>
@@ -167,13 +167,13 @@
     <property name="cond2" value="is char_facing player,left"/>
    </properties>
   </object>
-  <object id="52" name="Environment" type="event" x="16" y="0" width="16" height="16">
+  <object id="52" name="Environment" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment interior"/>
     <property name="cond1" value="not environment_is interior"/>
    </properties>
   </object>
-  <object id="53" name="Talk Rebel" type="event" x="208" y="240" width="32" height="16">
+  <object id="53" name="Talk Rebel" type="event" x="416" y="480" width="64" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_rebel"/>
@@ -188,7 +188,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="54" name="Talk Tru" type="event" x="32" y="288" width="32" height="16">
+  <object id="54" name="Talk Tru" type="event" x="64" y="576" width="64" height="32">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="pathfind_to_char player,spyder_nimrod_tru"/>
@@ -209,7 +209,7 @@
     <property name="cond2" value="is char_at player"/>
    </properties>
   </object>
-  <object id="55" name="Talk Bowie" type="event" x="16" y="256" width="16" height="32">
+  <object id="55" name="Talk Bowie" type="event" x="32" y="512" width="32" height="64">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_bowie"/>
@@ -225,34 +225,34 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="58" name="Post Talk Rebel" type="event" x="176" y="240" width="16" height="16">
+  <object id="58" name="Post Talk Rebel" type="event" x="352" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_rebel,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_rebel"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_rebel"/>
    </properties>
   </object>
-  <object id="59" name="Post Talk Bowie" type="event" x="32" y="224" width="16" height="16">
+  <object id="59" name="Post Talk Bowie" type="event" x="64" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_bowie,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_bowie"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_bowie"/>
    </properties>
   </object>
-  <object id="60" name="Post Talk Tru" type="event" x="96" y="224" width="16" height="16">
+  <object id="60" name="Post Talk Tru" type="event" x="192" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_nimrod_tru3"/>
     <property name="behav1" value="talk spyder_nimrod_tru"/>
     <property name="cond1" value="is battle_outcome_count player,won,spyder_nimrod_tru,1"/>
    </properties>
   </object>
-  <object id="62" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="62" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_10_empire"/>
     <property name="cond1" value="not music_playing music_10_empire"/>
    </properties>
   </object>
-  <object id="64" name="Flashback Xeon" type="event" x="112" y="112" width="16" height="16">
+  <object id="64" name="Flashback Xeon" type="event" x="224" y="224" width="32" height="32">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act03" value="set_layer 102:51:0:128"/>
@@ -294,7 +294,7 @@
     <property name="cond1" value="is variable_set xeon_creation:yes"/>
    </properties>
   </object>
-  <object id="65" name="Teleport to Nimrod Room" type="event" x="0" y="48" width="16" height="16">
+  <object id="65" name="Teleport to Nimrod Room" type="event" x="0" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_nimrod_room.tmx,8,3,0.3"/>
     <property name="act2" value="char_face player,left"/>
@@ -302,13 +302,13 @@
     <property name="cond2" value="is char_facing player,left"/>
    </properties>
   </object>
-  <object id="66" name="Create Dr Elara" type="event" x="64" y="176" width="16" height="16">
+  <object id="66" name="Create Dr Elara" type="event" x="128" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_elara,4,11"/>
     <property name="cond1" value="not char_exists spyder_nimrod_elara"/>
    </properties>
   </object>
-  <object id="67" name="Talk Elara" type="event" x="80" y="208" width="16" height="16">
+  <object id="67" name="Talk Elara" type="event" x="160" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_xeon_creation_trigger"/>
     <property name="act2" value="translated_dialog_choice no:yes,xeon_creation"/>
@@ -316,21 +316,21 @@
     <property name="cond1" value="not variable_set xeon_creation"/>
    </properties>
   </object>
-  <object id="68" name="Talk Elara Yes" type="event" x="96" y="208" width="16" height="16">
+  <object id="68" name="Talk Elara Yes" type="event" x="192" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_xeon_creation_trigger_after"/>
     <property name="behav1" value="talk spyder_nimrod_elara"/>
     <property name="cond1" value="is variable_set xeon_creation:done"/>
    </properties>
   </object>
-  <object id="69" name="Talk Elara No" type="event" x="64" y="208" width="16" height="16">
+  <object id="69" name="Talk Elara No" type="event" x="128" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_xeon_creation_trigger_no"/>
     <property name="behav1" value="talk spyder_nimrod_elara"/>
     <property name="cond1" value="is variable_set xeon_creation:no"/>
    </properties>
   </object>
-  <object id="70" name="PC Email" type="event" x="64" y="256" width="16" height="16">
+  <object id="70" name="PC Email" type="event" x="128" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_nimrod_pc_message1"/>
     <property name="act2" value="translated_dialog spyder_nimrod_pc_message2"/>
@@ -338,7 +338,7 @@
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="71" name="Notes" type="event" x="32" y="256" width="16" height="16">
+  <object id="71" name="Notes" type="event" x="64" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_nimrod_note1"/>
     <property name="act2" value="translated_dialog spyder_nimrod_note2"/>

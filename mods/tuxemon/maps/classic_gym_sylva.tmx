@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1-8-g449813058" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="54">
+<map version="1.10" tiledversion="1.12.1-8-g449813058" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="54">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -30,22 +30,22 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="4" name="Collisions">
-  <object id="13" type="collision" x="0" y="32" width="320" height="16"/>
+  <object id="13" type="collision" x="0" y="64" width="640" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="15" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="15" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_cathedral_theme"/>
     <property name="cond1" value="not music_playing music_cathedral_theme"/>
    </properties>
   </object>
-  <object id="14" name="Create Gym Leader" type="event" x="160" y="80" width="16" height="16">
+  <object id="14" name="Create Gym Leader" type="event" x="320" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc classic_gym_leader_sylva,10,5"/>
     <property name="cond1" value="not char_exists classic_gym_leader_sylva"/>
    </properties>
   </object>
-  <object id="17" name="Talk Gym Leader" type="event" x="160" y="96" width="16" height="16">
+  <object id="17" name="Talk Gym Leader" type="event" x="320" y="192" width="32" height="32">
    <properties>
     <property name="act11" value="char_talk classic_gym_leader_sylva,pre_battle"/>
     <property name="act12" value="add_monster hydrone,20,classic_gym_leader_sylva,5,10"/>
@@ -56,7 +56,7 @@
     <property name="cond1" value="not battle_outcome player,won,classic_gym_leader_sylva"/>
    </properties>
   </object>
-  <object id="16" name="Environment" type="event" x="16" y="0" width="16" height="16">
+  <object id="16" name="Environment" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment interior"/>
     <property name="cond1" value="not environment_is interior"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="18" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="59">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="18" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="59">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -32,19 +32,19 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="6" name="Collisions">
-  <object id="3" type="collision" x="0" y="256" width="288" height="32"/>
-  <object id="4" type="collision" x="32" y="112" width="224" height="16"/>
-  <object id="5" type="collision" x="0" y="16" width="288" height="16"/>
-  <object id="6" type="collision" x="0" y="160" width="224" height="16"/>
-  <object id="15" type="collision" x="240" y="160" width="48" height="16"/>
-  <object id="31" type="collision" x="48" y="96" width="16" height="16"/>
-  <object id="32" type="collision" x="80" y="96" width="16" height="16"/>
-  <object id="33" type="collision" x="112" y="96" width="16" height="16"/>
-  <object id="34" type="collision" x="192" y="96" width="16" height="16"/>
-  <object id="35" type="collision" x="224" y="96" width="16" height="16"/>
+  <object id="3" type="collision" x="0" y="512" width="576" height="64"/>
+  <object id="4" type="collision" x="64" y="224" width="448" height="32"/>
+  <object id="5" type="collision" x="0" y="32" width="576" height="32"/>
+  <object id="6" type="collision" x="0" y="320" width="448" height="32"/>
+  <object id="15" type="collision" x="480" y="320" width="96" height="32"/>
+  <object id="31" type="collision" x="96" y="192" width="32" height="32"/>
+  <object id="32" type="collision" x="160" y="192" width="32" height="32"/>
+  <object id="33" type="collision" x="224" y="192" width="32" height="32"/>
+  <object id="34" type="collision" x="384" y="192" width="32" height="32"/>
+  <object id="35" type="collision" x="448" y="192" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="4" name="Events">
-  <object id="1" name="Teleport to Nimrod Bottom" type="event" x="256" y="288" width="16" height="32">
+  <object id="1" name="Teleport to Nimrod Bottom" type="event" x="512" y="576" width="32" height="64">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_nimrod_bottom.tmx,16,19,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -52,7 +52,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="2" name="Teleport to Nimrod Top" type="event" x="0" y="288" width="32" height="16">
+  <object id="2" name="Teleport to Nimrod Top" type="event" x="0" y="576" width="64" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_nimrod_top.tmx,0,17,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -60,20 +60,20 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="7" name="Teleport to Nimrod Bottom" type="event" x="80" y="240" width="16" height="16">
+  <object id="7" name="Teleport to Nimrod Bottom" type="event" x="160" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_nimrod_bottom.tmx,2,15,0.3"/>
     <property name="act2" value="char_face player,down"/>
     <property name="cond1" value="is char_at player"/>
    </properties>
   </object>
-  <object id="13" name="Create Thatcher" type="event" x="48" y="144" width="16" height="16">
+  <object id="13" name="Create Thatcher" type="event" x="96" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_thatcher,3,9"/>
     <property name="cond1" value="not char_exists spyder_nimrod_thatcher"/>
    </properties>
   </object>
-  <object id="14" name="Talk Thatcher" type="event" x="32" y="144" width="16" height="16">
+  <object id="14" name="Talk Thatcher" type="event" x="64" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_thatcher,pre_battle"/>
     <property name="act2" value="add_monster squabbit,25,spyder_nimrod_thatcher,5,10"/>
@@ -84,14 +84,14 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_thatcher"/>
    </properties>
   </object>
-  <object id="16" name="Create Honour" type="event" x="240" y="64" width="16" height="16">
+  <object id="16" name="Create Honour" type="event" x="480" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_honour,15,4"/>
     <property name="act2" value="char_face spyder_nimrod_honour,left"/>
     <property name="cond1" value="not char_exists spyder_nimrod_honour"/>
    </properties>
   </object>
-  <object id="17" name="Talk Honour" type="event" x="256" y="64" width="16" height="16">
+  <object id="17" name="Talk Honour" type="event" x="512" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_honour,pre_battle"/>
     <property name="act2" value="add_monster embazook,25,spyder_nimrod_honour,5,10"/>
@@ -102,13 +102,13 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_honour"/>
    </properties>
   </object>
-  <object id="18" name="Create Antimony" type="event" x="64" y="176" width="16" height="16">
+  <object id="18" name="Create Antimony" type="event" x="128" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_antimony,4,11"/>
     <property name="cond1" value="not char_exists spyder_nimrod_antimony"/>
    </properties>
   </object>
-  <object id="19" name="Talk Antimony" type="event" x="80" y="176" width="16" height="16">
+  <object id="19" name="Talk Antimony" type="event" x="160" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_antimony,pre_battle"/>
     <property name="act2" value="add_monster komodraw,35,spyder_nimrod_antimony,5,10"/>
@@ -118,7 +118,7 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_antimony"/>
    </properties>
   </object>
-  <object id="20" name="Create Chrome Robo" type="event" x="144" y="176" width="16" height="16">
+  <object id="20" name="Create Chrome Robo" type="event" x="288" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_chromerobo,9,11"/>
     <property name="act2" value="char_face spyder_nimrod_chromerobo,down"/>
@@ -126,7 +126,7 @@
     <property name="cond2" value="not battle_outcome player,won,spyder_nimrod_chromerobo"/>
    </properties>
   </object>
-  <object id="21" name="Talk Chrome Robo" type="event" x="128" y="176" width="16" height="16">
+  <object id="21" name="Talk Chrome Robo" type="event" x="256" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_chromerobo,pre_battle"/>
     <property name="act2" value="add_monster chrome_robo,25,spyder_nimrod_chromerobo,5,10"/>
@@ -137,7 +137,7 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_chromerobo"/>
    </properties>
   </object>
-  <object id="24" name="Create Xeon" type="event" x="160" y="240" width="16" height="16">
+  <object id="24" name="Create Xeon" type="event" x="320" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_xeon,10,15"/>
     <property name="act2" value="char_face spyder_nimrod_xeon,up"/>
@@ -145,7 +145,7 @@
     <property name="cond2" value="not battle_outcome player,won,spyder_nimrod_xeon"/>
    </properties>
   </object>
-  <object id="25" name="Talk Xeon" type="event" x="176" y="240" width="16" height="16">
+  <object id="25" name="Talk Xeon" type="event" x="352" y="480" width="32" height="32">
    <properties>
     <property name="act3" value="start_battle player,spyder_nimrod_xeon"/>
     <property name="act4" value="char_talk spyder_nimrod_xeon,post_battle_lose"/>
@@ -154,14 +154,14 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_xeon"/>
    </properties>
   </object>
-  <object id="26" name="Create Argon" type="event" x="208" y="144" width="16" height="16">
+  <object id="26" name="Create Argon" type="event" x="416" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_argon,13,9"/>
     <property name="act2" value="char_face spyder_nimrod_argon,right"/>
     <property name="cond1" value="not char_exists spyder_nimrod_argon"/>
    </properties>
   </object>
-  <object id="27" name="Talk Argon" type="event" x="192" y="144" width="16" height="16">
+  <object id="27" name="Talk Argon" type="event" x="384" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_argon,pre_battle"/>
     <property name="act2" value="add_monster chrome_robo,30,spyder_nimrod_argon,5,10"/>
@@ -171,14 +171,14 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_argon"/>
    </properties>
   </object>
-  <object id="29" name="Create Archer" type="event" x="48" y="208" width="16" height="16">
+  <object id="29" name="Create Archer" type="event" x="96" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_nimrod_archer,3,13"/>
     <property name="act2" value="char_face spyder_nimrod_archer,right"/>
     <property name="cond1" value="not char_exists spyder_nimrod_archer"/>
    </properties>
   </object>
-  <object id="30" name="Talk Archer" type="event" x="32" y="208" width="16" height="16">
+  <object id="30" name="Talk Archer" type="event" x="64" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_archer,pre_battle"/>
     <property name="act2" value="add_monster sharpfin,25,spyder_nimrod_archer,5,10"/>
@@ -190,13 +190,13 @@
     <property name="cond1" value="not battle_outcome player,won,spyder_nimrod_archer"/>
    </properties>
   </object>
-  <object id="36" name="Environment" type="event" x="16" y="0" width="16" height="16">
+  <object id="36" name="Environment" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment interior"/>
     <property name="cond1" value="not environment_is interior"/>
    </properties>
   </object>
-  <object id="37" name="Talk Argon" type="event" x="224" y="144" width="16" height="16">
+  <object id="37" name="Talk Argon" type="event" x="448" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_argon"/>
@@ -211,7 +211,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="38" name="Talk Honour" type="event" x="192" y="64" width="48" height="16">
+  <object id="38" name="Talk Honour" type="event" x="384" y="128" width="96" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_honour"/>
@@ -227,7 +227,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="40" name="Talk Xeon" type="event" x="160" y="176" width="16" height="64">
+  <object id="40" name="Talk Xeon" type="event" x="320" y="352" width="32" height="128">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_xeon"/>
@@ -243,7 +243,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="41" name="Talk Chrome Robo" type="event" x="144" y="192" width="16" height="64">
+  <object id="41" name="Talk Chrome Robo" type="event" x="288" y="384" width="32" height="128">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_chromerobo"/>
@@ -259,7 +259,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="42" name="Talk Archer" type="event" x="64" y="208" width="16" height="16">
+  <object id="42" name="Talk Archer" type="event" x="128" y="416" width="32" height="32">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="pathfind_to_char player,spyder_nimrod_archer"/>
@@ -276,7 +276,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="43" name="Talk Antimony" type="event" x="64" y="192" width="16" height="16">
+  <object id="43" name="Talk Antimony" type="event" x="128" y="384" width="32" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_nimrod_antimony"/>
@@ -291,48 +291,48 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="45" name="Post Talk Archer" type="event" x="64" y="256" width="16" height="16">
+  <object id="45" name="Post Talk Archer" type="event" x="128" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_archer,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_archer"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_archer"/>
    </properties>
   </object>
-  <object id="46" name="Post Talk Antimony" type="event" x="80" y="256" width="16" height="16">
+  <object id="46" name="Post Talk Antimony" type="event" x="160" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_antimony,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_antimony"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_antimony"/>
    </properties>
   </object>
-  <object id="47" name="Post Talk Argon" type="event" x="96" y="256" width="16" height="16">
+  <object id="47" name="Post Talk Argon" type="event" x="192" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_argon,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_argon"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_argon"/>
    </properties>
   </object>
-  <object id="48" name="Post Talk Thatcher" type="event" x="112" y="256" width="16" height="16">
+  <object id="48" name="Post Talk Thatcher" type="event" x="224" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_thatcher,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_thatcher"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_thatcher"/>
    </properties>
   </object>
-  <object id="49" name="Post Talk Honour" type="event" x="128" y="256" width="16" height="16">
+  <object id="49" name="Post Talk Honour" type="event" x="256" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_nimrod_honour,post_battle_lose"/>
     <property name="behav1" value="talk spyder_nimrod_honour"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_nimrod_honour"/>
    </properties>
   </object>
-  <object id="50" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="50" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_10_empire"/>
     <property name="cond1" value="not music_playing music_10_empire"/>
    </properties>
   </object>
-  <object id="51" name="Zircon Back" type="event" x="224" y="160" width="16" height="16">
+  <object id="51" name="Zircon Back" type="event" x="448" y="320" width="32" height="32">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="create_npc spyder_nimrod_zircon,16,3"/>
@@ -354,13 +354,13 @@
     <property name="cond3" value="is char_at player"/>
    </properties>
   </object>
-  <object id="52" name="Flashback Trigger Yes" type="event" x="256" y="16" width="16" height="16">
+  <object id="52" name="Flashback Trigger Yes" type="event" x="512" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_nimrod_room.tmx,8,6"/>
     <property name="cond1" value="is variable_set zircon_argon:yes"/>
    </properties>
   </object>
-  <object id="53" name="Post Flashback" type="event" x="272" y="16" width="16" height="16">
+  <object id="53" name="Post Flashback" type="event" x="544" y="32" width="32" height="32">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="create_npc spyder_nimrod_zircon,14,9"/>
@@ -379,13 +379,13 @@
     <property name="cond3" value="not variable_set zircon_vs_argon:done"/>
    </properties>
   </object>
-  <object id="54" name="Flashback Trigger No" type="event" x="224" y="16" width="16" height="16">
+  <object id="54" name="Flashback Trigger No" type="event" x="448" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="set_variable zircon_argon:done"/>
     <property name="cond1" value="is variable_set zircon_argon:no"/>
    </properties>
   </object>
-  <object id="55" name="Default Template" type="event" x="208" y="16" width="16" height="16">
+  <object id="55" name="Default Template" type="event" x="416" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="set_layer"/>
     <property name="act2" value="set_template player,default"/>
@@ -393,7 +393,7 @@
     <property name="cond2" value="is variable_set zircon_argon:done"/>
    </properties>
   </object>
-  <object id="56" name="Draw" type="event" x="160" y="16" width="16" height="16">
+  <object id="56" name="Draw" type="event" x="320" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="set_variable zircon_vs_argon:done"/>
     <property name="act2" value="translated_dialog spyder_nimrod_zircon_draw,,bottomright"/>
@@ -404,7 +404,7 @@
     <property name="cond2" value="is variable_set battle_last_result:draw"/>
    </properties>
   </object>
-  <object id="57" name="Argon Win" type="event" x="176" y="16" width="16" height="16">
+  <object id="57" name="Argon Win" type="event" x="352" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="set_variable zircon_vs_argon:done"/>
     <property name="act2" value="translated_dialog spyder_nimrod_argon_won,,bottomleft"/>
@@ -416,7 +416,7 @@
     <property name="cond3" value="is variable_set battle_last_winner:spyder_nimrod_argon"/>
    </properties>
   </object>
-  <object id="58" name="Zircon Win" type="event" x="192" y="16" width="16" height="16">
+  <object id="58" name="Zircon Win" type="event" x="384" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="set_variable zircon_vs_argon:done"/>
     <property name="act2" value="translated_dialog spyder_nimrod_zircon_won,,bottomright"/>

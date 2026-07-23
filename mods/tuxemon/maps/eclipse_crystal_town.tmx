@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="66">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="66">
  <properties>
   <property name="east" value="lion_mountain"/>
   <property name="edges" value="clamped"/>
@@ -34,33 +34,33 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="12" type="collision" x="544" y="192" width="48" height="96"/>
-  <object id="14" type="collision" x="512" y="272" width="16" height="16"/>
-  <object id="15" type="collision" x="608" y="192" width="16" height="96"/>
-  <object id="16" type="collision" x="592" y="192" width="16" height="80"/>
-  <object id="18" type="collision" x="320" y="16" width="80" height="48"/>
-  <object id="19" type="collision" x="400" y="16" width="112" height="16"/>
-  <object id="20" type="collision" x="512" y="16" width="48" height="48"/>
-  <object id="23" type="collision" x="512" y="64" width="32" height="16"/>
-  <object id="24" type="collision" x="560" y="64" width="48" height="16"/>
-  <object id="25" type="collision" x="624" y="176" width="16" height="16"/>
-  <object id="26" type="collision" x="624" y="112" width="16" height="32"/>
-  <object id="30" type="collision" x="32" y="304" width="528" height="16"/>
-  <object id="31" type="collision" x="624" y="192" width="16" height="128"/>
-  <object id="33" type="collision" x="608" y="80" width="32" height="32"/>
-  <object id="38" type="collision" x="592" y="304" width="32" height="16"/>
-  <object id="41" type="collision" x="0" y="112" width="32" height="192"/>
-  <object id="46" type="collision" x="176" y="32" width="144" height="16"/>
-  <object id="48" type="collision" x="592" y="112" width="16" height="16"/>
-  <object id="50" type="collision" x="320" y="64" width="48" height="16"/>
-  <object id="51" type="collision" x="384" y="64" width="16" height="16"/>
-  <object id="53" type="collision" x="400" y="144" width="16" height="96"/>
-  <object id="54" type="collision" x="192" y="240" width="224" height="16"/>
-  <object id="55" type="collision" x="192" y="128" width="224" height="16"/>
-  <object id="57" type="collision" x="416" y="144" width="16" height="16"/>
-  <object id="60" type="collision" x="192" y="144" width="16" height="96"/>
-  <object id="61" type="collision" x="32" y="48" width="144" height="64"/>
-  <object id="63" type="collision" x="32" y="112" width="64" height="16"/>
-  <object id="65" type="collision" x="112" y="112" width="64" height="16"/>
+  <object id="12" type="collision" x="1088" y="384" width="96" height="192"/>
+  <object id="14" type="collision" x="1024" y="544" width="32" height="32"/>
+  <object id="15" type="collision" x="1216" y="384" width="32" height="192"/>
+  <object id="16" type="collision" x="1184" y="384" width="32" height="160"/>
+  <object id="18" type="collision" x="640" y="32" width="160" height="96"/>
+  <object id="19" type="collision" x="800" y="32" width="224" height="32"/>
+  <object id="20" type="collision" x="1024" y="32" width="96" height="96"/>
+  <object id="23" type="collision" x="1024" y="128" width="64" height="32"/>
+  <object id="24" type="collision" x="1120" y="128" width="96" height="32"/>
+  <object id="25" type="collision" x="1248" y="352" width="32" height="32"/>
+  <object id="26" type="collision" x="1248" y="224" width="32" height="64"/>
+  <object id="30" type="collision" x="64" y="608" width="1056" height="32"/>
+  <object id="31" type="collision" x="1248" y="384" width="32" height="256"/>
+  <object id="33" type="collision" x="1216" y="160" width="64" height="64"/>
+  <object id="38" type="collision" x="1184" y="608" width="64" height="32"/>
+  <object id="41" type="collision" x="0" y="224" width="64" height="384"/>
+  <object id="46" type="collision" x="352" y="64" width="288" height="32"/>
+  <object id="48" type="collision" x="1184" y="224" width="32" height="32"/>
+  <object id="50" type="collision" x="640" y="128" width="96" height="32"/>
+  <object id="51" type="collision" x="768" y="128" width="32" height="32"/>
+  <object id="53" type="collision" x="800" y="288" width="32" height="192"/>
+  <object id="54" type="collision" x="384" y="480" width="448" height="32"/>
+  <object id="55" type="collision" x="384" y="256" width="448" height="32"/>
+  <object id="57" type="collision" x="832" y="288" width="32" height="32"/>
+  <object id="60" type="collision" x="384" y="288" width="32" height="192"/>
+  <object id="61" type="collision" x="64" y="96" width="288" height="128"/>
+  <object id="63" type="collision" x="64" y="224" width="128" height="32"/>
+  <object id="65" type="collision" x="224" y="224" width="128" height="32"/>
  </objectgroup>
 </map>

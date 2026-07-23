@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="50" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="40">
+<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="50" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="40">
  <properties>
   <property name="edges" value="clamped"/>
  </properties>
@@ -182,8 +182,8 @@
 </data>
  </layer>
  <objectgroup color="#ffff00" id="4" name="Events">
-  <object id="1" name="Player Spawn" type="event" x="176" y="512" width="16" height="16"/>
-  <object id="2" name="Teleport to Lower Village" type="event" x="96" y="0" width="16" height="16">
+  <object id="1" name="Player Spawn" type="event" x="352" y="1024" width="32" height="32"/>
+  <object id="2" name="Teleport to Lower Village" type="event" x="192" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -191,7 +191,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="9" name="Teleport to Water Cathedral" type="event" x="656" y="0" width="16" height="16">
+  <object id="9" name="Teleport to Water Cathedral" type="event" x="1312" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_cathedral.tmx,23,59,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -199,7 +199,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="10" name="Teleport to Water Cathedral" type="event" x="672" y="0" width="16" height="16">
+  <object id="10" name="Teleport to Water Cathedral" type="event" x="1344" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_cathedral.tmx,23,59,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -207,7 +207,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="11" name="Teleport to Water Cathedral" type="event" x="688" y="0" width="16" height="16">
+  <object id="11" name="Teleport to Water Cathedral" type="event" x="1376" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_cathedral.tmx,24,59,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -215,7 +215,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="12" name="Teleport to Water Cathedral" type="event" x="704" y="0" width="16" height="16">
+  <object id="12" name="Teleport to Water Cathedral" type="event" x="1408" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_cathedral.tmx,25,59,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -223,7 +223,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="13" name="Teleport to Water Cathedral" type="event" x="720" y="0" width="16" height="16">
+  <object id="13" name="Teleport to Water Cathedral" type="event" x="1440" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_cathedral.tmx,26,59,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -231,7 +231,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="14" name="Teleport to Water Cathedral" type="event" x="736" y="0" width="16" height="16">
+  <object id="14" name="Teleport to Water Cathedral" type="event" x="1472" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_cathedral.tmx,26,59,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -239,26 +239,26 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="15" name="Add First Mon" type="event" x="144" y="448" width="16" height="16">
+  <object id="15" name="Add First Mon" type="event" x="288" y="896" width="32" height="32">
    <properties>
     <property name="act1" value="add_monster agnite,15"/>
     <property name="cond1" value="is party_size player,less_than,1"/>
    </properties>
   </object>
-  <object id="16" name="Talk Traveller" type="event" x="208" y="144" width="16" height="16">
+  <object id="16" name="Talk Traveller" type="event" x="416" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog water_traveller_1"/>
     <property name="act30" value="translated_dialog water_traveller_2"/>
     <property name="behav1" value="talk water_picnicker"/>
    </properties>
   </object>
-  <object id="17" name="Create Traveller" type="event" x="176" y="160" width="16" height="16">
+  <object id="17" name="Create Traveller" type="event" x="352" y="320" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc water_picnicker,11,10"/>
     <property name="cond1" value="not char_exists water_picnicker"/>
    </properties>
   </object>
-  <object id="20" name="Random Encounter" type="event" x="128" y="176" width="32" height="48">
+  <object id="20" name="Random Encounter" type="event" x="256" y="352" width="64" height="96">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="act2" value="play_map_animation grass,0.1,noloop,player"/>
@@ -266,7 +266,7 @@
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="22" name="Random Encounter" type="event" x="160" y="192" width="32" height="64">
+  <object id="22" name="Random Encounter" type="event" x="320" y="384" width="64" height="128">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="act2" value="play_map_animation grass,0.1,noloop,player"/>
@@ -274,7 +274,7 @@
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="23" name="Random Encounter" type="event" x="192" y="208" width="48" height="48">
+  <object id="23" name="Random Encounter" type="event" x="384" y="416" width="96" height="96">
    <properties>
     <property name="act1" value="random_encounter default_encounter,10"/>
     <property name="act2" value="play_map_animation grass,0.1,noloop,player"/>
@@ -282,7 +282,7 @@
     <property name="cond2" value="is char_moved player"/>
    </properties>
   </object>
-  <object id="24" name="Water Intro" type="event" x="160" y="496" width="16" height="16">
+  <object id="24" name="Water Intro" type="event" x="320" y="992" width="32" height="32">
    <properties>
     <property name="act1" value="char_face player,down"/>
     <property name="act2" value="change_bg"/>
@@ -296,7 +296,7 @@
     <property name="cond1" value="not variable_set water_intro:yes"/>
    </properties>
   </object>
-  <object id="30" name="Teleport to Lower Village" type="event" x="112" y="0" width="16" height="16">
+  <object id="30" name="Teleport to Lower Village" type="event" x="224" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -304,7 +304,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="31" name="Teleport to Lower Village" type="event" x="128" y="0" width="16" height="16">
+  <object id="31" name="Teleport to Lower Village" type="event" x="256" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -312,7 +312,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="32" name="Teleport to Lower Village" type="event" x="144" y="0" width="16" height="16">
+  <object id="32" name="Teleport to Lower Village" type="event" x="288" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -320,7 +320,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="33" name="Teleport to Lower Village" type="event" x="160" y="0" width="16" height="16">
+  <object id="33" name="Teleport to Lower Village" type="event" x="320" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -328,7 +328,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="34" name="Teleport to Lower Village" type="event" x="176" y="0" width="16" height="16">
+  <object id="34" name="Teleport to Lower Village" type="event" x="352" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -336,7 +336,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="35" name="Teleport to Lower Village" type="event" x="192" y="0" width="16" height="16">
+  <object id="35" name="Teleport to Lower Village" type="event" x="384" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,water_lower_village.tmx,34,22,0.5"/>
     <property name="act2" value="char_face player,up"/>
@@ -346,6 +346,6 @@
   </object>
  </objectgroup>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="37" type="collision" x="144" y="544" width="112" height="16"/>
+  <object id="37" type="collision" x="288" y="1088" width="224" height="32"/>
  </objectgroup>
 </map>

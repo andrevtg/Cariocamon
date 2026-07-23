@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="18">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="18">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="scenario" value="xero"/>
   <property name="slug" value="taba_ba_br_3"/>
  </properties>
- <tileset firstgid="1" name="core_indoor_walls" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_walls.png" width="736" height="1344"/>
+ <tileset firstgid="1" name="core_indoor_walls" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_walls.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="3865" name="core_indoor_floors" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_floors.png" width="736" height="1344"/>
+ <tileset firstgid="3865" name="core_indoor_floors" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_floors.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="7729" name="core_indoor_stairs" tilewidth="16" tileheight="16" tilecount="2970" columns="45">
-  <image source="../gfx/tilesets/core_indoor_stairs.png" width="720" height="1056"/>
+ <tileset firstgid="7729" name="core_indoor_stairs" tilewidth="32" tileheight="32" tilecount="2970" columns="45">
+  <image source="../gfx/tilesets/core_indoor_stairs.png" width="1440" height="2112"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="16" height="16">
   <data encoding="base64" compression="zlib">
@@ -35,30 +35,30 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="6" name="Collisions">
-  <object id="2" type="collision" x="16" y="192" width="224" height="48"/>
-  <object id="3" type="collision" x="224" y="128" width="32" height="48"/>
-  <object id="4" type="collision" x="224" y="176" width="16" height="16"/>
-  <object id="5" type="collision" x="0" y="80" width="32" height="32"/>
-  <object id="6" type="collision" x="16" y="112" width="16" height="80"/>
-  <object id="7" type="collision" x="0" y="0" width="240" height="48"/>
-  <object id="8" type="collision" x="224" y="48" width="32" height="48"/>
+  <object id="2" type="collision" x="32" y="384" width="448" height="96"/>
+  <object id="3" type="collision" x="448" y="256" width="64" height="96"/>
+  <object id="4" type="collision" x="448" y="352" width="32" height="32"/>
+  <object id="5" type="collision" x="0" y="160" width="64" height="64"/>
+  <object id="6" type="collision" x="32" y="224" width="32" height="160"/>
+  <object id="7" type="collision" x="0" y="0" width="480" height="96"/>
+  <object id="8" type="collision" x="448" y="96" width="64" height="96"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="5" name="Events">
-  <object id="9" name="back to passageway" type="event" x="0" y="48" width="16" height="16">
+  <object id="9" name="back to passageway" type="event" x="0" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_3.tmx,19,16,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,left"/>
    </properties>
   </object>
-  <object id="10" name="back to passageway" type="event" x="0" y="64" width="16" height="16">
+  <object id="10" name="back to passageway" type="event" x="0" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_3.tmx,19,17,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,left"/>
    </properties>
   </object>
-  <object id="11" name="there he is" type="event" x="32" y="48" width="16" height="32">
+  <object id="11" name="there he is" type="event" x="64" y="96" width="32" height="64">
    <properties>
     <property name="act1" value="char_stop player"/>
     <property name="act2" value="lock_controls"/>
@@ -74,7 +74,7 @@
     <property name="cond2" value="not variable_set unhinged:escaped"/>
    </properties>
   </object>
-  <object id="12" name="create acolyte" type="event" x="64" y="0" width="16" height="16">
+  <object id="12" name="create acolyte" type="event" x="128" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc cam,13,9,stand"/>
     <property name="act2" value="char_face cam,right"/>
@@ -82,7 +82,7 @@
     <property name="cond2" value="not variable_set acolyte3:gone"/>
    </properties>
   </object>
-  <object id="13" name="unhinged" type="event" x="128" y="32" width="16" height="16">
+  <object id="13" name="unhinged" type="event" x="256" y="64" width="32" height="32">
    <properties>
     <property name="act10" value="char_face cam,right"/>
     <property name="act11" value="wait 0.3"/>
@@ -114,7 +114,7 @@
     <property name="cond1" value="is variable_set unhinged:start"/>
    </properties>
   </object>
-  <object id="14" name="unhinged 2" type="event" x="144" y="32" width="16" height="16">
+  <object id="14" name="unhinged 2" type="event" x="288" y="64" width="32" height="32">
    <properties>
     <property name="act10" value="wait 1"/>
     <property name="act11" value="char_face player,up"/>
@@ -191,7 +191,7 @@
     <property name="cond1" value="is variable_set unhinged:second"/>
    </properties>
   </object>
-  <object id="15" name="unhinged 3" type="event" x="160" y="32" width="16" height="16">
+  <object id="15" name="unhinged 3" type="event" x="320" y="64" width="32" height="32">
    <properties>
     <property name="act10" value="translated_dialog acolyteiskayrazy"/>
     <property name="act11" value="char_face cam,right"/>
@@ -252,7 +252,7 @@
     <property name="cond1" value="is variable_set unhinged:consequences"/>
    </properties>
   </object>
-  <object id="16" name="movin out" type="event" x="96" y="0" width="16" height="16">
+  <object id="16" name="movin out" type="event" x="192" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="wait 0.4"/>
     <property name="act2" value="char_move omnigrunt6,right 4,up 2,right 2"/>
@@ -261,7 +261,7 @@
     <property name="cond1" value="is variable_set cammove:now"/>
    </properties>
   </object>
-  <object id="17" name="teleport to main room" type="event" x="240" y="96" width="16" height="32">
+  <object id="17" name="teleport to main room" type="event" x="480" y="192" width="32" height="64">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_main.tmx,1,6,1"/>
     <property name="cond1" value="is char_at player"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="9" height="7" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="47">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="9" height="7" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="47">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -31,19 +31,19 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="29" type="collision" x="128" y="96" width="16" height="16"/>
-  <object id="30" type="collision" x="64" y="64" width="32" height="32"/>
-  <object id="33" type="collision" x="0" y="16" width="144" height="16"/>
-  <object id="46" type="collision" x="0" y="80" width="48" height="16"/>
+  <object id="29" type="collision" x="256" y="192" width="32" height="32"/>
+  <object id="30" type="collision" x="128" y="128" width="64" height="64"/>
+  <object id="33" type="collision" x="0" y="32" width="288" height="32"/>
+  <object id="46" type="collision" x="0" y="160" width="96" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="23" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="23" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act10" value="play_music music_home"/>
     <property name="cond10" value="not music_playing music_home"/>
    </properties>
   </object>
-  <object id="27" name="Go Outside" type="event" x="112" y="96" width="16" height="16">
+  <object id="27" name="Go Outside" type="event" x="224" y="192" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_town.tmx,49,7,0.3"/>
     <property name="act20" value="char_face player,down"/>
@@ -51,21 +51,21 @@
     <property name="cond20" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="39" name="Create Husband" type="event" x="16" y="64" width="16" height="16">
+  <object id="39" name="Create Husband" type="event" x="32" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc taba_house1_husband,1,4"/>
     <property name="act2" value="char_face taba_house1_husband,up"/>
     <property name="cond1" value="not char_exists taba_house1_husband"/>
    </properties>
   </object>
-  <object id="40" name="Create Wife" type="event" x="64" y="48" width="16" height="16">
+  <object id="40" name="Create Wife" type="event" x="128" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc taba_house1_wife,4,3"/>
     <property name="act2" value="char_face taba_house1_wife,down"/>
     <property name="cond1" value="not char_exists taba_house1_wife"/>
    </properties>
   </object>
-  <object id="41" name="Read Sign" type="event" x="64" y="16" width="16" height="16">
+  <object id="41" name="Read Sign" type="event" x="128" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_calendar"/>
     <property name="cond1" value="is char_facing_tile player"/>
@@ -74,7 +74,7 @@
     <property name="cond4" value="not time_is date,equals,9-30"/>
    </properties>
   </object>
-  <object id="38" name="Read Feb12" type="event" x="64" y="16" width="16" height="16">
+  <object id="38" name="Read Feb12" type="event" x="128" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_calendar_feb12"/>
     <property name="cond1" value="is char_facing_tile player"/>
@@ -82,7 +82,7 @@
     <property name="cond3" value="is time_is date,equals,2-12"/>
    </properties>
   </object>
-  <object id="37" name="Read Sep30" type="event" x="64" y="16" width="16" height="16">
+  <object id="37" name="Read Sep30" type="event" x="128" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_calendar_sep30"/>
     <property name="cond1" value="is char_facing_tile player"/>
@@ -90,7 +90,7 @@
     <property name="cond3" value="is time_is date,equals,9-30"/>
    </properties>
   </object>
-  <object id="34" name="Husband Talk" type="event" x="32" y="16" width="16" height="16">
+  <object id="34" name="Husband Talk" type="event" x="64" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_husband1"/>
     <property name="act2" value="translated_dialog taba_house1_husband_extra"/>
@@ -99,21 +99,21 @@
     <property name="cond2" value="not time_is date,equals,9-30"/>
    </properties>
   </object>
-  <object id="32" name="Husband Feb12" type="event" x="32" y="16" width="16" height="16">
+  <object id="32" name="Husband Feb12" type="event" x="64" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_husband_feb12"/>
     <property name="behav1" value="talk taba_house1_husband"/>
     <property name="cond1" value="is time_is date,equals,2-12"/>
    </properties>
   </object>
-  <object id="42" name="Husband Sep30" type="event" x="32" y="16" width="16" height="16">
+  <object id="42" name="Husband Sep30" type="event" x="64" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_husband_sep30"/>
     <property name="behav1" value="talk taba_house1_husband"/>
     <property name="cond1" value="is time_is date,equals,9-30"/>
    </properties>
   </object>
-  <object id="43" name="Wife Talk" type="event" x="48" y="16" width="16" height="16">
+  <object id="43" name="Wife Talk" type="event" x="96" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_wife1"/>
     <property name="act2" value="translated_dialog taba_house1_wife_extra"/>
@@ -122,28 +122,28 @@
     <property name="cond2" value="not time_is date,equals,9-30"/>
    </properties>
   </object>
-  <object id="36" name="Wife Feb12" type="event" x="48" y="16" width="16" height="16">
+  <object id="36" name="Wife Feb12" type="event" x="96" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_wife_feb12"/>
     <property name="behav1" value="talk taba_house1_wife"/>
     <property name="cond1" value="is time_is date,equals,2-12"/>
    </properties>
   </object>
-  <object id="35" name="Wife Sep30" type="event" x="48" y="16" width="16" height="16">
+  <object id="35" name="Wife Sep30" type="event" x="96" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_wife_sep30"/>
     <property name="behav1" value="talk taba_house1_wife"/>
     <property name="cond1" value="is time_is date,equals,9-30"/>
    </properties>
   </object>
-  <object id="44" name="Reading" type="event" x="64" y="64" width="16" height="16">
+  <object id="44" name="Reading" type="event" x="128" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_reading"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="45" name="Watching" type="event" x="16" y="32" width="16" height="16">
+  <object id="45" name="Watching" type="event" x="32" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house1_watching"/>
     <property name="cond1" value="is char_facing_tile player"/>

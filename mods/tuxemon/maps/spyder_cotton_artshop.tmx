@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="22" height="11" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="51">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="22" height="11" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="51">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -31,13 +31,13 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="4" name="Collisions">
-  <object id="19" type="collision" x="208" y="0" width="144" height="96"/>
-  <object id="32" type="collision" x="0" y="0" width="208" height="64"/>
-  <object id="33" type="collision" x="48" y="112" width="16" height="64"/>
-  <object id="34" type="collision" x="64" y="112" width="16" height="16"/>
+  <object id="19" type="collision" x="416" y="0" width="288" height="192"/>
+  <object id="32" type="collision" x="0" y="0" width="416" height="128"/>
+  <object id="33" type="collision" x="96" y="224" width="32" height="128"/>
+  <object id="34" type="collision" x="128" y="224" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="13" name="Teleport to Cotton Town" type="event" x="16" y="160" width="32" height="16">
+  <object id="13" name="Teleport to Cotton Town" type="event" x="32" y="320" width="64" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_cotton_town.tmx,16,17,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -45,59 +45,59 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="15" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="15" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_cathedral_theme"/>
     <property name="cond1" value="not music_playing music_cathedral_theme"/>
    </properties>
   </object>
-  <object id="17" name="Make Barmaid" type="event" x="160" y="80" width="16" height="16">
+  <object id="17" name="Make Barmaid" type="event" x="320" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottontown_barmaid,10,5"/>
     <property name="act2" value="char_wander spyder_cottontown_barmaid,0.7"/>
     <property name="cond1" value="not char_exists spyder_cottontown_barmaid"/>
    </properties>
   </object>
-  <object id="18" name="Florist Talk" type="event" x="0" y="48" width="16" height="16">
+  <object id="18" name="Florist Talk" type="event" x="0" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_florist"/>
     <property name="behav1" value="talk spyder_cottonartshop_luvinia"/>
    </properties>
   </object>
-  <object id="21" name="Make Granny" type="event" x="240" y="128" width="16" height="16">
+  <object id="21" name="Make Granny" type="event" x="480" y="256" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottonartshop_philis,15,8"/>
     <property name="act2" value="char_wander spyder_cottonartshop_philis,0.9"/>
     <property name="cond1" value="not char_exists spyder_cottonartshop_philis"/>
    </properties>
   </object>
-  <object id="22" name="Granny Talk" type="event" x="256" y="112" width="16" height="16">
+  <object id="22" name="Granny Talk" type="event" x="512" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_granny"/>
     <property name="behav1" value="talk spyder_cottonartshop_philis"/>
    </properties>
   </object>
-  <object id="23" name="Goth Talk" type="event" x="288" y="112" width="16" height="16">
+  <object id="23" name="Goth Talk" type="event" x="576" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_goth"/>
     <property name="behav1" value="talk spyder_cottonartshop_phoenix"/>
    </properties>
   </object>
-  <object id="24" name="Make Goth" type="event" x="272" y="128" width="16" height="16">
+  <object id="24" name="Make Goth" type="event" x="544" y="256" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottonartshop_phoenix,17,8"/>
     <property name="act2" value="char_wander spyder_cottonartshop_phoenix,0.8"/>
     <property name="cond1" value="not char_exists spyder_cottonartshop_phoenix"/>
    </properties>
   </object>
-  <object id="25" name="Make Florist" type="event" x="16" y="96" width="16" height="16">
+  <object id="25" name="Make Florist" type="event" x="32" y="192" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottonartshop_luvinia,1,6"/>
     <property name="act2" value="char_wander spyder_cottonartshop_luvinia,1.0"/>
     <property name="cond1" value="not char_exists spyder_cottonartshop_luvinia"/>
    </properties>
   </object>
-  <object id="26" name="Barmaid Sold Bundle" type="event" x="176" y="64" width="16" height="16">
+  <object id="26" name="Barmaid Sold Bundle" type="event" x="352" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_barmaid_bundle_sold"/>
     <property name="behav1" value="talk spyder_cottontown_barmaid"/>
@@ -106,20 +106,20 @@
     <property name="cond4" value="is has_item player,p_trepidation"/>
    </properties>
   </object>
-  <object id="27" name="Make Shopkeeper" type="event" x="64" y="144" width="16" height="16">
+  <object id="27" name="Make Shopkeeper" type="event" x="128" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_cottonartshop_carter,4,9"/>
     <property name="act2" value="char_face spyder_cottonartshop_carter,left"/>
     <property name="cond1" value="not char_exists spyder_cottonartshop_carter"/>
    </properties>
   </object>
-  <object id="28" name="Shopkeeper Talk" type="event" x="64" y="112" width="16" height="16">
+  <object id="28" name="Shopkeeper Talk" type="event" x="128" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_shopkeeper"/>
     <property name="behav1" value="talk spyder_cottonartshop_carter"/>
    </properties>
   </object>
-  <object id="29" name="Pay Up" type="event" x="0" y="144" width="48" height="16">
+  <object id="29" name="Pay Up" type="event" x="0" y="288" width="96" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_shopkeeper"/>
     <property name="act2" value="translated_dialog player_wallet"/>
@@ -134,7 +134,7 @@
     <property name="cond8" value="not variable_set bought_bundle:yes"/>
    </properties>
   </object>
-  <object id="30" name="Afford Pay" type="event" x="48" y="112" width="16" height="16">
+  <object id="30" name="Afford Pay" type="event" x="96" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="pathfind player,2,8"/>
     <property name="act2" value="set_variable paygallery:null"/>
@@ -143,7 +143,7 @@
     <property name="cond2" value="is money_is player,greater_or_equal,50"/>
    </properties>
   </object>
-  <object id="20" name="Cannot Affort" type="event" x="48" y="144" width="16" height="16">
+  <object id="20" name="Cannot Affort" type="event" x="96" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="pathfind player,2,10"/>
     <property name="act2" value="set_variable paygallery:null"/>
@@ -151,14 +151,14 @@
     <property name="cond2" value="not money_is player,greater_or_equal,50"/>
    </properties>
   </object>
-  <object id="31" name="No Pay" type="event" x="48" y="128" width="16" height="16">
+  <object id="31" name="No Pay" type="event" x="96" y="256" width="32" height="32">
    <properties>
     <property name="act1" value="pathfind player,2,10"/>
     <property name="act2" value="set_variable paygallery:null"/>
     <property name="cond1" value="is variable_set paygallery:no"/>
    </properties>
   </object>
-  <object id="35" name="Barmaid Sell Bundle Op" type="event" x="160" y="0" width="16" height="16">
+  <object id="35" name="Barmaid Sell Bundle Op" type="event" x="320" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_barmaid"/>
     <property name="act2" value="translated_dialog spyder_cottonart_barmaid_bundle"/>
@@ -172,7 +172,7 @@
     <property name="cond5" value="not variable_set has_sold_paintings:yes"/>
    </properties>
   </object>
-  <object id="36" name="Barmaid Sell Starry" type="event" x="144" y="48" width="32" height="16">
+  <object id="36" name="Barmaid Sell Starry" type="event" x="288" y="96" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog p_starry_night_description"/>
     <property name="act2" value="translated_dialog spyder_cottonart_barmaid_single"/>
@@ -184,7 +184,7 @@
     <property name="cond4" value="is money_is player,greater_or_equal,1000"/>
    </properties>
   </object>
-  <object id="37" name="Barmaid Sell Trepidation" type="event" x="176" y="48" width="32" height="16">
+  <object id="37" name="Barmaid Sell Trepidation" type="event" x="352" y="96" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog p_trepidation_description"/>
     <property name="act2" value="translated_dialog spyder_cottonart_barmaid_single"/>
@@ -196,7 +196,7 @@
     <property name="cond4" value="is money_is player,greater_or_equal,1000"/>
    </properties>
   </object>
-  <object id="38" name="Barmaid Sell Monsters" type="event" x="112" y="48" width="32" height="16">
+  <object id="38" name="Barmaid Sell Monsters" type="event" x="224" y="96" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog p_monsters_eyes_description"/>
     <property name="act2" value="translated_dialog spyder_cottonart_barmaid_single"/>
@@ -208,7 +208,7 @@
     <property name="cond4" value="is money_is player,greater_or_equal,1000"/>
    </properties>
   </object>
-  <object id="41" name="Barmaid Sell Monsters Op" type="event" x="112" y="16" width="32" height="16">
+  <object id="41" name="Barmaid Sell Monsters Op" type="event" x="224" y="32" width="64" height="32">
    <properties>
     <property name="act1" value="set_variable has_sold_painting:yes"/>
     <property name="act2" value="add_item p_monsters_eyes"/>
@@ -220,7 +220,7 @@
     <property name="cond2" value="not variable_set bought_monsters_eyes:yes"/>
    </properties>
   </object>
-  <object id="39" name="Barmaid Sell Starry Op" type="event" x="144" y="16" width="32" height="16">
+  <object id="39" name="Barmaid Sell Starry Op" type="event" x="288" y="32" width="64" height="32">
    <properties>
     <property name="act1" value="set_variable has_sold_painting:yes"/>
     <property name="act2" value="add_item p_starry_night"/>
@@ -232,7 +232,7 @@
     <property name="cond2" value="not variable_set bought_starry:yes"/>
    </properties>
   </object>
-  <object id="40" name="Barmaid Sell Trepidation Op" type="event" x="176" y="16" width="32" height="16">
+  <object id="40" name="Barmaid Sell Trepidation Op" type="event" x="352" y="32" width="64" height="32">
    <properties>
     <property name="act1" value="set_variable has_sold_painting:yes"/>
     <property name="act2" value="add_item p_trepidation"/>
@@ -244,7 +244,7 @@
     <property name="cond2" value="not variable_set bought_trepidation:yes"/>
    </properties>
   </object>
-  <object id="42" name="Barmaid Sell Bundle" type="event" x="112" y="0" width="16" height="16">
+  <object id="42" name="Barmaid Sell Bundle" type="event" x="224" y="0" width="32" height="32">
    <properties>
     <property name="act01" value="set_variable has_sold_paintings:yes"/>
     <property name="act02" value="add_item p_starry_night"/>
@@ -262,7 +262,7 @@
     <property name="cond2" value="not variable_set bought_bundle:yes"/>
    </properties>
   </object>
-  <object id="43" name="Barmaid Sold Nothing" type="event" x="96" y="0" width="16" height="16">
+  <object id="43" name="Barmaid Sold Nothing" type="event" x="192" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_barmaid"/>
     <property name="behav1" value="talk spyder_cottontown_barmaid"/>
@@ -272,14 +272,14 @@
     <property name="cond4" value="not has_item player,p_trepidation"/>
    </properties>
   </object>
-  <object id="44" name="Player Bought Billie" type="event" x="48" y="48" width="16" height="16">
+  <object id="44" name="Player Bought Billie" type="event" x="96" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_cottonart_barmaid_painting_sold_billie"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="45" name="Billie Visit" type="event" x="48" y="64" width="16" height="48">
+  <object id="45" name="Billie Visit" type="event" x="96" y="128" width="32" height="96">
    <properties>
     <property name="act01" value="char_stop player"/>
     <property name="act02" value="lock_controls"/>
@@ -294,35 +294,35 @@
     <property name="cond2" value="is char_at player"/>
    </properties>
   </object>
-  <object id="46" name="Create Starry" type="event" x="144" y="32" width="16" height="16">
+  <object id="46" name="Create Starry" type="event" x="288" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc p_two,9,2"/>
     <property name="cond1" value="not char_exists p_two"/>
     <property name="cond2" value="not has_item player,p_starry_night"/>
    </properties>
   </object>
-  <object id="47" name="Create Monster" type="event" x="112" y="32" width="16" height="16">
+  <object id="47" name="Create Monster" type="event" x="224" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc p_one,7,2"/>
     <property name="cond1" value="not char_exists p_one"/>
     <property name="cond2" value="not has_item player,p_monsters_eyes"/>
    </properties>
   </object>
-  <object id="48" name="Create Trepidation" type="event" x="176" y="32" width="16" height="16">
+  <object id="48" name="Create Trepidation" type="event" x="352" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc p_three,11,2"/>
     <property name="cond1" value="not char_exists p_three"/>
     <property name="cond2" value="not has_item player,p_trepidation"/>
    </properties>
   </object>
-  <object id="49" name="Create Four" type="event" x="80" y="32" width="16" height="16">
+  <object id="49" name="Create Four" type="event" x="160" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc p_four,5,2"/>
     <property name="cond1" value="not char_exists p_four"/>
     <property name="cond2" value="is has_item player,p_monsters_eyes"/>
    </properties>
   </object>
-  <object id="50" name="Create Five" type="event" x="80" y="16" width="16" height="16">
+  <object id="50" name="Create Five" type="event" x="160" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc p_five,9,2"/>
     <property name="cond1" value="not char_exists p_five"/>

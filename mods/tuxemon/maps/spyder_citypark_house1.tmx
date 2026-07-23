@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="10" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="76">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="10" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="76">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -31,18 +31,18 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="63" type="collision" x="0" y="0" width="160" height="32"/>
-  <object id="64" type="collision" x="16" y="32" width="128" height="16"/>
-  <object id="71" type="collision" x="144" y="32" width="16" height="32"/>
+  <object id="63" type="collision" x="0" y="0" width="320" height="64"/>
+  <object id="64" type="collision" x="32" y="64" width="256" height="32"/>
+  <object id="71" type="collision" x="288" y="64" width="32" height="64"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="59" name="Create Maniac" type="event" x="48" y="80" width="16" height="16">
+  <object id="59" name="Create Maniac" type="event" x="96" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_citypark_house_maniac,3,5,wander"/>
     <property name="cond1" value="not char_exists spyder_citypark_house_maniac"/>
    </properties>
   </object>
-  <object id="60" name="Talk Maniac1" type="event" x="32" y="32" width="16" height="16">
+  <object id="60" name="Talk Maniac1" type="event" x="64" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_citypark_house_maniac1"/>
     <property name="act2" value="translated_dialog spyder_citypark_house_maniac2"/>
@@ -51,7 +51,7 @@
     <property name="cond1" value="not variable_set maniac_achievements:yes"/>
    </properties>
   </object>
-  <object id="70" name="Go outside" type="event" x="96" y="112" width="16" height="16">
+  <object id="70" name="Go outside" type="event" x="192" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_citypark.tmx,36,4,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -59,7 +59,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="73" name="Transfer Missions" type="event" x="16" y="16" width="16" height="16">
+  <object id="73" name="Transfer Missions" type="event" x="32" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="set_mission player"/>
     <property name="act2" value="set_variable maniac_help:yes"/>
@@ -69,7 +69,7 @@
     <property name="cond2" value="not variable_set maniac_help:yes"/>
    </properties>
   </object>
-  <object id="74" name="No Missions" type="event" x="16" y="16" width="16" height="16">
+  <object id="74" name="No Missions" type="event" x="32" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_citypark_house_maniac3"/>
     <property name="behav1" value="talk spyder_citypark_house_maniac"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="74">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="74">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -8,11 +8,11 @@
   <property name="map_type" value="notype"/>
  </properties>
  <tileset firstgid="1" source="../gfx/tilesets/core_indoor_walls.tsx"/>
- <tileset firstgid="3865" name="Office_interiors_shadowless_16x16" tilewidth="16" tileheight="16" tilecount="528" columns="22">
-  <image source="../gfx/tilesets/Office_interiors_shadowless_16x16.png" width="352" height="384"/>
+ <tileset firstgid="3865" name="Office_interiors_shadowless_16x16" tilewidth="32" tileheight="32" tilecount="528" columns="22">
+  <image source="../gfx/tilesets/Office_interiors_shadowless_16x16.png" width="704" height="768"/>
  </tileset>
- <tileset firstgid="4393" name="Interiors_16x16" tilewidth="16" tileheight="16" tilecount="2592" columns="16">
-  <image source="../gfx/tilesets/Interiors_16x16.png" width="256" height="2592"/>
+ <tileset firstgid="4393" name="Interiors_16x16" tilewidth="32" tileheight="32" tilecount="2592" columns="16">
+  <image source="../gfx/tilesets/Interiors_16x16.png" width="512" height="5184"/>
  </tileset>
  <tileset firstgid="6985" source="../gfx/tilesets/core_indoor_floors.tsx"/>
  <layer id="1" name="Tile Layer 1" width="10" height="10">
@@ -36,14 +36,14 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="62" type="collision" x="0" y="96" width="64" height="16"/>
-  <object id="63" type="collision" x="80" y="48" width="80" height="32"/>
-  <object id="64" type="collision" x="0" y="32" width="160" height="16"/>
-  <object id="65" type="collision" x="0" y="48" width="64" height="16"/>
-  <object id="66" type="collision" x="144" y="144" width="16" height="16"/>
+  <object id="62" type="collision" x="0" y="192" width="128" height="32"/>
+  <object id="63" type="collision" x="160" y="96" width="160" height="64"/>
+  <object id="64" type="collision" x="0" y="64" width="320" height="32"/>
+  <object id="65" type="collision" x="0" y="96" width="128" height="32"/>
+  <object id="66" type="collision" x="288" y="288" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="67" name="Go Outside" type="event" x="64" y="144" width="32" height="16">
+  <object id="67" name="Go Outside" type="event" x="128" y="288" width="64" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_leather_town.tmx,24,4,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -51,42 +51,42 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="68" name="PC" type="event" x="0" y="96" width="32" height="16">
+  <object id="68" name="PC" type="event" x="0" y="192" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_leathershaft2_pc"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="69" name="Papers" type="event" x="32" y="96" width="32" height="16">
+  <object id="69" name="Papers" type="event" x="64" y="192" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_leathershaft2_papers"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="70" name="Dude" type="event" x="112" y="64" width="16" height="16">
+  <object id="70" name="Dude" type="event" x="224" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_leathershaft2_dude"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="71" name="Achievement" type="event" x="64" y="32" width="16" height="16">
+  <object id="71" name="Achievement" type="event" x="128" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_leathershaft2_achievement"/>
     <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="72" name="Create NPCs" type="event" x="16" y="16" width="16" height="16">
+  <object id="72" name="Create NPCs" type="event" x="32" y="32" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_leathershaft2_colin,7,7"/>
     <property name="act2" value="char_face spyder_leathershaft2_colin,up"/>
     <property name="cond1" value="not char_exists spyder_leathershaft2_colin"/>
    </properties>
   </object>
-  <object id="73" name="Skeptic" type="event" x="112" y="112" width="16" height="16">
+  <object id="73" name="Skeptic" type="event" x="224" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_leathershaft2_skeptic"/>
     <property name="behav1" value="talk spyder_leathershaft2_colin"/>

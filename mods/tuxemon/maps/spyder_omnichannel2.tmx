@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="14" height="21" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="49">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="14" height="21" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="49">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -8,11 +8,11 @@
   <property name="slug" value="omnichannel2"/>
  </properties>
  <tileset firstgid="1" source="../gfx/tilesets/core_indoor_stairs.tsx"/>
- <tileset firstgid="2971" name="Office_interiors_shadowless_16x16" tilewidth="16" tileheight="16" tilecount="528" columns="22">
-  <image source="../gfx/tilesets/Office_interiors_shadowless_16x16.png" width="352" height="384"/>
+ <tileset firstgid="2971" name="Office_interiors_shadowless_16x16" tilewidth="32" tileheight="32" tilecount="528" columns="22">
+  <image source="../gfx/tilesets/Office_interiors_shadowless_16x16.png" width="704" height="768"/>
  </tileset>
- <tileset firstgid="3499" name="Tilesets_16x16" tilewidth="16" tileheight="16" tilecount="1760" columns="40">
-  <image source="../gfx/tilesets/Tilesets_16x16.png" width="640" height="704"/>
+ <tileset firstgid="3499" name="Tilesets_16x16" tilewidth="32" tileheight="32" tilecount="1760" columns="40">
+  <image source="../gfx/tilesets/Tilesets_16x16.png" width="1280" height="1408"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="14" height="21">
   <data encoding="base64" compression="zlib">
@@ -35,72 +35,72 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="3" name="Collisions">
-  <object id="1" type="collision" x="0" y="0" width="224" height="32"/>
-  <object id="16" type="collision" x="0" y="32" width="16" height="304"/>
-  <object id="17" type="collision" x="112" y="48" width="16" height="128"/>
-  <object id="18" type="collision" x="48" y="128" width="16" height="48"/>
-  <object id="19" type="collision" x="48" y="208" width="80" height="32"/>
-  <object id="20" type="collision" x="16" y="96" width="96" height="32"/>
-  <object id="21" type="collision" x="16" y="240" width="48" height="32"/>
-  <object id="22" type="collision" x="16" y="272" width="32" height="16"/>
-  <object id="23" type="collision" x="176" y="32" width="32" height="16"/>
-  <object id="38" type="collision" x="32" y="48" width="64" height="16"/>
-  <object id="43" type="collision" x="96" y="272" width="80" height="32"/>
-  <object id="44" type="collision" x="96" y="304" width="16" height="32"/>
-  <object id="45" type="collision" x="160" y="256" width="16" height="16"/>
-  <object id="46" type="collision" x="208" y="32" width="16" height="304"/>
-  <object id="47" type="collision" x="160" y="208" width="48" height="32"/>
-  <object id="48" type="collision" x="160" y="96" width="48" height="32"/>
+  <object id="1" type="collision" x="0" y="0" width="448" height="64"/>
+  <object id="16" type="collision" x="0" y="64" width="32" height="608"/>
+  <object id="17" type="collision" x="224" y="96" width="32" height="256"/>
+  <object id="18" type="collision" x="96" y="256" width="32" height="96"/>
+  <object id="19" type="collision" x="96" y="416" width="160" height="64"/>
+  <object id="20" type="collision" x="32" y="192" width="192" height="64"/>
+  <object id="21" type="collision" x="32" y="480" width="96" height="64"/>
+  <object id="22" type="collision" x="32" y="544" width="64" height="32"/>
+  <object id="23" type="collision" x="352" y="64" width="64" height="32"/>
+  <object id="38" type="collision" x="64" y="96" width="128" height="32"/>
+  <object id="43" type="collision" x="192" y="544" width="160" height="64"/>
+  <object id="44" type="collision" x="192" y="608" width="32" height="64"/>
+  <object id="45" type="collision" x="320" y="512" width="32" height="32"/>
+  <object id="46" type="collision" x="416" y="64" width="32" height="608"/>
+  <object id="47" type="collision" x="320" y="416" width="96" height="64"/>
+  <object id="48" type="collision" x="320" y="192" width="96" height="64"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="4" name="Events">
-  <object id="6" name="Teleport to Omnichannel 3" type="event" x="16" y="144" width="16" height="16">
+  <object id="6" name="Teleport to Omnichannel 3" type="event" x="32" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_omnichannel3.tmx,1,12,0.3"/>
     <property name="act2" value="char_face player,up"/>
     <property name="cond1" value="is char_at player"/>
    </properties>
   </object>
-  <object id="7" name="Teleport to Omnichannel 3" type="event" x="32" y="144" width="16" height="16">
+  <object id="7" name="Teleport to Omnichannel 3" type="event" x="64" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_omnichannel3.tmx,1,12,0.3"/>
     <property name="act2" value="char_face player,up"/>
     <property name="cond1" value="is char_at player"/>
    </properties>
   </object>
-  <object id="9" name="Teleport to Omnichannel 1" type="event" x="32" y="208" width="16" height="16">
+  <object id="9" name="Teleport to Omnichannel 1" type="event" x="64" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_omnichannel1.tmx,2,10,0.3"/>
     <property name="act2" value="char_face player,down"/>
     <property name="cond1" value="is char_at player"/>
    </properties>
   </object>
-  <object id="10" name="Teleport to Omnichannel 1" type="event" x="16" y="208" width="16" height="16">
+  <object id="10" name="Teleport to Omnichannel 1" type="event" x="32" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_omnichannel1.tmx,1,10,0.3"/>
     <property name="act2" value="char_face player,down"/>
     <property name="cond1" value="is char_at player"/>
    </properties>
   </object>
-  <object id="11" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="11" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_omnichannel"/>
     <property name="cond1" value="not music_playing music_omnichannel"/>
    </properties>
   </object>
-  <object id="14" name="Environment" type="event" x="16" y="0" width="16" height="16">
+  <object id="14" name="Environment" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment interior"/>
     <property name="cond1" value="not environment_is interior"/>
    </properties>
   </object>
-  <object id="24" name="Create Bettger" type="event" x="192" y="160" width="16" height="16">
+  <object id="24" name="Create Bettger" type="event" x="384" y="320" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_omnichannel_bettger,12,10"/>
     <property name="cond1" value="not char_exists spyder_omnichannel_bettger"/>
     <property name="cond2" value="not battle_outcome player,won,spyder_omnichannel_bettger"/>
    </properties>
   </object>
-  <object id="25" name="Talk Schwartz" type="event" x="128" y="192" width="32" height="16">
+  <object id="25" name="Talk Schwartz" type="event" x="256" y="384" width="64" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_omnichannel_schwartz"/>
@@ -116,7 +116,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="29" name="Create Schwartz" type="event" x="192" y="176" width="16" height="16">
+  <object id="29" name="Create Schwartz" type="event" x="384" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_omnichannel_schwartz,12,11"/>
     <property name="act2" value="char_face spyder_omnichannel_schwartz,up"/>
@@ -124,7 +124,7 @@
     <property name="cond2" value="not battle_outcome player,won,spyder_omnichannel_schwartz"/>
    </properties>
   </object>
-  <object id="30" name="Talk Bettger" type="event" x="112" y="176" width="32" height="16">
+  <object id="30" name="Talk Bettger" type="event" x="224" y="352" width="64" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_omnichannel_bettger"/>
@@ -140,7 +140,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="31" name="Create Tohei" type="event" x="80" y="304" width="16" height="16">
+  <object id="31" name="Create Tohei" type="event" x="160" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_omnichannel_tohei,4,19"/>
     <property name="act2" value="char_face spyder_omnichannel_tohei,up"/>
@@ -148,7 +148,7 @@
     <property name="cond2" value="not battle_outcome player,won,spyder_omnichannel_tohei"/>
    </properties>
   </object>
-  <object id="32" name="Talk Tohei" type="event" x="80" y="256" width="16" height="48">
+  <object id="32" name="Talk Tohei" type="event" x="160" y="512" width="32" height="96">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_omnichannel_tohei"/>
@@ -163,7 +163,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="36" name="Create Crane" type="event" x="176" y="48" width="16" height="16">
+  <object id="36" name="Create Crane" type="event" x="352" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_omnichannel_crane,11,3"/>
     <property name="act2" value="char_face spyder_omnichannel_crane,up"/>
@@ -171,7 +171,7 @@
     <property name="cond2" value="not battle_outcome player,won,spyder_omnichannel_crane"/>
    </properties>
   </object>
-  <object id="37" name="Talk Crane" type="event" x="128" y="96" width="32" height="16">
+  <object id="37" name="Talk Crane" type="event" x="256" y="192" width="64" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_omnichannel_crane"/>
@@ -187,7 +187,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="39" name="Create Dempsey" type="event" x="64" y="64" width="16" height="16">
+  <object id="39" name="Create Dempsey" type="event" x="128" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_omnichannel_dempsey,4,4"/>
     <property name="act2" value="char_face spyder_omnichannel_dempsey,up"/>
@@ -195,7 +195,7 @@
     <property name="cond2" value="not battle_outcome player,won,spyder_omnichannel_dempsey"/>
    </properties>
   </object>
-  <object id="40" name="Talk Dempsey" type="event" x="96" y="32" width="16" height="16">
+  <object id="40" name="Talk Dempsey" type="event" x="192" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_omnichannel_dempsey"/>
@@ -211,7 +211,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="41" name="PC" type="event" x="16" y="272" width="32" height="16">
+  <object id="41" name="PC" type="event" x="32" y="544" width="64" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_omnichannel2_pc"/>
     <property name="act2" value="set_variable omnichannel1wall:yes"/>
@@ -219,7 +219,7 @@
     <property name="cond2" value="is button_pressed INTERACT"/>
    </properties>
   </object>
-  <object id="42" name="Threats" type="event" x="0" y="32" width="16" height="16">
+  <object id="42" name="Threats" type="event" x="0" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="random_encounter spyder_omnichannel,0.25"/>
     <property name="cond1" value="is variable_set omnichannel1wall:yes"/>

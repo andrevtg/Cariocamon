@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="23">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="23">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="scenario" value="xero"/>
   <property name="slug" value="taba_ba_br_2"/>
  </properties>
- <tileset firstgid="1" name="core_indoor_floors" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_floors.png" width="736" height="1344"/>
+ <tileset firstgid="1" name="core_indoor_floors" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_floors.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="3865" name="core_indoor_walls" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_walls.png" width="736" height="1344"/>
+ <tileset firstgid="3865" name="core_indoor_walls" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_walls.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="7729" name="core_indoor_stairs" tilewidth="16" tileheight="16" tilecount="2970" columns="45">
-  <image source="../gfx/tilesets/core_indoor_stairs.png" width="720" height="1056"/>
+ <tileset firstgid="7729" name="core_indoor_stairs" tilewidth="32" tileheight="32" tilecount="2970" columns="45">
+  <image source="../gfx/tilesets/core_indoor_stairs.png" width="1440" height="2112"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="16" height="16">
   <data encoding="base64" compression="zlib">
@@ -35,19 +35,19 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="4" name="Collisions">
-  <object id="1" type="collision" x="32" y="48" width="64" height="48"/>
-  <object id="2" type="collision" x="80" y="0" width="16" height="48"/>
-  <object id="3" type="collision" x="160" y="0" width="16" height="96"/>
-  <object id="4" type="collision" x="176" y="48" width="48" height="48"/>
-  <object id="7" type="collision" x="208" y="96" width="32" height="48"/>
-  <object id="8" type="collision" x="224" y="144" width="16" height="112"/>
-  <object id="9" type="collision" x="160" y="224" width="64" height="32"/>
-  <object id="10" type="collision" x="16" y="224" width="80" height="32"/>
-  <object id="11" type="collision" x="16" y="96" width="16" height="128"/>
-  <object id="12" type="collision" x="32" y="96" width="16" height="48"/>
+  <object id="1" type="collision" x="64" y="96" width="128" height="96"/>
+  <object id="2" type="collision" x="160" y="0" width="32" height="96"/>
+  <object id="3" type="collision" x="320" y="0" width="32" height="192"/>
+  <object id="4" type="collision" x="352" y="96" width="96" height="96"/>
+  <object id="7" type="collision" x="416" y="192" width="64" height="96"/>
+  <object id="8" type="collision" x="448" y="288" width="32" height="224"/>
+  <object id="9" type="collision" x="320" y="448" width="128" height="64"/>
+  <object id="10" type="collision" x="32" y="448" width="160" height="64"/>
+  <object id="11" type="collision" x="32" y="192" width="32" height="256"/>
+  <object id="12" type="collision" x="64" y="192" width="32" height="96"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="3" name="Events">
-  <object id="13" name="create npcs" type="event" x="48" y="48" width="16" height="16">
+  <object id="13" name="create npcs" type="event" x="96" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc omnigrunt4,6,0,stand"/>
     <property name="act2" value="create_npc omnigrunt5,9,0,stand"/>
@@ -55,21 +55,21 @@
     <property name="cond2" value="not char_exists omnigrunt5"/>
    </properties>
   </object>
-  <object id="15" name="back to passageway" type="event" x="112" y="0" width="16" height="16">
+  <object id="15" name="back to passageway" type="event" x="224" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_2.tmx,14,17,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="16" name="back to passageway-2" type="event" x="128" y="0" width="16" height="16">
+  <object id="16" name="back to passageway-2" type="event" x="256" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_passageway_2.tmx,15,17,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="17" name="acolyte2" type="event" x="96" y="48" width="64" height="16">
+  <object id="17" name="acolyte2" type="event" x="192" y="96" width="128" height="32">
    <properties>
     <property name="act10" value="char_stop player"/>
     <property name="act11" value="lock_controls"/>
@@ -111,7 +111,7 @@
     <property name="cond2" value="not variable_set talkedonce:yes"/>
    </properties>
   </object>
-  <object id="18" name="acolyte2battle-won" type="event" x="48" y="80" width="16" height="16">
+  <object id="18" name="acolyte2battle-won" type="event" x="96" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="unlock_controls"/>
     <property name="act2" value="translated_dialog acolyte2challengerwin"/>
@@ -124,7 +124,7 @@
     <property name="cond3" value="not variable_set acolyte2battledone:yes"/>
    </properties>
   </object>
-  <object id="19" name="acolyte2battle-loss" type="event" x="80" y="80" width="16" height="16">
+  <object id="19" name="acolyte2battle-loss" type="event" x="160" y="160" width="32" height="32">
    <properties>
     <property name="act1" value="unlock_controls"/>
     <property name="act2" value="translated_dialog acolyte2challengerloss"/>
@@ -136,7 +136,7 @@
     <property name="cond3" value="not variable_set acolyte2battledone:yes"/>
    </properties>
   </object>
-  <object id="20" name="create garth" type="event" x="80" y="48" width="16" height="16">
+  <object id="20" name="create garth" type="event" x="160" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc garth,7,9,stand"/>
     <property name="act2" value="char_face garth,up"/>
@@ -145,7 +145,7 @@
     <property name="cond2" value="is variable_set talkedonce:yes"/>
    </properties>
   </object>
-  <object id="21" name="battle redo" type="event" x="112" y="128" width="16" height="16">
+  <object id="21" name="battle redo" type="event" x="224" y="256" width="32" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="translated_dialog acolyte2challengerredo"/>
@@ -159,7 +159,7 @@
     <property name="cond5" value="is variable_set acolyte2battledone:yes"/>
    </properties>
   </object>
-  <object id="22" name="teleport to main room" type="event" x="96" y="240" width="64" height="16">
+  <object id="22" name="teleport to main room" type="event" x="192" y="480" width="128" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_main.tmx,1,6,1"/>
     <property name="cond1" value="is char_at player"/>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="14" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="13">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="14" height="17" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="13">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="scenario" value="xero"/>
  </properties>
- <tileset firstgid="1" name="core_indoor_stairs" tilewidth="16" tileheight="16" tilecount="2970" columns="45">
-  <image source="../gfx/tilesets/core_indoor_stairs.png" width="720" height="1056"/>
+ <tileset firstgid="1" name="core_indoor_stairs" tilewidth="32" tileheight="32" tilecount="2970" columns="45">
+  <image source="../gfx/tilesets/core_indoor_stairs.png" width="1440" height="2112"/>
  </tileset>
- <tileset firstgid="2971" name="core_indoor_walls" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_walls.png" width="736" height="1344"/>
+ <tileset firstgid="2971" name="core_indoor_walls" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_walls.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="6835" name="core_indoor_floors" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_floors.png" width="736" height="1344"/>
+ <tileset firstgid="6835" name="core_indoor_floors" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_floors.png" width="1472" height="2688"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="14" height="17">
   <data encoding="base64" compression="zlib">
@@ -34,31 +34,31 @@
   </data>
  </layer>
  <objectgroup color="#ff2600" id="5" name="Collisions">
-  <object id="1" type="collision" x="0" y="32" width="144" height="48"/>
-  <object id="2" type="collision" x="0" y="80" width="16" height="160"/>
-  <object id="3" type="collision" x="64" y="192" width="160" height="48"/>
-  <object id="4" type="collision" x="16" y="192" width="16" height="80"/>
-  <object id="5" type="collision" x="64" y="240" width="16" height="32"/>
-  <object id="6" type="collision" x="208" y="32" width="16" height="160"/>
-  <object id="7" type="collision" x="192" y="0" width="16" height="80"/>
-  <object id="8" type="collision" x="128" y="0" width="16" height="32"/>
+  <object id="1" type="collision" x="0" y="64" width="288" height="96"/>
+  <object id="2" type="collision" x="0" y="160" width="32" height="320"/>
+  <object id="3" type="collision" x="128" y="384" width="320" height="96"/>
+  <object id="4" type="collision" x="32" y="384" width="32" height="160"/>
+  <object id="5" type="collision" x="128" y="480" width="32" height="64"/>
+  <object id="6" type="collision" x="416" y="64" width="32" height="320"/>
+  <object id="7" type="collision" x="384" y="0" width="32" height="160"/>
+  <object id="8" type="collision" x="256" y="0" width="32" height="64"/>
  </objectgroup>
  <objectgroup color="#fffb00" id="6" name="Events">
-  <object id="9" name="teleport to stairwell 2" type="event" x="32" y="256" width="16" height="16">
+  <object id="9" name="teleport to stairwell 2" type="event" x="64" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_stairwell_2.tmx,8,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="10" name="teleport to stairwell 2-2" type="event" x="48" y="256" width="16" height="16">
+  <object id="10" name="teleport to stairwell 2-2" type="event" x="96" y="512" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,taba_ba_stairwell_2.tmx,9,1,0.5"/>
     <property name="cond1" value="is char_at player"/>
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="11" name="Stop and talk" type="event" x="16" y="176" width="64" height="16">
+  <object id="11" name="Stop and talk" type="event" x="32" y="352" width="128" height="32">
    <properties>
     <property name="act1" value="char_stop player"/>
     <property name="act2" value="lock_controls"/>
@@ -70,7 +70,7 @@
     <property name="cond2" value="not variable_set foyer_move:done"/>
    </properties>
   </object>
-  <object id="12" name="wait up" type="event" x="48" y="32" width="16" height="16">
+  <object id="12" name="wait up" type="event" x="96" y="64" width="32" height="32">
    <properties>
     <property name="act10" value="translated_dialog tabawaitup"/>
     <property name="cond1" value="is variable_set foyer_talk:start"/>

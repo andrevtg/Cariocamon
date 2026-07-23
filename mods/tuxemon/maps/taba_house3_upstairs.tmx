@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="12" height="7" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="66">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="12" height="7" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="66">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -32,26 +32,26 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="29" type="collision" x="32" y="80" width="16" height="16"/>
-  <object id="33" type="collision" x="0" y="16" width="192" height="16"/>
-  <object id="40" type="collision" x="0" y="80" width="16" height="16"/>
-  <object id="42" type="collision" x="0" y="32" width="16" height="16"/>
-  <object id="43" type="collision" x="32" y="32" width="16" height="16"/>
-  <object id="44" type="collision" x="64" y="32" width="16" height="16"/>
-  <object id="46" type="collision" x="80" y="48" width="32" height="32"/>
-  <object id="58" type="collision" x="144" y="32" width="16" height="16"/>
-  <object id="59" type="collision" x="176" y="32" width="16" height="16"/>
-  <object id="60" type="collision" x="176" y="80" width="16" height="16"/>
-  <object id="61" type="collision" x="128" y="32" width="16" height="48"/>
+  <object id="29" type="collision" x="64" y="160" width="32" height="32"/>
+  <object id="33" type="collision" x="0" y="32" width="384" height="32"/>
+  <object id="40" type="collision" x="0" y="160" width="32" height="32"/>
+  <object id="42" type="collision" x="0" y="64" width="32" height="32"/>
+  <object id="43" type="collision" x="64" y="64" width="32" height="32"/>
+  <object id="44" type="collision" x="128" y="64" width="32" height="32"/>
+  <object id="46" type="collision" x="160" y="96" width="64" height="64"/>
+  <object id="58" type="collision" x="288" y="64" width="32" height="32"/>
+  <object id="59" type="collision" x="352" y="64" width="32" height="32"/>
+  <object id="60" type="collision" x="352" y="160" width="32" height="32"/>
+  <object id="61" type="collision" x="256" y="64" width="32" height="96"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="23" name="Play Music" type="event" x="176" y="0" width="16" height="16">
+  <object id="23" name="Play Music" type="event" x="352" y="0" width="32" height="32">
    <properties>
     <property name="act10" value="play_music music_home"/>
     <property name="cond10" value="not music_playing music_home"/>
    </properties>
   </object>
-  <object id="27" name="Go Down" type="event" x="96" y="32" width="16" height="16">
+  <object id="27" name="Go Down" type="event" x="192" y="64" width="32" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_house3.tmx,7,2,0.3"/>
     <property name="act20" value="char_face player,right"/>
@@ -59,25 +59,25 @@
     <property name="cond20" value="is char_facing player,left"/>
    </properties>
   </object>
-  <object id="52" name="Create Client1" type="event" x="48" y="64" width="16" height="16">
+  <object id="52" name="Create Client1" type="event" x="96" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc taba_house3_client1,3,4,wander"/>
     <property name="cond1" value="not char_exists taba_house3_client1"/>
    </properties>
   </object>
-  <object id="53" name="Talk Client1" type="event" x="80" y="64" width="16" height="16">
+  <object id="53" name="Talk Client1" type="event" x="160" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client4a"/>
     <property name="behav1" value="talk taba_house3_client1"/>
    </properties>
   </object>
-  <object id="62" name="Create Client2" type="event" x="160" y="64" width="16" height="16">
+  <object id="62" name="Create Client2" type="event" x="320" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc taba_house3_client2,10,4,wander"/>
     <property name="cond1" value="not char_exists taba_house3_client2"/>
    </properties>
   </object>
-  <object id="63" name="Talk Client Question" type="event" x="96" y="64" width="16" height="16">
+  <object id="63" name="Talk Client Question" type="event" x="192" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client5a"/>
     <property name="act2" value="translated_dialog_choice taba_house3_choice1:taba_house3_choice2,beesissue"/>
@@ -85,14 +85,14 @@
     <property name="cond1" value="not variable_set beesissue"/>
    </properties>
   </object>
-  <object id="64" name="Talk Client First" type="event" x="80" y="48" width="16" height="16">
+  <object id="64" name="Talk Client First" type="event" x="160" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client5a_first"/>
     <property name="behav1" value="talk taba_house3_client2"/>
     <property name="cond1" value="is variable_set beesissue:taba_house3_choice1"/>
    </properties>
   </object>
-  <object id="65" name="Talk Client Second" type="event" x="96" y="48" width="16" height="16">
+  <object id="65" name="Talk Client Second" type="event" x="192" y="96" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog taba_house3_client5a_second"/>
     <property name="behav1" value="talk taba_house3_client2"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="594">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="594">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="map_type" value="notype"/>
@@ -27,28 +27,28 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="4" name="Collisions">
-  <object id="441" type="collision" x="0" y="144" width="32" height="416"/>
-  <object id="442" type="collision" x="0" y="592" width="400" height="16"/>
-  <object id="444" type="collision" x="624" y="480" width="16" height="160"/>
-  <object id="474" type="collision" x="304" y="512" width="80" height="48"/>
-  <object id="475" type="collision" x="448" y="512" width="32" height="48"/>
-  <object id="476" type="collision" x="496" y="512" width="32" height="48"/>
-  <object id="479" type="collision" x="64" y="320" width="16" height="160"/>
-  <object id="480" type="collision" x="80" y="320" width="160" height="16"/>
-  <object id="481" type="collision" x="224" y="336" width="16" height="144"/>
-  <object id="482" type="collision" x="192" y="464" width="32" height="16"/>
-  <object id="485" type="collision" x="192" y="336" width="32" height="32"/>
-  <object id="486" type="collision" x="80" y="336" width="32" height="32"/>
-  <object id="489" type="collision" x="32" y="208" width="160" height="64"/>
-  <object id="491" type="collision" x="176" y="0" width="32" height="160"/>
-  <object id="492" type="collision" x="0" y="0" width="176" height="48"/>
-  <object id="493" type="collision" x="0" y="48" width="32" height="64"/>
-  <object id="553" type="collision" x="448" y="624" width="176" height="16"/>
-  <object id="569" type="collision" x="32" y="512" width="32" height="32"/>
-  <object id="581" type="collision" x="80" y="464" width="32" height="16"/>
+  <object id="441" type="collision" x="0" y="288" width="64" height="832"/>
+  <object id="442" type="collision" x="0" y="1184" width="800" height="32"/>
+  <object id="444" type="collision" x="1248" y="960" width="32" height="320"/>
+  <object id="474" type="collision" x="608" y="1024" width="160" height="96"/>
+  <object id="475" type="collision" x="896" y="1024" width="64" height="96"/>
+  <object id="476" type="collision" x="992" y="1024" width="64" height="96"/>
+  <object id="479" type="collision" x="128" y="640" width="32" height="320"/>
+  <object id="480" type="collision" x="160" y="640" width="320" height="32"/>
+  <object id="481" type="collision" x="448" y="672" width="32" height="288"/>
+  <object id="482" type="collision" x="384" y="928" width="64" height="32"/>
+  <object id="485" type="collision" x="384" y="672" width="64" height="64"/>
+  <object id="486" type="collision" x="160" y="672" width="64" height="64"/>
+  <object id="489" type="collision" x="64" y="416" width="320" height="128"/>
+  <object id="491" type="collision" x="352" y="0" width="64" height="320"/>
+  <object id="492" type="collision" x="0" y="0" width="352" height="96"/>
+  <object id="493" type="collision" x="0" y="96" width="64" height="128"/>
+  <object id="553" type="collision" x="896" y="1248" width="352" height="32"/>
+  <object id="569" type="collision" x="64" y="1024" width="64" height="64"/>
+  <object id="581" type="collision" x="160" y="928" width="64" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="5" name="Events">
-  <object id="562" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="562" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_town_theme"/>
     <property name="cond1" value="not music_playing music_town_theme"/>

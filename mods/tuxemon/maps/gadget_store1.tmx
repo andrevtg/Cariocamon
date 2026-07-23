@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="13" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="12">
- <tileset firstgid="1" name="core_indoor_floors" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_floors.png" width="736" height="1344"/>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="13" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="12">
+ <tileset firstgid="1" name="core_indoor_floors" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_floors.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="3865" name="core_indoor_walls" tilewidth="16" tileheight="16" tilecount="3864" columns="46">
-  <image source="../gfx/tilesets/core_indoor_walls.png" width="736" height="1344"/>
+ <tileset firstgid="3865" name="core_indoor_walls" tilewidth="32" tileheight="32" tilecount="3864" columns="46">
+  <image source="../gfx/tilesets/core_indoor_walls.png" width="1472" height="2688"/>
  </tileset>
- <tileset firstgid="7729" name="core_set pieces" tilewidth="16" tileheight="16" tilecount="1550" columns="31">
-  <image source="../gfx/tilesets/core_set pieces.png" width="496" height="800"/>
+ <tileset firstgid="7729" name="core_set pieces" tilewidth="32" tileheight="32" tilecount="1550" columns="31">
+  <image source="../gfx/tilesets/core_set pieces.png" width="992" height="1600"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="20" height="13">
   <data encoding="base64" compression="zlib">
@@ -30,13 +30,13 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="6" name="Collisions">
-  <object id="3" type="collision" x="0" y="192" width="112" height="16"/>
-  <object id="4" type="collision" x="144" y="192" width="176" height="16"/>
-  <object id="5" type="collision" x="0" y="0" width="320" height="48"/>
-  <object id="8" type="collision" x="304" y="80" width="16" height="16"/>
+  <object id="3" type="collision" x="0" y="384" width="224" height="32"/>
+  <object id="4" type="collision" x="288" y="384" width="352" height="32"/>
+  <object id="5" type="collision" x="0" y="0" width="640" height="96"/>
+  <object id="8" type="collision" x="608" y="160" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="2" name="Events">
-  <object id="2" type="event" x="112" y="192" width="32" height="16">
+  <object id="2" type="event" x="224" y="384" width="64" height="32">
    <properties>
     <property name="act10" value="transition_teleport player,taba_town.tmx,40,11,0.3"/>
     <property name="cond10" value="is char_at player"/>

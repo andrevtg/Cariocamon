@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1-8-g449813058" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="289">
+<map version="1.10" tiledversion="1.12.1-8-g449813058" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="289">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="map_type" value="town"/>
@@ -40,16 +40,16 @@
   <properties>
    <property name="Collision" value=""/>
   </properties>
-  <object id="179" type="collision" x="240" y="0" width="16" height="16"/>
+  <object id="179" type="collision" x="480" y="0" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="7" name="Events">
-  <object id="228" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="228" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_town_theme"/>
     <property name="cond1" value="not music_playing music_town_theme"/>
    </properties>
   </object>
-  <object id="210" name="Environment Day" type="event" x="16" y="0" width="16" height="16">
+  <object id="210" name="Environment Day" type="event" x="32" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment grass"/>
     <property name="cond1" value="not time_is stage_of_day,equals,night"/>
@@ -57,7 +57,7 @@
     <property name="cond3" value="not environment_is grass"/>
    </properties>
   </object>
-  <object id="211" name="Environment Night" type="event" x="32" y="0" width="16" height="16">
+  <object id="211" name="Environment Night" type="event" x="64" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment night_grass"/>
     <property name="cond1" value="is time_is stage_of_day,equals,night"/>
@@ -65,7 +65,7 @@
     <property name="cond3" value="not environment_is night_grass"/>
    </properties>
   </object>
-  <object id="285" name="Teleport to Route2" type="event" x="0" y="256" width="16" height="48">
+  <object id="285" name="Teleport to Route2" type="event" x="0" y="512" width="32" height="96">
    <properties>
     <property name="act1" value="transition_teleport player,classic_route_2.tmx,39,17,0.3"/>
     <property name="act2" value="char_face player,left"/>
@@ -73,7 +73,7 @@
     <property name="cond2" value="is char_facing player,left"/>
    </properties>
   </object>
-  <object id="286" name="Teleport to Route5" type="event" x="624" y="16" width="16" height="48">
+  <object id="286" name="Teleport to Route5" type="event" x="1248" y="32" width="32" height="96">
    <properties>
     <property name="act1" value="transition_teleport player,classic_route_5.tmx,0,2,0.3"/>
     <property name="act2" value="char_face player,right"/>
@@ -81,7 +81,7 @@
     <property name="cond2" value="is char_facing player,right"/>
    </properties>
   </object>
-  <object id="287" name="Teleport to Route7" type="event" x="560" y="304" width="48" height="16">
+  <object id="287" name="Teleport to Route7" type="event" x="1120" y="608" width="96" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,classic_route_7.tmx,36,0,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -89,7 +89,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="288" name="Teleport to Route3" type="event" x="256" y="0" width="48" height="16">
+  <object id="288" name="Teleport to Route3" type="event" x="512" y="0" width="96" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,classic_route_3.tmx,17,19,0.3"/>
     <property name="act2" value="char_face player,up"/>

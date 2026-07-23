@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="78">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="78">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -30,64 +30,64 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="2" type="collision" x="112" y="544" width="96" height="32"/>
-  <object id="3" type="collision" x="208" y="464" width="16" height="160"/>
-  <object id="4" type="collision" x="224" y="416" width="16" height="80"/>
-  <object id="5" type="collision" x="256" y="416" width="32" height="112"/>
-  <object id="6" type="collision" x="224" y="368" width="16" height="32"/>
-  <object id="7" type="collision" x="240" y="400" width="16" height="16"/>
-  <object id="8" type="collision-line" x="320" y="624">
-   <polyline points="0,0 0,-112"/>
+  <object id="2" type="collision" x="224" y="1088" width="192" height="64"/>
+  <object id="3" type="collision" x="416" y="928" width="32" height="320"/>
+  <object id="4" type="collision" x="448" y="832" width="32" height="160"/>
+  <object id="5" type="collision" x="512" y="832" width="64" height="224"/>
+  <object id="6" type="collision" x="448" y="736" width="32" height="64"/>
+  <object id="7" type="collision" x="480" y="800" width="32" height="32"/>
+  <object id="8" type="collision-line" x="640" y="1248">
+   <polyline points="0,0 0,-224"/>
   </object>
-  <object id="9" type="collision" x="144" y="592" width="32" height="32"/>
-  <object id="10" type="collision" x="192" y="320" width="64" height="32"/>
-  <object id="11" type="collision" x="208" y="80" width="32" height="80"/>
-  <object id="12" type="collision" x="224" y="128" width="32" height="112"/>
-  <object id="13" type="collision" x="256" y="48" width="16" height="64"/>
-  <object id="14" type="collision" x="272" y="112" width="16" height="16"/>
-  <object id="15" type="collision" x="144" y="48" width="48" height="32"/>
-  <object id="16" type="collision" x="112" y="464" width="64" height="32"/>
-  <object id="17" type="collision" x="160" y="480" width="32" height="32"/>
-  <object id="18" type="collision" x="96" y="624" width="224" height="16"/>
-  <object id="19" type="collision" x="0" y="528" width="16" height="112"/>
-  <object id="20" type="collision" x="0" y="0" width="80" height="64"/>
-  <object id="21" type="collision" x="80" y="48" width="64" height="48"/>
-  <object id="22" type="collision" x="0" y="128" width="64" height="112"/>
-  <object id="23" type="collision" x="144" y="128" width="16" height="112"/>
-  <object id="24" type="collision" x="0" y="240" width="16" height="16"/>
-  <object id="25" type="collision" x="160" y="176" width="16" height="64"/>
-  <object id="26" type="collision" x="176" y="208" width="16" height="48"/>
-  <object id="27" type="collision" x="192" y="240" width="32" height="16"/>
-  <object id="28" type="collision" x="224" y="560" width="16" height="64"/>
-  <object id="29" type="collision" x="240" y="576" width="32" height="48"/>
-  <object id="30" type="collision" x="304" y="0" width="16" height="528"/>
-  <object id="31" type="collision" x="80" y="0" width="224" height="16"/>
-  <object id="32" type="collision" x="80" y="16" width="80" height="16"/>
-  <object id="33" type="collision" x="80" y="32" width="16" height="16"/>
-  <object id="34" type="collision" x="240" y="16" width="64" height="16"/>
-  <object id="35" type="collision" x="272" y="32" width="32" height="32"/>
-  <object id="36" type="collision" x="288" y="176" width="16" height="208"/>
-  <object id="37" type="collision" x="256" y="304" width="32" height="80"/>
-  <object id="58" type="collision" x="128" y="176" width="16" height="80"/>
-  <object id="59" type="collision" x="64" y="176" width="32" height="64"/>
-  <object id="60" type="collision" x="0" y="64" width="16" height="64"/>
-  <object id="61" type="collision" x="48" y="64" width="16" height="48"/>
-  <object id="62" type="collision" x="64" y="64" width="16" height="32"/>
-  <object id="63" type="collision" x="0" y="256" width="144" height="96"/>
-  <object id="64" type="collision" x="144" y="272" width="16" height="112"/>
-  <object id="65" type="collision" x="160" y="272" width="64" height="32"/>
-  <object id="66" type="collision" x="48" y="592" width="64" height="32"/>
-  <object id="67" type="collision" x="48" y="576" width="32" height="16"/>
-  <object id="68" type="collision" x="16" y="528" width="64" height="32"/>
-  <object id="69" type="collision" x="48" y="448" width="64" height="48"/>
-  <object id="70" type="collision" x="48" y="496" width="32" height="32"/>
-  <object id="71" type="collision" x="0" y="352" width="16" height="176"/>
-  <object id="72" type="collision" x="112" y="352" width="32" height="48"/>
-  <object id="73" type="collision" x="48" y="384" width="64" height="48"/>
-  <object id="74" type="collision" x="112" y="400" width="16" height="16"/>
+  <object id="9" type="collision" x="288" y="1184" width="64" height="64"/>
+  <object id="10" type="collision" x="384" y="640" width="128" height="64"/>
+  <object id="11" type="collision" x="416" y="160" width="64" height="160"/>
+  <object id="12" type="collision" x="448" y="256" width="64" height="224"/>
+  <object id="13" type="collision" x="512" y="96" width="32" height="128"/>
+  <object id="14" type="collision" x="544" y="224" width="32" height="32"/>
+  <object id="15" type="collision" x="288" y="96" width="96" height="64"/>
+  <object id="16" type="collision" x="224" y="928" width="128" height="64"/>
+  <object id="17" type="collision" x="320" y="960" width="64" height="64"/>
+  <object id="18" type="collision" x="192" y="1248" width="448" height="32"/>
+  <object id="19" type="collision" x="0" y="1056" width="32" height="224"/>
+  <object id="20" type="collision" x="0" y="0" width="160" height="128"/>
+  <object id="21" type="collision" x="160" y="96" width="128" height="96"/>
+  <object id="22" type="collision" x="0" y="256" width="128" height="224"/>
+  <object id="23" type="collision" x="288" y="256" width="32" height="224"/>
+  <object id="24" type="collision" x="0" y="480" width="32" height="32"/>
+  <object id="25" type="collision" x="320" y="352" width="32" height="128"/>
+  <object id="26" type="collision" x="352" y="416" width="32" height="96"/>
+  <object id="27" type="collision" x="384" y="480" width="64" height="32"/>
+  <object id="28" type="collision" x="448" y="1120" width="32" height="128"/>
+  <object id="29" type="collision" x="480" y="1152" width="64" height="96"/>
+  <object id="30" type="collision" x="608" y="0" width="32" height="1056"/>
+  <object id="31" type="collision" x="160" y="0" width="448" height="32"/>
+  <object id="32" type="collision" x="160" y="32" width="160" height="32"/>
+  <object id="33" type="collision" x="160" y="64" width="32" height="32"/>
+  <object id="34" type="collision" x="480" y="32" width="128" height="32"/>
+  <object id="35" type="collision" x="544" y="64" width="64" height="64"/>
+  <object id="36" type="collision" x="576" y="352" width="32" height="416"/>
+  <object id="37" type="collision" x="512" y="608" width="64" height="160"/>
+  <object id="58" type="collision" x="256" y="352" width="32" height="160"/>
+  <object id="59" type="collision" x="128" y="352" width="64" height="128"/>
+  <object id="60" type="collision" x="0" y="128" width="32" height="128"/>
+  <object id="61" type="collision" x="96" y="128" width="32" height="96"/>
+  <object id="62" type="collision" x="128" y="128" width="32" height="64"/>
+  <object id="63" type="collision" x="0" y="512" width="288" height="192"/>
+  <object id="64" type="collision" x="288" y="544" width="32" height="224"/>
+  <object id="65" type="collision" x="320" y="544" width="128" height="64"/>
+  <object id="66" type="collision" x="96" y="1184" width="128" height="64"/>
+  <object id="67" type="collision" x="96" y="1152" width="64" height="32"/>
+  <object id="68" type="collision" x="32" y="1056" width="128" height="64"/>
+  <object id="69" type="collision" x="96" y="896" width="128" height="96"/>
+  <object id="70" type="collision" x="96" y="992" width="64" height="64"/>
+  <object id="71" type="collision" x="0" y="704" width="32" height="352"/>
+  <object id="72" type="collision" x="224" y="704" width="64" height="96"/>
+  <object id="73" type="collision" x="96" y="768" width="128" height="96"/>
+  <object id="74" type="collision" x="224" y="800" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="38" name="Teleport to Aboveground" type="event" x="112" y="32" width="16" height="16">
+  <object id="38" name="Teleport to Aboveground" type="event" x="224" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_tunnel.tmx,12,3,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -95,7 +95,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="39" name="Teleport to Aboveground" type="event" x="208" y="224" width="16" height="16">
+  <object id="39" name="Teleport to Aboveground" type="event" x="416" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_tunnel.tmx,6,16,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -103,7 +103,7 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="40" name="Teleport to Aboveground" type="event" x="224" y="400" width="16" height="16">
+  <object id="40" name="Teleport to Aboveground" type="event" x="448" y="800" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_tunnel.tmx,5,27,0.3"/>
     <property name="act2" value="char_face player,down"/>
@@ -111,33 +111,33 @@
     <property name="cond2" value="is char_facing player,down"/>
    </properties>
   </object>
-  <object id="43" name="Create Beryll" type="event" x="144" y="496" width="16" height="16">
+  <object id="43" name="Create Beryll" type="event" x="288" y="992" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_beryll,9,31"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_beryll"/>
    </properties>
   </object>
-  <object id="45" name="Create Lute" type="event" x="32" y="576" width="16" height="16">
+  <object id="45" name="Create Lute" type="event" x="64" y="1152" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_lute,2,36"/>
     <property name="act2" value="char_face spyder_tunnelb_lute,up"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_lute"/>
    </properties>
   </object>
-  <object id="47" name="Create Meitner" type="event" x="240" y="304" width="16" height="16">
+  <object id="47" name="Create Meitner" type="event" x="480" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_meitner,15,19"/>
     <property name="act2" value="char_face spyder_tunnelb_meitner,up"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_meitner"/>
    </properties>
   </object>
-  <object id="49" name="Environment" type="event" x="0" y="32" width="16" height="16">
+  <object id="49" name="Environment" type="event" x="0" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment cave"/>
     <property name="cond1" value="not environment_is cave"/>
    </properties>
   </object>
-  <object id="50" name="Talk Meitner" type="event" x="240" y="240" width="16" height="64">
+  <object id="50" name="Talk Meitner" type="event" x="480" y="480" width="32" height="128">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_tunnelb_meitner"/>
@@ -152,7 +152,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="51" name="Talk Lute" type="event" x="32" y="560" width="16" height="16">
+  <object id="51" name="Talk Lute" type="event" x="64" y="1120" width="32" height="32">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="pathfind_to_char player,spyder_tunnelb_lute"/>
@@ -170,7 +170,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="52" name="Talk Beryll" type="event" x="144" y="512" width="16" height="32">
+  <object id="52" name="Talk Beryll" type="event" x="288" y="1024" width="32" height="64">
    <properties>
     <property name="act01" value="lock_controls"/>
     <property name="act02" value="pathfind_to_char player,spyder_tunnelb_beryll"/>
@@ -187,20 +187,20 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="42" name="Encounters" type="event" x="0" y="64" width="16" height="16">
+  <object id="42" name="Encounters" type="event" x="0" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="random_encounter spyder_routeb,0.6"/>
     <property name="cond1" value="is check_char_parameter player,moving,1"/>
    </properties>
   </object>
-  <object id="54" name="Create Shammer" type="event" x="32" y="608" width="16" height="16">
+  <object id="54" name="Create Shammer" type="event" x="64" y="1216" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_shammer,2,38"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_shammer"/>
     <property name="cond2" value="not variable_set tunnelb_shammer:yes"/>
    </properties>
   </object>
-  <object id="55" name="Shammer" type="event" x="48" y="608" width="16" height="16">
+  <object id="55" name="Shammer" type="event" x="96" y="1216" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog shammer_fossil,,center,center,center"/>
     <property name="act2" value="add_item shammer_fossil"/>
@@ -209,14 +209,14 @@
     <property name="behav1" value="talk spyder_tunnelb_shammer"/>
    </properties>
   </object>
-  <object id="56" name="Create Rhincus" type="event" x="256" y="528" width="16" height="16">
+  <object id="56" name="Create Rhincus" type="event" x="512" y="1056" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_tunnelb_rhincus,16,33"/>
     <property name="cond1" value="not char_exists spyder_tunnelb_rhincus"/>
     <property name="cond2" value="not variable_set tunnelb_rhincus:yes"/>
    </properties>
   </object>
-  <object id="57" name="Rhincus" type="event" x="256" y="512" width="16" height="16">
+  <object id="57" name="Rhincus" type="event" x="512" y="1024" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog rhincus_fossil,,center,center,center"/>
     <property name="act2" value="add_item rhincus_fossil"/>
@@ -225,21 +225,21 @@
     <property name="behav1" value="talk spyder_tunnelb_rhincus"/>
    </properties>
   </object>
-  <object id="75" name="Talk Beryll" type="event" x="160" y="496" width="16" height="16">
+  <object id="75" name="Talk Beryll" type="event" x="320" y="992" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_tunnelb_beryll,post_battle_lose"/>
     <property name="behav1" value="talk spyder_tunnelb_beryll"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_tunnelb_beryll"/>
    </properties>
   </object>
-  <object id="76" name="Talk Lute" type="event" x="48" y="576" width="16" height="16">
+  <object id="76" name="Talk Lute" type="event" x="96" y="1152" width="32" height="32">
    <properties>
     <property name="act01" value="char_talk spyder_tunnelb_lute,post_battle_lose"/>
     <property name="behav1" value="talk spyder_tunnelb_lute"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_tunnelb_lute"/>
    </properties>
   </object>
-  <object id="77" name="Talk Meitner" type="event" x="256" y="304" width="16" height="16">
+  <object id="77" name="Talk Meitner" type="event" x="512" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_tunnelb_meitner,post_battle_lose"/>
     <property name="behav1" value="talk spyder_tunnelb_meitner"/>

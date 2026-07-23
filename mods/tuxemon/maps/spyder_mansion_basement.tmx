@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="24" height="22" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="77">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="24" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="77">
  <properties>
   <property name="edges" value="clamped"/>
   <property name="inside" type="bool" value="true"/>
@@ -33,45 +33,45 @@
   </data>
  </layer>
  <objectgroup color="#ff0000" id="5" name="Collisions">
-  <object id="1" type="collision" x="0" y="0" width="16" height="224"/>
-  <object id="2" type="collision" x="16" y="0" width="368" height="32"/>
-  <object id="3" type="collision" x="368" y="32" width="16" height="320"/>
-  <object id="4" type="collision" x="240" y="192" width="128" height="32"/>
-  <object id="5" type="collision" x="16" y="192" width="176" height="32"/>
-  <object id="6" type="collision" x="48" y="128" width="96" height="32"/>
-  <object id="7" type="collision" x="32" y="112" width="32" height="32"/>
-  <object id="8" type="collision" x="16" y="64" width="32" height="32"/>
-  <object id="9" type="collision" x="64" y="32" width="16" height="16"/>
-  <object id="10" type="collision" x="80" y="32" width="16" height="96"/>
-  <object id="11" type="collision" x="128" y="64" width="48" height="32"/>
-  <object id="12" type="collision" x="176" y="32" width="16" height="128"/>
-  <object id="13" type="collision" x="240" y="32" width="16" height="128"/>
-  <object id="14" type="collision" x="224" y="144" width="16" height="16"/>
-  <object id="15" type="collision" x="144" y="128" width="16" height="16"/>
-  <object id="16" type="collision" x="160" y="96" width="16" height="16"/>
-  <object id="17" type="collision" x="256" y="128" width="80" height="32"/>
-  <object id="18" type="collision" x="272" y="80" width="64" height="16"/>
-  <object id="19" type="collision" x="320" y="96" width="16" height="32"/>
-  <object id="20" type="collision" x="176" y="224" width="16" height="96"/>
-  <object id="21" type="collision" x="64" y="224" width="16" height="128"/>
-  <object id="22" type="collision" x="240" y="224" width="16" height="96"/>
-  <object id="23" type="collision" x="96" y="256" width="48" height="32"/>
-  <object id="24" type="collision" x="128" y="288" width="16" height="64"/>
-  <object id="25" type="collision" x="304" y="320" width="16" height="32"/>
-  <object id="26" type="collision" x="320" y="336" width="16" height="16"/>
-  <object id="27" type="collision" x="256" y="224" width="80" height="16"/>
-  <object id="28" type="collision" x="288" y="240" width="32" height="16"/>
-  <object id="29" type="collision" x="304" y="256" width="16" height="16"/>
-  <object id="30" type="collision" x="352" y="224" width="16" height="16"/>
-  <object id="31" type="collision" x="192" y="304" width="16" height="16"/>
-  <object id="32" type="collision" x="160" y="224" width="16" height="16"/>
-  <object id="33" type="collision" x="352" y="176" width="16" height="16"/>
-  <object id="34" type="collision-line" x="96" y="288">
-   <polyline points="0,0 0,32"/>
+  <object id="1" type="collision" x="0" y="0" width="32" height="448"/>
+  <object id="2" type="collision" x="32" y="0" width="736" height="64"/>
+  <object id="3" type="collision" x="736" y="64" width="32" height="640"/>
+  <object id="4" type="collision" x="480" y="384" width="256" height="64"/>
+  <object id="5" type="collision" x="32" y="384" width="352" height="64"/>
+  <object id="6" type="collision" x="96" y="256" width="192" height="64"/>
+  <object id="7" type="collision" x="64" y="224" width="64" height="64"/>
+  <object id="8" type="collision" x="32" y="128" width="64" height="64"/>
+  <object id="9" type="collision" x="128" y="64" width="32" height="32"/>
+  <object id="10" type="collision" x="160" y="64" width="32" height="192"/>
+  <object id="11" type="collision" x="256" y="128" width="96" height="64"/>
+  <object id="12" type="collision" x="352" y="64" width="32" height="256"/>
+  <object id="13" type="collision" x="480" y="64" width="32" height="256"/>
+  <object id="14" type="collision" x="448" y="288" width="32" height="32"/>
+  <object id="15" type="collision" x="288" y="256" width="32" height="32"/>
+  <object id="16" type="collision" x="320" y="192" width="32" height="32"/>
+  <object id="17" type="collision" x="512" y="256" width="160" height="64"/>
+  <object id="18" type="collision" x="544" y="160" width="128" height="32"/>
+  <object id="19" type="collision" x="640" y="192" width="32" height="64"/>
+  <object id="20" type="collision" x="352" y="448" width="32" height="192"/>
+  <object id="21" type="collision" x="128" y="448" width="32" height="256"/>
+  <object id="22" type="collision" x="480" y="448" width="32" height="192"/>
+  <object id="23" type="collision" x="192" y="512" width="96" height="64"/>
+  <object id="24" type="collision" x="256" y="576" width="32" height="128"/>
+  <object id="25" type="collision" x="608" y="640" width="32" height="64"/>
+  <object id="26" type="collision" x="640" y="672" width="32" height="32"/>
+  <object id="27" type="collision" x="512" y="448" width="160" height="32"/>
+  <object id="28" type="collision" x="576" y="480" width="64" height="32"/>
+  <object id="29" type="collision" x="608" y="512" width="32" height="32"/>
+  <object id="30" type="collision" x="704" y="448" width="32" height="32"/>
+  <object id="31" type="collision" x="384" y="608" width="32" height="32"/>
+  <object id="32" type="collision" x="320" y="448" width="32" height="32"/>
+  <object id="33" type="collision" x="704" y="352" width="32" height="32"/>
+  <object id="34" type="collision-line" x="192" y="576">
+   <polyline points="0,0 0,64"/>
   </object>
  </objectgroup>
  <objectgroup color="#ffff00" id="6" name="Events">
-  <object id="35" name="Teleport to Middle" type="event" x="96" y="304" width="16" height="16">
+  <object id="35" name="Teleport to Middle" type="event" x="192" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_mansion.tmx,1,15,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -79,7 +79,7 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="36" name="Teleport to Middle" type="event" x="112" y="304" width="16" height="16">
+  <object id="36" name="Teleport to Middle" type="event" x="224" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="transition_teleport player,spyder_mansion.tmx,2,15,0.3"/>
     <property name="act2" value="char_face player,up"/>
@@ -87,64 +87,64 @@
     <property name="cond2" value="is char_facing player,up"/>
    </properties>
   </object>
-  <object id="37" name="Play Music" type="event" x="0" y="0" width="16" height="16">
+  <object id="37" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="play_music music_jester_theme"/>
     <property name="cond1" value="not music_playing music_jester_theme"/>
    </properties>
   </object>
-  <object id="40" name="Create Captain" type="event" x="48" y="64" width="16" height="16">
+  <object id="40" name="Create Captain" type="event" x="96" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_flick,3,4"/>
     <property name="cond1" value="not char_exists spyder_basement_flick"/>
     <property name="cond2" value="not variable_set captainreturns:yes"/>
    </properties>
   </object>
-  <object id="41" name="Talk Captain" type="event" x="32" y="64" width="16" height="16">
+  <object id="41" name="Talk Captain" type="event" x="64" y="128" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_mansion_captain1"/>
     <property name="act2" value="set_variable foundcaptain:yes"/>
     <property name="behav1" value="talk spyder_basement_flick"/>
    </properties>
   </object>
-  <object id="42" name="Environment" type="event" x="32" y="0" width="16" height="16">
+  <object id="42" name="Environment" type="event" x="64" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="set_environment interior"/>
     <property name="cond1" value="not environment_is interior"/>
    </properties>
   </object>
-  <object id="43" name="Create Rogue" type="event" x="224" y="128" width="16" height="16">
+  <object id="43" name="Create Rogue" type="event" x="448" y="256" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_garret,14,8"/>
     <property name="act2" value="char_face spyder_basement_garret,left"/>
     <property name="cond1" value="not char_exists spyder_basement_garret"/>
    </properties>
   </object>
-  <object id="46" name="Create Roger" type="event" x="320" y="240" width="16" height="16">
+  <object id="46" name="Create Roger" type="event" x="640" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_roger,20,15"/>
     <property name="cond1" value="not char_exists spyder_basement_roger"/>
    </properties>
   </object>
-  <object id="47" name="Create Catholi" type="event" x="208" y="288" width="16" height="16">
+  <object id="47" name="Create Catholi" type="event" x="416" y="576" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_catholi,13,18"/>
     <property name="cond1" value="not char_exists spyder_basement_catholi"/>
    </properties>
   </object>
-  <object id="49" name="Create Coralli" type="event" x="336" y="32" width="16" height="16">
+  <object id="49" name="Create Coralli" type="event" x="672" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_coralli,21,2"/>
     <property name="cond1" value="not char_exists spyder_basement_coralli"/>
    </properties>
   </object>
-  <object id="50" name="Create Bobby" type="event" x="96" y="96" width="16" height="16">
+  <object id="50" name="Create Bobby" type="event" x="192" y="192" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_bobby,6,6"/>
     <property name="cond1" value="not char_exists spyder_basement_bobby"/>
    </properties>
   </object>
-  <object id="51" name="Talk Coralli" type="event" x="336" y="48" width="16" height="48">
+  <object id="51" name="Talk Coralli" type="event" x="672" y="96" width="32" height="96">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_basement_coralli"/>
@@ -160,7 +160,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="52" name="Talk Bobby" type="event" x="112" y="96" width="48" height="16">
+  <object id="52" name="Talk Bobby" type="event" x="224" y="192" width="96" height="32">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_basement_bobby"/>
@@ -175,7 +175,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="54" name="Talk Roger" type="event" x="320" y="256" width="16" height="64">
+  <object id="54" name="Talk Roger" type="event" x="640" y="512" width="32" height="128">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_basement_roger"/>
@@ -190,7 +190,7 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="56" name="Talk Catholi" type="event" x="208" y="304" width="16" height="48">
+  <object id="56" name="Talk Catholi" type="event" x="416" y="608" width="32" height="96">
    <properties>
     <property name="act1" value="lock_controls"/>
     <property name="act2" value="pathfind_to_char player,spyder_basement_catholi"/>
@@ -206,32 +206,32 @@
     <property name="cond3" value="not char_defeated player"/>
    </properties>
   </object>
-  <object id="58" name="Create Baller" type="event" x="336" y="176" width="16" height="16">
+  <object id="58" name="Create Baller" type="event" x="672" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_josh,21,11"/>
     <property name="act2" value="char_face spyder_basement_josh,left"/>
     <property name="cond1" value="not char_exists spyder_basement_josh"/>
    </properties>
   </object>
-  <object id="59" name="Talk Baller" type="event" x="352" y="176" width="16" height="16">
+  <object id="59" name="Talk Baller" type="event" x="704" y="352" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_basement_baller"/>
     <property name="behav1" value="talk spyder_basement_josh"/>
    </properties>
   </object>
-  <object id="60" name="Talk Rogue" type="event" x="240" y="144" width="16" height="16">
+  <object id="60" name="Talk Rogue" type="event" x="480" y="288" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_basement_rogue"/>
     <property name="behav1" value="talk spyder_basement_garret"/>
    </properties>
   </object>
-  <object id="61" name="Create Josephine" type="event" x="192" y="320" width="16" height="16">
+  <object id="61" name="Create Josephine" type="event" x="384" y="640" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_basement_josephine,12,20"/>
     <property name="cond1" value="not char_exists spyder_basement_josephine"/>
    </properties>
   </object>
-  <object id="62" name="Talk Josephine before" type="event" x="240" y="304" width="16" height="16">
+  <object id="62" name="Talk Josephine before" type="event" x="480" y="608" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_basement_josephine1"/>
     <property name="act2" value="translated_dialog_choice yes:no,offer_josephine"/>
@@ -239,7 +239,7 @@
     <property name="cond1" value="not variable_set offer_josephine:yes"/>
    </properties>
   </object>
-  <object id="63" name="Healed" type="event" x="240" y="288" width="16" height="16">
+  <object id="63" name="Healed" type="event" x="480" y="576" width="32" height="32">
    <properties>
     <property name="act2" value="set_monster_health"/>
     <property name="act3" value="set_monster_status"/>
@@ -253,49 +253,49 @@
     <property name="cond2" value="not variable_set healed_josephine:yes"/>
    </properties>
   </object>
-  <object id="64" name="Talk Josephine after" type="event" x="240" y="272" width="16" height="16">
+  <object id="64" name="Talk Josephine after" type="event" x="480" y="544" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog spyder_basement_josephine2"/>
     <property name="behav1" value="talk spyder_basement_josephine"/>
     <property name="cond1" value="is variable_set healed_josephine:yes"/>
    </properties>
   </object>
-  <object id="65" name="Post Talk Bobby" type="event" x="128" y="128" width="16" height="16">
+  <object id="65" name="Post Talk Bobby" type="event" x="256" y="256" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_basement_bobby,post_battle_lose"/>
     <property name="behav1" value="talk spyder_basement_bobby"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_basement_bobby"/>
    </properties>
   </object>
-  <object id="67" name="Post Talk Coralli" type="event" x="320" y="112" width="16" height="16">
+  <object id="67" name="Post Talk Coralli" type="event" x="640" y="224" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_basement_coralli,post_battle_lose"/>
     <property name="behav1" value="talk spyder_basement_coralli"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_basement_coralli"/>
    </properties>
   </object>
-  <object id="68" name="Post Talk Catholi" type="event" x="176" y="240" width="16" height="16">
+  <object id="68" name="Post Talk Catholi" type="event" x="352" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_basement_catholi,post_battle_lose"/>
     <property name="behav1" value="talk spyder_basement_catholi"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_basement_catholi"/>
    </properties>
   </object>
-  <object id="69" name="Post Talk Roger" type="event" x="240" y="240" width="16" height="16">
+  <object id="69" name="Post Talk Roger" type="event" x="480" y="480" width="32" height="32">
    <properties>
     <property name="act1" value="char_talk spyder_basement_roger,post_battle_lose"/>
     <property name="behav1" value="talk spyder_basement_roger"/>
     <property name="cond1" value="is battle_outcome player,won,spyder_basement_roger"/>
    </properties>
   </object>
-  <object id="70" name="Create TM Ice Shield" type="event" x="336" y="224" width="16" height="16">
+  <object id="70" name="Create TM Ice Shield" type="event" x="672" y="448" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_mansion_tmiceshield,21,14"/>
     <property name="cond1" value="not char_exists spyder_mansion_tmiceshield"/>
     <property name="cond2" value="not variable_set mansion_tmiceshield:yes"/>
    </properties>
   </object>
-  <object id="71" name="TM Ice Shield" type="event" x="336" y="208" width="16" height="16">
+  <object id="71" name="TM Ice Shield" type="event" x="672" y="416" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog tm_ice_shield,,center,center,center"/>
     <property name="act2" value="add_item tm_ice_shield"/>
@@ -305,14 +305,14 @@
     <property name="cond1" value="not variable_set mansion_tmiceshield:yes"/>
    </properties>
   </object>
-  <object id="72" name="Create Grand Tuxeball" type="event" x="160" y="32" width="16" height="16">
+  <object id="72" name="Create Grand Tuxeball" type="event" x="320" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_mansion_grandtux,10,2"/>
     <property name="cond1" value="not char_exists spyder_mansion_grandtux"/>
     <property name="cond2" value="not variable_set mansion_grandtux:yes"/>
    </properties>
   </object>
-  <object id="73" name="Grand Tuxeball" type="event" x="144" y="32" width="16" height="16">
+  <object id="73" name="Grand Tuxeball" type="event" x="288" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog tuxeball_grand,,center,center,center"/>
     <property name="act2" value="add_item tuxeball_grand"/>
@@ -322,14 +322,14 @@
     <property name="cond1" value="not variable_set mansion_grandtux:yes"/>
    </properties>
   </object>
-  <object id="74" name="Create Tea" type="event" x="32" y="32" width="16" height="16">
+  <object id="74" name="Create Tea" type="event" x="64" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="create_npc spyder_mansion_tea,1,2"/>
     <property name="cond1" value="not char_exists spyder_mansion_tea"/>
     <property name="cond2" value="not variable_set mansion_tea:yes"/>
    </properties>
   </object>
-  <object id="75" name="Tea" type="event" x="16" y="32" width="16" height="16">
+  <object id="75" name="Tea" type="event" x="32" y="64" width="32" height="32">
    <properties>
     <property name="act1" value="translated_dialog tea,,center,center,center"/>
     <property name="act2" value="add_item tea"/>
@@ -339,7 +339,7 @@
     <property name="cond1" value="not variable_set mansion_tea:yes"/>
    </properties>
   </object>
-  <object id="76" name="Encounters" type="event" x="64" y="0" width="16" height="16">
+  <object id="76" name="Encounters" type="event" x="128" y="0" width="32" height="32">
    <properties>
     <property name="act1" value="random_encounter spyder_mansion,0.6"/>
     <property name="cond1" value="is check_char_parameter player,moving,1"/>

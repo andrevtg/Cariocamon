@@ -16,7 +16,7 @@ from tuxemon.script.parser import parse_action_string
 
 # Constants
 FOLDER = "maps"
-MULTIPLIER = 16
+MULTIPLIER = 32
 MIN_LAYERS = 4
 TMX_TYPES_PREFIXES = ("init", "collision", "event")
 
@@ -60,7 +60,7 @@ def _is_valid_integer(value: str) -> bool:
         return False
 
 
-def _is_multiple_of_16(value) -> bool:
+def _is_multiple_of_tile(value) -> bool:
     return int(value) % MULTIPLIER == 0
 
 
@@ -171,8 +171,8 @@ def test_object_width(loaded_data):
             width = obj.attrib.get("width")
             if width:
                 assert _is_valid_integer(width), f"Invalid width '{width}'"
-                assert _is_multiple_of_16(width), (
-                    f"Width '{width}' is not a multiple of 16"
+                assert _is_multiple_of_tile(width), (
+                    f"Width '{width}' is not a multiple of {MULTIPLIER}"
                 )
 
 
@@ -182,8 +182,8 @@ def test_object_height(loaded_data):
             height = obj.attrib.get("height")
             if height:
                 assert _is_valid_integer(height), f"Invalid height '{height}'"
-                assert _is_multiple_of_16(height), (
-                    f"Height '{height}' is not a multiple of 16"
+                assert _is_multiple_of_tile(height), (
+                    f"Height '{height}' is not a multiple of {MULTIPLIER}"
                 )
 
 
@@ -193,8 +193,8 @@ def test_object_x(loaded_data):
             x = obj.attrib.get("x")
             if x:
                 assert _is_valid_integer(x), f"Invalid x '{x}'"
-                assert _is_multiple_of_16(x), (
-                    f"X '{x}' is not a multiple of 16"
+                assert _is_multiple_of_tile(x), (
+                    f"X '{x}' is not a multiple of {MULTIPLIER}"
                 )
 
 
@@ -204,8 +204,8 @@ def test_object_y(loaded_data):
             y = obj.attrib.get("y")
             if y:
                 assert _is_valid_integer(y), f"Invalid y '{y}'"
-                assert _is_multiple_of_16(y), (
-                    f"Y '{y}' is not a multiple of 16"
+                assert _is_multiple_of_tile(y), (
+                    f"Y '{y}' is not a multiple of {MULTIPLIER}"
                 )
 
 
