@@ -254,7 +254,7 @@
     <property name="act3" value="translated_dialog water_gemuar_before3"/>
     <property name="act4" value="wild_encounter jemuar,60,3"/>
     <property name="act5" value="set_variable after_gemuar:yes"/>
-    <property name="cond1" value="is player_facing_tile"/>
+    <property name="cond1" value="is char_facing_tile player"/>
     <property name="cond2" value="is button_pressed K_RETURN"/>
     <property name="cond3" value="not variable_set after_gemuar:yes"/>
    </properties>
@@ -395,7 +395,7 @@
     <property name="act1" value="add_monster agnite,65"/>
     <property name="act2" value="set_monster_health add_monster,0.1"/>
     <property name="act3" value="set_variable x1:yes"/>
-    <property name="cond1" value="not has_monster agnite"/>
+    <property name="cond1" value="not has_monster player,agnite"/>
     <property name="cond3" value="not variable_set x1:yes"/>
    </properties>
   </object>
@@ -420,8 +420,8 @@
   </object>
   <object id="48" name="Set Environment" type="event" x="1504" y="1472" width="32" height="32">
    <properties>
-    <property name="act1" value="set_environment water"/>
-    <property name="cond1" value="not environment_is water"/>
+    <property name="act1" value="set_environment underwater"/>
+    <property name="cond1" value="not environment_is underwater"/>
    </properties>
   </object>
   <object id="49" name="Create NPC" type="event" x="1248" y="800" width="32" height="32">
