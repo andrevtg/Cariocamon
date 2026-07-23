@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from tuxemon.mod_manager import Manager
 
 # ip_list = ["http://127.0.0.1:5000", "http://127.0.0.1:5001"]

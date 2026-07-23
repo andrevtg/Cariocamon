@@ -23,7 +23,13 @@ def find_save_path(slot: int) -> Path:
     if sys.platform == "win32":
         base = Path.home() / ".tuxemon" / "saves"
     elif sys.platform == "darwin":
-        base = Path.home() / "Library" / "Application Support" / "tuxemon" / "saves"
+        base = (
+            Path.home()
+            / "Library"
+            / "Application Support"
+            / "tuxemon"
+            / "saves"
+        )
     else:
         base = Path.home() / ".tuxemon" / "saves"
 
@@ -50,6 +56,7 @@ def load_save(path: Path) -> dict:
         return json.loads(text)
     if suffix in (".yaml", ".yml"):
         import yaml
+
         return yaml.safe_load(text)
     raise ValueError(f"Unsupported save format: {path}")
 
@@ -60,6 +67,7 @@ def write_save(data: dict, path: Path) -> None:
         path.write_text(json.dumps(data, indent=4), encoding="utf-8")
     elif suffix in (".yaml", ".yml"):
         import yaml
+
         path.write_text(yaml.dump(data, allow_unicode=True), encoding="utf-8")
     else:
         raise ValueError(f"Unsupported save format: {path}")
@@ -102,9 +110,15 @@ def make_monster_dict(slug: str, level: int) -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Add all monsters to a save file.")
-    parser.add_argument("--slot", type=int, required=True, help="Save slot number")
-    parser.add_argument("--level", type=int, default=5, help="Monster level (default: 5)")
+    parser = argparse.ArgumentParser(
+        description="Add all monsters to a save file."
+    )
+    parser.add_argument(
+        "--slot", type=int, required=True, help="Save slot number"
+    )
+    parser.add_argument(
+        "--level", type=int, default=5, help="Monster level (default: 5)"
+    )
     args = parser.parse_args()
 
     try:
@@ -137,7 +151,9 @@ def main() -> None:
         if slug not in existing
     ]
     if new_monsters:
-        print(f"Adding {len(new_monsters)} monsters to storage ({len(all_slugs) - len(new_monsters)} already present).")
+        print(
+            f"Adding {len(new_monsters)} monsters to storage ({len(all_slugs) - len(new_monsters)} already present)."
+        )
         BOX_SIZE = 30
         boxes: dict = dict(npc_state.get("monster_boxes", {}))
         idx = 1
@@ -155,7 +171,9 @@ def main() -> None:
 
     # --- Tuxepedia ---
     tuxepedia: dict = dict(npc_state.get("tuxepedia") or {})
-    needs_update = [s for s in all_slugs if tuxepedia.get(s, {}).get("status") != "caught"]
+    needs_update = [
+        s for s in all_slugs if tuxepedia.get(s, {}).get("status") != "caught"
+    ]
     if needs_update:
         print(f"Marking {len(needs_update)} monsters as caught in tuxepedia.")
         for slug in all_slugs:

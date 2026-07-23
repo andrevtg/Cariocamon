@@ -26,9 +26,7 @@ try:
 except ImportError:
     yaml = None  # type: ignore[assignment]
 
-ADD_MONSTER_RE = re.compile(
-    r"^(add_monster\s+[^,]+,)(\d+)((?:,.*)?)$"
-)
+ADD_MONSTER_RE = re.compile(r"^(add_monster\s+[^,]+,)(\d+)((?:,.*)?)$")
 
 
 def bump_level(action: str, delta: int) -> tuple[str, bool]:
@@ -44,6 +42,7 @@ def bump_level(action: str, delta: int) -> tuple[str, bool]:
 # TMX (XML) handling
 # ---------------------------------------------------------------------------
 
+
 def update_tmx(tmx_path: Path, delta: int) -> int:
     """Edit add_monster levels in TMX properties in place. Returns change count."""
     text = tmx_path.read_text(encoding="utf-8")
@@ -54,7 +53,7 @@ def update_tmx(tmx_path: Path, delta: int) -> int:
         new_val, changed = bump_level(m.group(2), delta)
         if changed:
             changes += 1
-        return f'{m.group(1)}{new_val}{m.group(3)}'
+        return f"{m.group(1)}{new_val}{m.group(3)}"
 
     # Match: value="add_monster ..." inside a property tag
     prop_re = re.compile(
@@ -70,6 +69,7 @@ def update_tmx(tmx_path: Path, delta: int) -> int:
 # ---------------------------------------------------------------------------
 # YAML handling
 # ---------------------------------------------------------------------------
+
 
 def update_yaml(yaml_path: Path, delta: int) -> int:
     """Edit add_monster levels in a companion YAML file in place. Returns change count."""
@@ -137,7 +137,9 @@ def main() -> None:
     tmx_changes = update_tmx(tmx_path, delta)
     total += tmx_changes
     if tmx_changes:
-        print(f"TMX:  updated {tmx_changes} add_monster action(s) in {tmx_path}")
+        print(
+            f"TMX:  updated {tmx_changes} add_monster action(s) in {tmx_path}"
+        )
     else:
         print(f"TMX:  no add_monster actions found in {tmx_path}")
 
@@ -147,13 +149,17 @@ def main() -> None:
         yaml_changes = update_yaml(yaml_path, delta)
         total += yaml_changes
         if yaml_changes:
-            print(f"YAML: updated {yaml_changes} add_monster action(s) in {yaml_path}")
+            print(
+                f"YAML: updated {yaml_changes} add_monster action(s) in {yaml_path}"
+            )
         else:
             print(f"YAML: no add_monster actions found in {yaml_path}")
     else:
         print(f"YAML: no companion file at {yaml_path}, skipping")
 
-    print(f"\nDone. {total} monster level(s) {'increased' if delta >= 0 else 'decreased'} by {abs(delta)}.")
+    print(
+        f"\nDone. {total} monster level(s) {'increased' if delta >= 0 else 'decreased'} by {abs(delta)}."
+    )
 
 
 if __name__ == "__main__":
