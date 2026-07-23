@@ -130,3 +130,13 @@ Completed in one sitting, one commit per category. Findings vs. plan:
   environment island sheet and NPC combat sheet. Lesson for Phase 4:
   lazily-loaded asset paths need explicit exercise — boot success
   proves little about battle assets.
+- **Second straggler class (user playtest, fixed): px values in mod
+  content.** `mods/tuxemon/db/animation/*.yaml` declares `frame_x`/
+  `frame_y` per animation (207 entries) — the strips were doubled but
+  the declared frame sizes weren't, so `slice_spritesheet` cut
+  quarter-frames (intro screen drew the top-left corner of each frame
+  at half size). Doubled via script; regression test added (sheet
+  divides evenly by declared frame size). Swept the rest of
+  `mods/tuxemon/db/` for pixel-valued content: environments hold only
+  asset paths, monster `height`/`weight` are biometric (not px) —
+  animation YAMLs were the only case.
