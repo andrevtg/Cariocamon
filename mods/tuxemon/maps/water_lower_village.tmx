@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="42" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="78">
+<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="42" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="79">
  <properties>
   <property name="edges" value="clamped"/>
  </properties>
@@ -509,6 +509,12 @@
    <properties>
     <property name="act1" value="play_music music_fields_loop"/>
     <property name="cond1" value="not music_playing music_fields_loop"/>
+   </properties>
+  </object>
+   <object id="78" name="Set Environment" type="event" x="0" y="0" width="32" height="32">
+   <properties>
+    <property name="act1" value="set_environment grass"/>
+    <property name="cond1" value="not environment_is grass"/>
    </properties>
   </object>
  </objectgroup>
