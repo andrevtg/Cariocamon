@@ -1,7 +1,6 @@
 # Phase 3b: HD pixel-art enhancement (hq2x)
 
-- Status: In progress (pilot accepted — keep all, including hq2x
-  border; batch underway)
+- Status: Complete
 - Depends on: Phase 3a (complete),
   [ADR-0005](../../adr/0005-hd-pixel-art-via-algorithmic-enhancement.md)
 
@@ -69,6 +68,27 @@ the phase can pause per-category with no breakage.
   battle, and menu states shows no seams, halos, or distorted UI.
 
 ## Notes
+
+### Outcome (2026-07-23)
+
+Full batch executed same day as the pilot acceptance, one commit per
+category, all sourced from `pre-hd-baseline` originals:
+
+- Tilesets 77 (`--tile 16`); overworld sheets 208 (`--tile 16x32`) +
+  static objects 24 (whole); battle sheets 412 (whole, agnite excluded
+  for its user-chosen pre-rendered front) + player combat sheets 357
+  (`--tile 64x64`) + flairs (whole); UI 258 with island sheets
+  (`--tile 96x57`) and borders (`--tile 6`) special-cased; items 177,
+  bubbles 12, overlay/cursor 4 (whole); animations 207 (per-frame
+  cells derived from `db/animation/*.yaml`: current value / 2).
+- Verification: full suite at the 9-failure pre-existing baseline,
+  20s headless boot clean, Taba Town spot-render seam-free,
+  TSX-vs-PNG size cross-check 0 mismatches.
+- Batch gotchas recorded for reuse: `rembg` drags Pillow >= 10 which
+  silently breaks `hqx` (`PIL.PyAccess` removed) — keep the venv
+  pinned to Pillow 9.5; `ls | xargs` splits space-named tileset
+  files — use `find -print0 | xargs -0`; `git show` sources must be
+  repo-relative paths.
 
 ### AI-redraw side test (2026-07-23, user-requested)
 
