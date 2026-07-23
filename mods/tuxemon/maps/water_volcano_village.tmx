@@ -303,8 +303,8 @@
   </object>
   <object id="25" name="Play Music" type="event" x="608" y="224" width="32" height="32">
    <properties>
-    <property name="act1" value="play_music music_valor_heroes"/>
-    <property name="cond1" value="not music_playing music_valor_heroes"/>
+    <property name="act1" value="play_music music_town_theme"/>
+    <property name="cond1" value="not music_playing music_town_theme"/>
    </properties>
   </object>
   <object id="26" name="Set Environment" type="event" x="544" y="32" width="32" height="32">

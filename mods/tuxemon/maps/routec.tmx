@@ -65,8 +65,8 @@
  <objectgroup id="4" name="Events">
   <object id="148" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
-    <property name="act10" value="play_music lunar_joyride.mp3"/>
-    <property name="cond10" value="not music_playing lunar_joyride.mp3"/>
+    <property name="act10" value="play_music music_lunar_joyride"/>
+    <property name="cond10" value="not music_playing music_lunar_joyride"/>
    </properties>
   </object>
   <object id="149" name="Teleport to Dragon's Cave" type="event" x="192" y="64" width="32" height="32">

@@ -48,8 +48,8 @@
  <objectgroup color="#ffff00" id="7" name="Events">
   <object id="23" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
-    <property name="act1" value="play_music lunar_joyride.mp3"/>
-    <property name="cond1" value="not music_playing lunar_joyride.mp3"/>
+    <property name="act1" value="play_music music_lunar_joyride"/>
+    <property name="cond1" value="not music_playing music_lunar_joyride"/>
    </properties>
   </object>
   <object id="26" name="Go Upstairs" type="event" x="0" y="32" width="32" height="32">

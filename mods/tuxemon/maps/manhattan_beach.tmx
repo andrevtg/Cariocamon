@@ -214,8 +214,8 @@
   </object>
   <object id="57" name="Play Music" type="event" x="320" y="0" width="32" height="32">
    <properties>
-    <property name="act1" value="play_music legend_bofie/all-the-tea-in-china.mp3"/>
-    <property name="cond1" value="not music_playing legend_bofie/all-the-tea-in-china.mp3"/>
+    <property name="act1" value="play_music music_dark_blue"/>
+    <property name="cond1" value="not music_playing music_dark_blue"/>
    </properties>
   </object>
   <object id="37" name="Talk to Uncle Jeff" type="event" x="608" y="32" width="32" height="32">

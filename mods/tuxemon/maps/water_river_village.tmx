@@ -274,8 +274,8 @@
   </object>
   <object id="19" name="Play Music" type="event" x="0" y="0" width="32" height="32">
    <properties>
-    <property name="act1" value="play_music music_dizzy_spells"/>
-    <property name="cond1" value="not music_playing music_dizzy_spells"/>
+    <property name="act1" value="play_music music_night_dizzy_spells"/>
+    <property name="cond1" value="not music_playing music_night_dizzy_spells"/>
    </properties>
   </object>
   <object id="20" name="Create Omnichannel 5" type="event" x="288" y="128" width="32" height="32">

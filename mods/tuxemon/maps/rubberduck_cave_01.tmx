@@ -210,8 +210,8 @@
   </object>
   <object id="65" name="Play Music" type="init" x="320" y="224" width="32" height="32">
    <properties>
-    <property name="act1" value="play_music Come and Find Me.ogg"/>
-    <property name="cond1" value="not music_playing Come and Find Me.ogg"/>
+    <property name="act1" value="play_music music_come_and_find_me"/>
+    <property name="cond1" value="not music_playing music_come_and_find_me"/>
    </properties>
   </object>
   <object id="172" name="Item hint" type="event" x="864" y="1696" width="32" height="64">
