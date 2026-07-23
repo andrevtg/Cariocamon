@@ -1,7 +1,6 @@
 # Phase 4: Validation
 
-- Status: In progress (automated gates green 2026-07-23; awaiting
-  user playtest)
+- Status: Complete (2026-07-23)
 - Depends on: Phases 3a and 3b (complete; 3c also complete)
 
 ## Goal
@@ -34,9 +33,13 @@ schema-valid, test-suite-green, and playable.
       zero-diff after fixing upstream-merge drift in `scripts/`
       (commit `d16e0d2ce`); mypy at its documented 25-error
       pre-existing baseline (9 files, none in migrated code paths).
-- [ ] Manual playtest per `CONTRIBUTING.md` convention: ~10 minutes from a
+- [x] Manual playtest per `CONTRIBUTING.md` convention: ~10 minutes from a
       new game, covering overworld movement, an NPC interaction, a wild
-      encounter/combat, menu navigation, save/load.
+      encounter/combat, menu navigation, save/load. Done by the user
+      2026-07-23: "all good". (Earlier extended playtests this same
+      day also covered both water-game endings and battles; the map
+      script bugs they surfaced were unrelated pre-existing drift,
+      fixed in their own commits.)
 - [x] Visual spot-check across map, combat, and menu states for any asset
       that still looks stretched/misaligned (a straggler that dodged
       Phase 1's literal cleanup or Phase 3's validation).
