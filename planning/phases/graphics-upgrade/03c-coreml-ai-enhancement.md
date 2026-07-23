@@ -49,8 +49,9 @@ Gotchas (learned 2026-07-23, do not rediscover):
 
 ## Tasks
 
-- [ ] **Prep** — tag the current build for A/B and rollback:
+- [x] **Prep** — tag the current build for A/B and rollback:
       `git tag hq2x-build` (before the first 3c commit; keep the tag).
+      Done 2026-07-23.
 - [ ] **Stage 1: monster battle sheets** (412 files, whole-image, no
   `--tile`; transparent gutters isolate the cells; ~1 s each):
 
@@ -60,11 +61,15 @@ Gotchas (learned 2026-07-23, do not rediscover):
     | xargs python scripts/enhance_png_coreml.py
   ```
 
-  - [ ] Decide agnite: its front is the hand-picked Ani2Real
-        pre-render from 3b (user-chosen). Keep the exception, or let
-        the AI pass unify it. Ask the user; record the verdict here.
-  - [ ] Verify (gates below), spot-check a battle in-game, commit
+  - [x] Decide agnite: **unify with the AI pass** (user verdict
+        2026-07-23) — the 3b Ani2Real exception is dropped; agnite's
+        sheet is regenerated from `pre-hd-baseline` like the rest.
+  - [x] Verify (gates below), spot-check a battle in-game, commit
         (`Enhance monster battle sheets with Core ML AI (phase 3c)`).
+        All 412 sheets regenerated 2026-07-23; gates 1–4 green
+        (tests at the 9-failure baseline, HD size checks pass, 263
+        maps load). In-game battle spot-check approved by the user
+        ("it is great"). Committed.
 - [ ] **Stage 2: pilot slice, uncommitted** — same slice as 3b so the
       comparison is apples-to-apples. Apply to working tree and have
       the user playtest (walk Paper Town, dialog, one battle, menus):
