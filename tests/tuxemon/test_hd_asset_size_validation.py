@@ -28,6 +28,6 @@ def test_throwaway_hd_npc_sheet_matches_doubled_sheet_size():
     assert has.size(HD_TEST_NPC_SHEET, HD_NPC_SHEET_SIZE)
 
 
-def test_old_resolution_icon_fails_doubled_icon_size_check():
-    old_icon = "gfx/ui/icons/party/party_icon01.png"
-    assert not has.size(old_icon, ICON_SIZE)
+def test_wrong_size_asset_fails_icon_size_check():
+    wrong_size_image = HD_TEST_TILE  # 32x32, not the 14x14 icon size
+    assert not has.size(wrong_size_image, ICON_SIZE)

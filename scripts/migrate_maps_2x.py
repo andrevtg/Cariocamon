@@ -50,12 +50,12 @@ def _rewrite_tag(match: re.Match[str]) -> str:
             tag_text,
         )
     if name in ("polyline", "polygon"):
-        tag_text = POINTS_RE.sub(
-            lambda m: 'points="{}"'.format(
-                NUM_RE.sub(lambda n: _double(n.group(0)), m.group(1))
-            ),
-            tag_text,
-        )
+
+        def _double_points(m: re.Match[str]) -> str:
+            doubled = NUM_RE.sub(lambda n: _double(n.group(0)), m.group(1))
+            return f'points="{doubled}"'
+
+        tag_text = POINTS_RE.sub(_double_points, tag_text)
     return tag_text
 
 
