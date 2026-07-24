@@ -12,6 +12,7 @@ planning/
   roadmap.md            — index of all epics: status + links, nothing else
   adr/                  — architecture decision records, one global sequential log
   phases/<epic-slug>/   — one self-contained file per phase, per epic
+  upstream-fixes.md     — log of fixes for bugs inherited from upstream Tuxemon
 ```
 
 ## Working in this folder
@@ -40,6 +41,10 @@ planning/
   next epic) smarter than the last.
 - **`roadmap.md`** stays a thin index (epic name, status, links). Anything
   more detailed than that belongs in a phase file, not the roadmap.
+- **`upstream-fixes.md`** gets an entry whenever a bug's root cause turns
+  out to exist in upstream Tuxemon (verify against `upstream/development`
+  before logging): symptom, root cause, fix commit, upstream PR status.
+  Fork-introduced bugs don't go here — git history covers those.
 
 ## Starting a new epic
 
