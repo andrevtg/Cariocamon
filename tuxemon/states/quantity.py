@@ -10,7 +10,7 @@ from pygame_menu.locals import ALIGN_CENTER
 from tuxemon.locale.locale import T
 from tuxemon.menu.formatter import CurrencyFormatter, QuantityFormatter
 from tuxemon.menu.menu import PygameMenuState
-from tuxemon.platform.const import buttons
+from tuxemon.platform.const import buttons, intentions
 from tuxemon.platform.const.graphics import BG_MISSIONS
 
 if TYPE_CHECKING:
@@ -178,8 +178,11 @@ class QuantityPickerState(PygameMenuState):
             self._confirm()
             return None
 
-        # B = cancel
-        if event.button == buttons.B and event.pressed:
+        # B / BACK = cancel
+        if (
+            event.button in (buttons.B, buttons.BACK, intentions.MENU_CANCEL)
+            and event.pressed
+        ):
             self.client.pop_state()
             return None
 

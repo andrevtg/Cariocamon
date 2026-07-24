@@ -299,10 +299,14 @@ class PygameMenuState(State):
         self.selected_widget = None
 
         animation = self.animate_close()
+        # pop this state explicitly: popping without an argument would
+        # remove whatever is on top, which may not be this menu
         if animation:
-            animation.schedule(self.client.pop_state, ScheduleType.ON_FINISH)
+            animation.schedule(
+                partial(self.client.pop_state, self), ScheduleType.ON_FINISH
+            )
         else:
-            self.client.pop_state()
+            self.client.pop_state(self)
 
     def _finalize(self) -> None:
         if self._menu is not None:
@@ -910,10 +914,15 @@ class Menu(Generic[T], State):
             self.set_transparent(True)
             ani = self.animate_close()
             self.on_close()
+            # pop this state explicitly: popping without an argument would
+            # remove whatever is on top, which may not be this menu
             if ani:
-                ani.schedule(self.client.pop_state, ScheduleType.ON_FINISH)
+                ani.schedule(
+                    partial(self.client.pop_state, self),
+                    ScheduleType.ON_FINISH,
+                )
             else:
-                self.client.pop_state()
+                self.client.pop_state(self)
 
     def anchor(self, attribute: str, value: int | tuple[int, int]) -> None:
         """
